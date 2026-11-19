@@ -1,0 +1,3002 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRANKAS Terbuka — Mockup Mobile (390 × 844 px)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0E3B2E;
+      --primary-2: #145A43;
+      --ink: #10201A;
+      --muted: #5E6B64;
+      --bg: #F4F6F3;
+      --surface: #FFFFFF;
+      --border: #E3E8E4;
+      --tint: #E3F4EA;
+      --gold: #C9952B;
+      --gold-ink: #8A5A00;
+      --gold-light: #E9C877;
+      --gold-soft: #FFF4DB;
+      --success: #0F7A4B;
+      --danger: #B42318;
+      --danger-bg: #FDECEC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #E8ECE9;
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      line-height: 1.45;
+    }
+
+    button, input, select {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Kanvas Ponsel 390 × 844 px */
+    .phone-shell {
+      width: 390px;
+      height: 844px;
+      background: var(--bg);
+      border-radius: 40px;
+      border: 8px solid #16221D;
+      box-shadow: 0 24px 60px rgba(14, 59, 46, 0.22);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    /* Status Bar 44 px */
+    .status-bar {
+      height: 44px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+      z-index: 20;
+    }
+
+    .status-bar.light-bar {
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    .island-switcher {
+      background: #10201A;
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 28px;
+    }
+
+    .status-bar.light-bar .island-switcher {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+
+    /* Viewport Konten */
+    .phone-viewport {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-bottom: 88px;
+      scrollbar-width: none;
+    }
+
+    .phone-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Header Hijau */
+    .screen-header-dark {
+      background: var(--primary);
+      color: #FFFFFF;
+      padding: 8px 16px 24px;
+      border-bottom-left-radius: 22px;
+      border-bottom-right-radius: 22px;
+    }
+
+    .screen-header-light {
+      padding: 12px 16px 8px;
+    }
+
+    .topbar-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 44px;
+    }
+
+    .icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-btn.on-dark {
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+    }
+
+    .icon-btn.on-light {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink);
+    }
+
+    /* Tipografi Sesuai Spesifikasi */
+    .title-screen {
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .title-card {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .text-body {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .text-caption {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .num-hero {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.15;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+
+    /* Stack & Kartu */
+    .content-stack {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(16, 32, 26, 0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card-hero {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 6px 18px rgba(14, 59, 46, 0.14);
+    }
+
+    .card-hero-2 {
+      background: var(--primary-2);
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sub-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .alert-warning {
+      background: var(--gold-soft);
+      border: 1px solid var(--gold-light);
+      color: var(--gold-ink);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .alert-danger {
+      background: var(--danger-bg);
+      border: 1px solid #F5C2BE;
+      color: var(--danger);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .alert-tint {
+      background: var(--tint);
+      border: 1px solid #C2E5D1;
+      color: var(--primary);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    /* Tombol & Chip (Target Sentuh >= 44 px) */
+    .btn-gold-primary {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .btn-gold-primary:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .btn-outline-primary {
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1.5px solid var(--primary);
+      background: var(--surface);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-outline-neutral {
+      min-height: 44px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-text {
+      min-height: 44px;
+      padding: 8px 4px;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: underline;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .chip-pill {
+      min-height: 44px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .chip-pill.selected {
+      background: var(--tint);
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .chip-pill.disabled-slot {
+      background: #ECEFED;
+      color: #8A9690;
+      text-decoration: line-through;
+      cursor: not-allowed;
+    }
+
+    /* Label Pil */
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .badge-success {
+      background: var(--tint);
+      color: var(--success);
+    }
+
+    .badge-gold {
+      background: var(--gold-soft);
+      color: var(--gold-ink);
+    }
+
+    .badge-danger {
+      background: var(--danger-bg);
+      color: var(--danger);
+    }
+
+    .badge-neutral {
+      background: #ECEFED;
+      color: var(--muted);
+    }
+
+    .badge-dark-glass {
+      background: rgba(255, 255, 255, 0.14);
+      color: #FFFFFF;
+    }
+
+    /* Input & Select */
+    .input-field {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    .input-field:focus {
+      outline: 2px solid var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Progress Bar */
+    .bar-track {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: #E6EBE8;
+      overflow: hidden;
+    }
+
+    .bar-fill-primary {
+      height: 100%;
+      border-radius: 999px;
+      background: var(--primary);
+    }
+
+    .bar-fill-gold {
+      height: 100%;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    .bar-fill-success {
+      height: 100%;
+      border-radius: 999px;
+      background: var(--success);
+    }
+
+    /* Stepper Horizontal 3 Langkah */
+    .h-stepper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+    }
+
+    .h-step {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .h-step.active {
+      color: var(--primary);
+    }
+
+    .h-step-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .h-step.active .h-step-dot {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    /* Stepper Vertikal */
+    .v-step-row {
+      display: flex;
+      gap: 12px;
+      position: relative;
+    }
+
+    .v-step-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 24px;
+      flex-shrink: 0;
+    }
+
+    .v-step-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+    }
+
+    .v-step-circle.done {
+      background: var(--success);
+      border-color: var(--success);
+      color: #FFFFFF;
+    }
+
+    .v-step-circle.active {
+      background: var(--gold-soft);
+      border-color: var(--gold);
+      color: var(--gold-ink);
+    }
+
+    .v-step-circle.warn {
+      background: var(--gold-soft);
+      border-color: var(--gold);
+      color: var(--gold-ink);
+    }
+
+    .v-step-line {
+      width: 2px;
+      flex: 1;
+      min-height: 16px;
+      background: var(--border);
+      margin: 4px 0;
+    }
+
+    /* Navigasi Bawah 4 Menu */
+    .bottom-nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 6px 8px 10px;
+      z-index: 25;
+    }
+
+    .bnav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      min-height: 48px;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .bnav-btn.active {
+      color: var(--primary);
+      font-weight: 700;
+      background: var(--tint);
+    }
+
+    /* Bottom Sheet & Drawer di dalam Ponsel */
+    .sheet-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(16, 32, 26, 0.52);
+      z-index: 40;
+      display: none;
+      align-items: flex-end;
+    }
+
+    .sheet-backdrop.open {
+      display: flex;
+    }
+
+    .sheet-panel {
+      width: 100%;
+      max-height: 82%;
+      overflow-y: auto;
+      background: var(--surface);
+      border-top-left-radius: 22px;
+      border-top-right-radius: 22px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .toast-banner {
+      position: absolute;
+      top: 52px;
+      left: 16px;
+      right: 16px;
+      background: var(--ink);
+      color: #FFFFFF;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      z-index: 50;
+      display: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .toast-banner.show {
+      display: block;
+    }
+
+    .illustration-footer {
+      text-align: center;
+      font-size: 11px;
+      color: var(--muted);
+      padding: 4px 0 8px;
+    }
+
+    /* Tampilan Khusus N13 Desktop KPI (1440 × 900) */
+    .desktop-kpi-wrap {
+      display: none;
+      width: 100%;
+      max-width: 1360px;
+      background: var(--bg);
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(14, 59, 46, 0.14);
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 0;
+        background: var(--bg);
+      }
+      .phone-shell {
+        width: 100vw;
+        height: 100dvh;
+        border: none;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- KANVAS PONSEL UTAMA (390 × 844 px) -->
+  <div class="phone-shell" id="phoneContainer">
+    <!-- Status Bar 44 px -->
+    <div class="status-bar" id="phoneStatusBar">
+      <span class="tabular">09.00</span>
+      <button type="button" class="island-switcher" onclick="openScreenSwitcher()" title="Pilih layar (19 layar)">
+        <span id="islandScreenLabel">N1 · Beranda</span>
+        <span>▾</span>
+      </button>
+      <span style="display:inline-flex; align-items:center; gap:5px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+        <svg width="16" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="18" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg>
+      </span>
+    </div>
+
+    <!-- Toast Notifikasi -->
+    <div class="toast-banner" id="toastBanner"></div>
+
+    <!-- Area Konten Layar -->
+    <main class="phone-viewport" id="phoneViewport"></main>
+
+    <!-- Navigasi Bawah 4 Menu: Brankas · Tujuan · Bukti · Butik -->
+    <nav class="bottom-nav" aria-label="Menu utama">
+      <button type="button" class="bnav-btn active" data-tab="brankas" onclick="navigateTo('N1')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="12" cy="12" r="3"/><line x1="7" y1="8" x2="7.01" y2="8"/></svg>
+        <span>Brankas</span>
+      </button>
+      <button type="button" class="bnav-btn" data-tab="tujuan" onclick="navigateTo('L2')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+        <span>Tujuan</span>
+      </button>
+      <button type="button" class="bnav-btn" data-tab="bukti" onclick="navigateTo('L3')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        <span>Bukti</span>
+      </button>
+      <button type="button" class="bnav-btn" data-tab="butik" onclick="navigateTo('L4')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Butik</span>
+      </button>
+    </nav>
+
+    <!-- Bottom Sheet Interaktif -->
+    <div class="sheet-backdrop" id="sheetBackdrop" onclick="if(event.target===this) closeSheet()">
+      <div class="sheet-panel" id="sheetPanel"></div>
+    </div>
+  </div>
+
+  <!-- KANVAS DESKTOP N13 (KPI INTERNAL 1440 × 900) -->
+  <div class="desktop-kpi-wrap" id="desktopKpiContainer"></div>
+
+  <script>
+    // Data Acuan Kasus (15 Nov 2026)
+    const PRICE_BUY_15NOV = 2517000;
+    const PRICE_BUYBACK_15NOV = 2293000;
+    const AVG_BUY_PRICE = 2380000;
+
+    // Daftar Seluruh 19 Layar (L1–L6 & N1–N13)
+    const SCREEN_LIST = [
+      { id: 'N1', code: 'N1', title: 'Beranda Brankas', tab: 'brankas', group: 'Utama & Navigasi', tag: 'Penting' },
+      { id: 'L2', code: 'L2', title: 'Tujuan tabungan', tab: 'tujuan', group: 'Utama & Navigasi', tag: 'Wajib' },
+      { id: 'L3', code: 'L3', title: 'Bukti saldo (Varian A/B)', tab: 'bukti', group: 'Utama & Navigasi', tag: 'Wajib' },
+      { id: 'L4', code: 'L4', title: 'Ambil emas di butik', tab: 'butik', group: 'Utama & Navigasi', tag: 'Wajib' },
+
+      { id: 'L5', code: 'L5', title: 'BRANKAS Mula (mulai Rp10.000)', tab: 'brankas', group: 'Tabungan & Transaksi', tag: 'Revisi' },
+      { id: 'N5', code: 'N5', title: 'Checkout beli + rincian biaya', tab: 'brankas', group: 'Tabungan & Transaksi', tag: 'Wajib' },
+      { id: 'N6', code: 'N6', title: 'Kartu risiko + kuis edukasi', tab: 'brankas', group: 'Tabungan & Transaksi', tag: 'Penting' },
+      { id: 'N7', code: 'N7', title: 'Beli ulang cepat (Setor lagi)', tab: 'tujuan', group: 'Tabungan & Transaksi', tag: 'Penting' },
+      { id: 'N8', code: 'N8', title: 'Atur autodebet (opsional)', tab: 'tujuan', group: 'Tabungan & Transaksi', tag: 'Opsional' },
+      { id: 'N9', code: 'N9', title: 'Jual + rincian potongan', tab: 'brankas', group: 'Tabungan & Transaksi', tag: 'Wajib' },
+      { id: 'N10', code: 'N10', title: 'Status cetak per tahap', tab: 'butik', group: 'Tabungan & Transaksi', tag: 'Wajib' },
+
+      { id: 'N3', code: 'N3', title: 'Persiapan daftar + asal pelanggan', tab: 'brankas', group: 'Pendaftaran & Keamanan', tag: 'Wajib' },
+      { id: 'N2', code: 'N2', title: 'Pilih tipe keanggotaan + biaya efektif', tab: 'brankas', group: 'Pendaftaran & Keamanan', tag: 'Penting' },
+      { id: 'L1', code: 'L1', title: 'Status pendaftaran & e-KYC', tab: 'brankas', group: 'Pendaftaran & Keamanan', tag: 'Revisi' },
+      { id: 'N4', code: 'N4', title: 'e-KYC ditolak beserta alasannya', tab: 'brankas', group: 'Pendaftaran & Keamanan', tag: 'Wajib' },
+      { id: 'L6', code: 'L6', title: 'Pusat Keamanan & Keluarga', tab: 'brankas', group: 'Pendaftaran & Keamanan', tag: 'Revisi' },
+
+      { id: 'N11', code: 'N11', title: 'Mode sederhana (ramah senior)', tab: 'brankas', group: 'Inklusi, Notifikasi & KPI', tag: 'Opsional' },
+      { id: 'N12', code: 'N12', title: 'Pusat status / notifikasi', tab: 'brankas', group: 'Inklusi, Notifikasi & KPI', tag: 'Opsional' },
+      { id: 'N13', code: 'N13', title: 'Dashboard KPI internal (desktop)', tab: 'brankas', group: 'Inklusi, Notifikasi & KPI', tag: 'Desktop' }
+    ];
+
+    // State Aplikasi
+    const state = {
+      currentScreen: 'N1',
+      // L1
+      l1QuotaOpen: false,
+      l1NotifySaved: false,
+      // L2
+      goals: [
+        { id: 'g1', name: 'Menikah', current: 6.40, target: 10.0, pct: 64, deadline: 'Des 2027', status: 'Sesuai jadwal', badge: 'badge-success' },
+        { id: 'g2', name: 'Dana darurat', current: 2.10, target: 5.0, pct: 42, deadline: 'Tanpa tenggat', status: 'Tanpa tenggat', badge: 'badge-neutral' },
+        { id: 'g3', name: 'Umrah', current: 0.80, target: 15.0, pct: 5, deadline: '2029', status: 'Perlu dikejar', badge: 'badge-gold' }
+      ],
+      zakatSimulate90: false,
+      // L3
+      l3ViewMode: 'ab', // 'ab' | 'a' | 'b'
+      l3SimulateGainPct: 0,
+      l3PhysicalBars: [
+        { serial: 'ID-ANTM-25-04192', gram: 2.0, note: 'CertiCard · Butik Jakarta' },
+        { serial: 'ID-ANTM-26-07311', gram: 1.0, note: 'CertiCard · Butik Bandung' }
+      ],
+      // L4
+      l4Denom: 1,
+      l4Qty: 3,
+      l4BoutiqueIdx: 0,
+      l4Boutiques: [
+        { name: 'Butik Emas LM Jakarta (Gedung Antam)', stock5g: true },
+        { name: 'Butik Emas LM Bandung', stock5g: false },
+        { name: 'Butik Emas LM Surabaya', stock5g: true }
+      ],
+      l4Date: 'Kam 28 Nov',
+      l4Slot: '11.00',
+      l4StockAlertSet: false,
+      // L5
+      l5Nominal: 25000,
+      l5CustomMode: false,
+      // L6
+      l6VerifyInput: 'logammulia.com',
+      l6FamilyName: 'Rina (Anak)',
+      l6FamilyPhone: '0812-****-8890',
+      // N2
+      n2PlanGram: 5,
+      n2SelectedTier: 'Quartz',
+      // N3
+      n3KtpReady: true,
+      n3NpwpStatus: 'unchecked', // 'unchecked' | 'matched' | 'unmatched'
+      n3BankReady: true,
+      n3Origin: '',
+      // N4
+      n4BoutiqueChoice: 'Butik Emas LM Jakarta',
+      n4BoutiqueDate: 'Sen, 23 Nov · 10.00',
+      // N5
+      n5Bank: 'BCA Virtual Account',
+      n5RiskChecked: false,
+      n5ShowSpreadInfo: false,
+      // N6
+      n6QuizAnswer: null, // 'benar' | 'salah' | null
+      n6ShowLearnMore: false,
+      // N7
+      n7GoalName: 'Menikah',
+      n7Chip: '1',
+      n7CustomGram: 1.5,
+      n7ProfileExpanded: false,
+      // N8
+      n8Nominal: 500000,
+      n8Day: '25',
+      n8Bank: 'BCA ****4417',
+      n8ReminderH1: true,
+      // N9
+      n9Gram: 2.0,
+      n9HasNpwp: true,
+      // N10
+      n10Delayed: false,
+      n10ReadyState: false,
+      // N12
+      n12Tab: 'Semua',
+      n12EmptyMode: false,
+      // N13
+      n13Channel: 'Semua kanal'
+    };
+
+    // Utilitas Format Angka Indonesia
+    function formatRp(num) {
+      const val = Math.round(Number(num) || 0);
+      const sign = val < 0 ? '−' : '';
+      return sign + 'Rp' + Math.abs(val).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    function formatGr(num, dec) {
+      const d = typeof dec === 'number' ? dec : 2;
+      return (Number(num) || 0).toFixed(d).replace('.', ',');
+    }
+
+    // Toast & Bottom Sheet
+    let toastTimer = null;
+    function showToast(msg) {
+      const el = document.getElementById('toastBanner');
+      if (!el) return;
+      el.textContent = msg;
+      el.classList.add('show');
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        el.classList.remove('show');
+      }, 2800);
+    }
+
+    function openSheet(html) {
+      const backdrop = document.getElementById('sheetBackdrop');
+      const panel = document.getElementById('sheetPanel');
+      if (!backdrop || !panel) return;
+      panel.innerHTML = html;
+      backdrop.classList.add('open');
+    }
+
+    function closeSheet() {
+      const backdrop = document.getElementById('sheetBackdrop');
+      if (backdrop) backdrop.classList.remove('open');
+    }
+
+    // Pemilih 19 Layar
+    function openScreenSwitcher() {
+      const groups = ['Utama & Navigasi', 'Tabungan & Transaksi', 'Pendaftaran & Keamanan', 'Inklusi, Notifikasi & KPI'];
+      const listHtml = groups.map(grp => {
+        const items = SCREEN_LIST.filter(s => s.group === grp);
+        return `
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div style="font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:0.04em;">${grp}</div>
+            ${items.map(item => `
+              <button type="button" onclick="closeSheet(); navigateTo('${item.id}');"
+                style="width:100%; min-height:44px; padding:10px 12px; border-radius:12px; border:1px solid ${state.currentScreen === item.id ? 'var(--primary)' : 'var(--border)'}; background:${state.currentScreen === item.id ? 'var(--tint)' : 'var(--surface)'}; display:flex; align-items:center; justify-content:space-between; gap:8px; text-align:left;">
+                <span style="font-size:13px; font-weight:600; color:var(--ink);">
+                  <strong style="color:var(--primary);">${item.code}</strong> · ${item.title}
+                </span>
+                <span class="badge-pill ${item.tag === 'Wajib' ? 'badge-gold' : 'badge-neutral'}">${item.tag}</span>
+              </button>
+            `).join('')}
+          </div>
+        `;
+      }).join('');
+
+      openSheet(`
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div class="title-card">Daftar 19 Layar Mockup</div>
+            <div class="text-caption">BRANKAS Terbuka · BCC FES × ANTAM 2026</div>
+          </div>
+          <button type="button" class="icon-btn on-light" onclick="closeSheet()" aria-label="Tutup">✕</button>
+        </div>
+        ${listHtml}
+      `);
+    }
+
+    // =========================================================================
+    // N1 · BERANDA BRANKAS
+    // =========================================================================
+    function renderN1() {
+      const totalGr = state.goals.reduce((acc, g) => acc + g.current, 0);
+      const estSellValue = totalGr * PRICE_BUYBACK_15NOV;
+      const topGoal = state.goals[0];
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <div>
+              <div style="font-size:12px; color:rgba(255,255,255,0.8);">Selamat pagi,</div>
+              <h1 class="title-screen">Halo, Budi</h1>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button type="button" class="icon-btn on-dark" onclick="navigateTo('L6')" aria-label="Pusat Keamanan" title="Pusat Keamanan">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </button>
+              <button type="button" class="icon-btn on-dark" onclick="navigateTo('N12')" aria-label="Notifikasi" title="Notifikasi" style="position:relative;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                <span style="position:absolute; top:10px; right:10px; width:8px; height:8px; border-radius:999px; background:var(--gold);"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="card-hero-2" style="margin-top:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12px; color:rgba(255,255,255,0.85);">Saldo emas</span>
+              <span class="badge-pill badge-dark-glass">Didukung fisik 1:1</span>
+            </div>
+            <div class="num-hero">${formatGr(totalGr, 2)} gram</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; border-top:1px solid rgba(255,255,255,0.16); padding-top:10px;">
+              <span style="font-size:12px; color:rgba(255,255,255,0.9);">Perkiraan nilai jual hari ini <strong class="tabular">${formatRp(estSellValue)}</strong></span>
+              <button type="button" onclick="navigateTo('L3')" style="color:var(--gold-light); font-size:12px; font-weight:700; text-decoration:underline; white-space:nowrap;">Lihat bukti</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <!-- Baris 4 Aksi Bulat -->
+          <div class="card" style="padding:14px 12px;">
+            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; text-align:center;">
+              <button type="button" onclick="navigateTo('N5')" style="display:flex; flex-direction:column; align-items:center; gap:6px; min-height:64px;">
+                <span style="width:44px; height:44px; border-radius:999px; background:var(--tint); color:var(--primary); display:flex; align-items:center; justify-content:center;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </span>
+                <span style="font-size:12px; font-weight:600;">Beli</span>
+              </button>
+              <button type="button" onclick="openN7Sheet('Menikah')" style="display:flex; flex-direction:column; align-items:center; gap:6px; min-height:64px;">
+                <span style="width:44px; height:44px; border-radius:999px; background:var(--gold-soft); color:var(--gold-ink); display:flex; align-items:center; justify-content:center;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                </span>
+                <span style="font-size:12px; font-weight:600;">Setor lagi</span>
+              </button>
+              <button type="button" onclick="navigateTo('N9')" style="display:flex; flex-direction:column; align-items:center; gap:6px; min-height:64px;">
+                <span style="width:44px; height:44px; border-radius:999px; background:var(--bg); border:1px solid var(--border); color:var(--ink); display:flex; align-items:center; justify-content:center;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </span>
+                <span style="font-size:12px; font-weight:600;">Jual</span>
+              </button>
+              <button type="button" onclick="navigateTo('L4')" style="display:flex; flex-direction:column; align-items:center; gap:6px; min-height:64px;">
+                <span style="width:44px; height:44px; border-radius:999px; background:var(--bg); border:1px solid var(--border); color:var(--ink); display:flex; align-items:center; justify-content:center;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                </span>
+                <span style="font-size:12px; font-weight:600;">Ambil fisik</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Kartu Sedang Diproses (Maks 2 item dengan janji waktu) -->
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Sedang diproses</h2>
+              <button type="button" class="btn-text" style="min-height:32px; font-size:12px;" onclick="navigateTo('N12')">Semua</button>
+            </div>
+            <button type="button" onclick="navigateTo('N10')" class="sub-box" style="width:100%; text-align:left; display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <div>
+                <div style="font-size:13px; font-weight:600; color:var(--ink);">Cetak 5 g · Dicetak</div>
+                <div class="text-caption">Perkiraan siap 28 Nov 2026</div>
+              </div>
+              <span class="badge-pill badge-gold">Pantau</span>
+            </button>
+            <button type="button" onclick="navigateTo('N12')" class="sub-box" style="width:100%; text-align:left; display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <div>
+                <div style="font-size:13px; font-weight:600; color:var(--ink);">Dana jual Rp1,2 jt</div>
+                <div class="text-caption">Perkiraan masuk 21 Nov 2026</div>
+              </div>
+              <span class="badge-pill badge-success">Sesuai jadwal</span>
+            </button>
+          </div>
+
+          <!-- Kartu Tujuan Terdekat -->
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Tujuan terdekat</h2>
+              <span class="badge-pill badge-success">${topGoal.pct}%</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline;">
+              <span style="font-size:14px; font-weight:600;">${topGoal.name}</span>
+              <span class="text-caption tabular">${formatGr(topGoal.current, 2)} / ${formatGr(topGoal.target, 1)} g</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill-primary" style="width:${topGoal.pct}%;"></div>
+            </div>
+            <button type="button" class="btn-outline-primary" style="width:100%;" onclick="openN7Sheet('${topGoal.name}')">
+              Setor lagi
+            </button>
+          </div>
+
+          <!-- Kartu Pintasan Alur Usulan -->
+          <div class="card">
+            <div class="title-card">Alur pendaftaran &amp; pemula</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <button type="button" class="btn-outline-neutral" onclick="navigateTo('L5')">BRANKAS Mula</button>
+              <button type="button" class="btn-outline-neutral" onclick="navigateTo('N3')">Daftar baru</button>
+              <button type="button" class="btn-outline-neutral" onclick="navigateTo('L1')">Status e-KYC</button>
+              <button type="button" class="btn-outline-neutral" onclick="navigateTo('N11')">Mode sederhana</button>
+            </div>
+          </div>
+
+          <!-- Banner Kecil Tepercaya -->
+          <div class="alert-tint" style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <span>Kanal resmi ANTAM hanya: <strong>logammulia.com</strong>, aplikasi resmi &amp; ALMIRA.</span>
+            <button type="button" onclick="navigateTo('L6')" style="font-weight:700; text-decoration:underline; white-space:nowrap;">Cek</button>
+          </div>
+
+          <p class="illustration-footer">Contoh ilustrasi · Harga acuan 15 Nov 2026</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // L2 · TUJUAN TABUNGAN (WAJIB REVISI + PELACAK NISAB ZAKAT 85 G)
+    // =========================================================================
+    function renderL2() {
+      const totalGr = state.goals.reduce((acc, g) => acc + g.current, 0);
+      const zakatGr = state.zakatSimulate90 ? 90.0 : totalGr;
+      const nisabTarget = 85.0;
+      const nisabPct = Math.min(100, Math.round((zakatGr / nisabTarget) * 100));
+      const zakatDueGr = zakatGr >= nisabTarget ? zakatGr * 0.025 : 0;
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <h1 class="title-screen">Tujuan saya</h1>
+            <span class="badge-pill badge-dark-glass">Setoran rutin 9 dari 12 bulan</span>
+          </div>
+          <div class="card-hero-2" style="margin-top:10px;">
+            <span style="font-size:12px; color:rgba(255,255,255,0.85);">Total emas di semua tujuan</span>
+            <div class="num-hero">${formatGr(totalGr, 2)} gram</div>
+            <span style="font-size:12px; color:rgba(255,255,255,0.85);">Perkiraan nilai jual: ${formatRp(totalGr * PRICE_BUYBACK_15NOV)}</span>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          ${state.goals.map((g, idx) => `
+            <div class="card">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
+                <div>
+                  <h2 class="title-card">${g.name}</h2>
+                  <div class="text-caption tabular" style="margin-top:2px;">
+                    <strong>${formatGr(g.current, 2)}</strong> / ${formatGr(g.target, 1)} gram · ${g.deadline}
+                  </div>
+                </div>
+                <span class="badge-pill ${g.badge}">${g.status}</span>
+              </div>
+
+              <div class="bar-track">
+                <div class="${g.badge === 'badge-gold' ? 'bar-fill-gold' : 'bar-fill-primary'}" style="width:${g.pct}%;"></div>
+              </div>
+
+              ${g.name === 'Umrah' ? `
+                <div class="alert-warning">
+                  Perlu ±Rp350.000/bulan agar tepat waktu.
+                </div>
+              ` : ''}
+
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+                <span class="text-caption">Pengingat tiap tanggal 25</span>
+                <button type="button" class="btn-outline-primary" onclick="openN7SheetByIndex(${idx})">
+                  Setor lagi
+                </button>
+              </div>
+
+              ${g.name === 'Umrah' ? `
+                <div style="border-top:1px solid var(--border); padding-top:8px;">
+                  <button type="button" class="btn-text" style="min-height:36px; font-size:12px;" onclick="navigateTo('N8')">
+                    Atur setoran otomatis (opsional)
+                  </button>
+                </div>
+              ` : ''}
+            </div>
+          `).join('')}
+
+          <!-- Fitur Pendamping: Pelacak Nisab Zakat Emas (85 gram) -->
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <h2 class="title-card">Pelacak nisab zakat (85 g)</h2>
+              <button type="button" class="badge-pill badge-neutral" onclick="state.zakatSimulate90=!state.zakatSimulate90; renderApp();">
+                ${state.zakatSimulate90 ? 'Kembali ke saldo asli' : 'Simulasi 90 g'}
+              </button>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="text-caption tabular">Akumulasi: <strong>${formatGr(zakatGr, 2)}</strong> / 85,00 gram</span>
+              <span class="text-caption tabular"><strong>${nisabPct}%</strong></span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill-success" style="width:${nisabPct}%;"></div>
+            </div>
+            ${zakatGr >= nisabTarget ? `
+              <div class="alert-tint">
+                Mencapai nisab 85 g (haul 1 tahun). Perkiraan zakat 2,5%: <strong>${formatGr(zakatDueGr, 2)} g</strong> (${formatRp(zakatDueGr * PRICE_BUYBACK_15NOV)}).
+              </div>
+            ` : `
+              <p class="text-caption">Belum mencapai batas nisab 85 gram selama 1 tahun penyimpanan.</p>
+            `}
+          </div>
+
+          <!-- Satu Tombol Emas di Bawah -->
+          <button type="button" class="btn-gold-primary" onclick="openNewGoalSheet()">
+            Buat tujuan baru
+          </button>
+
+          <p class="illustration-footer">Contoh ilustrasi</p>
+        </div>
+      `;
+    }
+
+    function openNewGoalSheet() {
+      openSheet(`
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="title-card">Buat tujuan baru</span>
+          <button type="button" class="icon-btn on-light" onclick="closeSheet()" aria-label="Tutup">✕</button>
+        </div>
+        <div>
+          <label class="text-caption" for="newGoalName">Nama tujuan</label>
+          <input id="newGoalName" type="text" class="input-field" value="Dana Pendidikan" />
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <div>
+            <label class="text-caption" for="newGoalTarget">Target (gram)</label>
+            <input id="newGoalTarget" type="number" step="0.5" min="1" value="8" class="input-field" />
+          </div>
+          <div>
+            <label class="text-caption" for="newGoalDeadline">Target waktu</label>
+            <input id="newGoalDeadline" type="text" value="2028" class="input-field" />
+          </div>
+        </div>
+        <button type="button" class="btn-gold-primary" onclick="submitNewGoal()">
+          Simpan tujuan baru
+        </button>
+      `);
+    }
+
+    function submitNewGoal() {
+      const nameEl = document.getElementById('newGoalName');
+      const targetEl = document.getElementById('newGoalTarget');
+      const deadlineEl = document.getElementById('newGoalDeadline');
+      const nm = (nameEl && nameEl.value ? nameEl.value : 'Dana Pendidikan').trim();
+      const tg = Math.max(1, parseFloat(targetEl && targetEl.value ? targetEl.value : '8') || 8);
+      const dl = (deadlineEl && deadlineEl.value ? deadlineEl.value : '2028').trim();
+      state.goals.push({
+        id: 'goal-' + Date.now(),
+        name: nm,
+        current: 0.5,
+        target: tg,
+        pct: Math.min(100, Math.round((0.5 / tg) * 100)),
+        deadline: dl,
+        status: 'Baru dibuat',
+        badge: 'badge-success'
+      });
+      closeSheet();
+      renderApp();
+      showToast('Tujuan ' + nm + ' berhasil ditambahkan.');
+    }
+
+    // =========================================================================
+    // N7 · BELI ULANG CEPAT ("SETOR LAGI")
+    // =========================================================================
+    function openN7SheetByIndex(idx) {
+      const goal = state.goals[idx] || state.goals[0];
+      openN7Sheet(goal ? goal.name : 'Menikah');
+    }
+
+    function updateN7CustomGram(rawVal) {
+      const gram = Math.max(0.5, parseFloat(rawVal) || 0.5);
+      state.n7CustomGram = gram;
+      const totalEl = document.getElementById('n7EstTotalText');
+      const btnEl = document.getElementById('n7SubmitBtn');
+      if (totalEl) totalEl.textContent = formatRp(gram * PRICE_BUY_15NOV);
+      if (btnEl) btnEl.textContent = 'Setor ' + formatGr(gram, 1) + ' gram';
+    }
+
+    function submitN7Deposit() {
+      const gram = state.n7Chip === 'Lainnya' ? state.n7CustomGram : parseFloat(state.n7Chip);
+      const target = state.goals.find(g => g.name === state.n7GoalName);
+      if (target) {
+        target.current = +(target.current + gram).toFixed(2);
+        target.pct = Math.min(100, Math.round((target.current / target.target) * 100));
+      }
+      closeSheet();
+      renderApp();
+      showToast('Setoran ' + formatGr(gram, 1) + ' gram ke ' + state.n7GoalName + ' tercatat (ilustrasi).');
+    }
+
+    function openN7Sheet(goalName) {
+      state.n7GoalName = goalName || 'Menikah';
+      const gram = state.n7Chip === 'Lainnya' ? state.n7CustomGram : parseFloat(state.n7Chip);
+      const estTotal = gram * PRICE_BUY_15NOV;
+
+      openSheet(`
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <span class="badge-pill badge-neutral">N7 · Beli ulang cepat</span>
+            <h3 class="title-card" style="margin-top:4px;">Setor ke tujuan ${state.n7GoalName}</h3>
+          </div>
+          <button type="button" class="icon-btn on-light" onclick="closeSheet()" aria-label="Tutup">✕</button>
+        </div>
+
+        <div class="text-caption">Pilih nominal gramasi (kelipatan 0,5 g)</div>
+        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:8px;">
+          ${['0.5', '1', '2', 'Lainnya'].map(ch => `
+            <button type="button" class="chip-pill ${state.n7Chip === ch ? 'selected' : ''}" style="padding:0 6px; font-size:12px;"
+              onclick="state.n7Chip='${ch}'; openN7Sheet(state.n7GoalName);">
+              ${ch === 'Lainnya' ? 'Lainnya' : ch.replace('.', ',') + ' g'}
+            </button>
+          `).join('')}
+        </div>
+
+        ${state.n7Chip === 'Lainnya' ? `
+          <div>
+            <label class="text-caption" for="n7CustomInput">Masukkan gramasi (kelipatan 0,5 g)</label>
+            <input id="n7CustomInput" type="number" step="0.5" min="0.5" value="${state.n7CustomGram}" class="input-field"
+              oninput="updateN7CustomGram(this.value)" />
+          </div>
+        ` : ''}
+
+        <div class="sub-box" style="display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:12px; font-weight:600; color:var(--ink);">Data pembelian sama seperti sebelumnya</span>
+            <button type="button" style="font-size:12px; font-weight:700; color:var(--primary); text-decoration:underline;"
+              onclick="state.n7ProfileExpanded=!state.n7ProfileExpanded; openN7Sheet(state.n7GoalName);">
+              ${state.n7ProfileExpanded ? 'Tutup' : 'Ubah'}
+            </button>
+          </div>
+          ${state.n7ProfileExpanded ? `
+            <div style="font-size:12px; color:var(--muted); border-top:1px solid var(--border); padding-top:6px;">
+              Sumber dana: <strong>Gaji</strong> · Tujuan: <strong>Investasi</strong> · Rekening: <strong>BCA ****4417</strong>
+            </div>
+          ` : `
+            <span class="text-caption">Gaji · Investasi · BCA ****4417</span>
+          `}
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <span class="text-caption">Perkiraan total</span>
+            <div id="n7EstTotalText" class="tabular" style="font-size:18px; font-weight:700;">${formatRp(estTotal)}</div>
+          </div>
+          <button type="button" class="btn-text" onclick="closeSheet(); navigateTo('N5');">Rincian biaya</button>
+        </div>
+
+        <button type="button" id="n7SubmitBtn" class="btn-gold-primary" onclick="submitN7Deposit()">
+          Setor ${formatGr(gram, 1)} gram
+        </button>
+        <p class="text-caption" style="text-align:center;">3 ketukan, tanpa mengisi ulang.</p>
+      `);
+    }
+
+    function renderN7() {
+      const gram = state.n7Chip === 'Lainnya' ? state.n7CustomGram : parseFloat(state.n7Chip);
+      const estTotal = gram * PRICE_BUY_15NOV;
+      return `
+        <div class="screen-header-light">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-light" onclick="navigateTo('L2')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="title-screen">Setor lagi</h1>
+            <span style="width:44px;"></span>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div class="card">
+            <span class="badge-pill badge-neutral">Tujuan: Menikah</span>
+            <h2 class="title-card">Setor ke tujuan Menikah</h2>
+            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:8px;">
+              ${['0.5', '1', '2', 'Lainnya'].map(ch => `
+                <button type="button" class="chip-pill ${state.n7Chip === ch ? 'selected' : ''}" style="padding:0 6px; font-size:12px;"
+                  onclick="state.n7Chip='${ch}'; renderApp();">
+                  ${ch === 'Lainnya' ? 'Lainnya' : ch.replace('.', ',') + ' g'}
+                </button>
+              `).join('')}
+            </div>
+
+            <div class="sub-box">
+              <div style="font-size:12px; font-weight:600;">Data pembelian sama seperti sebelumnya</div>
+              <div class="text-caption" style="margin-top:2px;">Gaji · Investasi · BCA ****4417</div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <span class="text-caption">Perkiraan total</span>
+                <div class="tabular" style="font-size:18px; font-weight:700;">${formatRp(estTotal)}</div>
+              </div>
+              <button type="button" class="btn-text" onclick="navigateTo('N5')">Rincian biaya</button>
+            </div>
+
+            <button type="button" class="btn-gold-primary" onclick="navigateTo('L2'); showToast('Setoran berhasil dicatat (ilustrasi).');">
+              Setor ${formatGr(gram, 1)} gram
+            </button>
+            <p class="text-caption" style="text-align:center;">3 ketukan, tanpa mengisi ulang.</p>
+          </div>
+          <p class="illustration-footer">Contoh ilustrasi</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // L3 · BUKTI SALDO (VARIAN A/B + PORTOFOLIO TERPADU + SIMULASI IMPAS)
+    // =========================================================================
+    function openCertiCardSheet() {
+      openSheet(`
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="title-card">Catat emas fisik CertiCard</span>
+          <button type="button" class="icon-btn on-light" onclick="closeSheet()" aria-label="Tutup">✕</button>
+        </div>
+        <p class="text-caption">Gabungkan catatan emas fisik ANTAM milik Anda dengan saldo digital BRANKAS.</p>
+        <div>
+          <label class="text-caption" for="ccSerial">Nomor seri kemasan CertiCard</label>
+          <input id="ccSerial" type="text" class="input-field" value="ID-ANTM-26-08815" />
+        </div>
+        <div>
+          <label class="text-caption" for="ccGram">Berat batangan (gram)</label>
+          <input id="ccGram" type="number" step="0.5" min="0.5" value="2" class="input-field" />
+        </div>
+        <button type="button" class="btn-gold-primary" onclick="submitCertiCard()">
+          Simpan ke portofolio terpadu
+        </button>
+      `);
+    }
+
+    function submitCertiCard() {
+      const srEl = document.getElementById('ccSerial');
+      const grEl = document.getElementById('ccGram');
+      const sr = (srEl && srEl.value ? srEl.value : 'ID-ANTM-26-08815').trim();
+      const gr = Math.max(0.5, parseFloat(grEl && grEl.value ? grEl.value : '2') || 2);
+      state.l3PhysicalBars.push({ serial: sr, gram: gr, note: 'CertiCard · Tercatat manual' });
+      closeSheet();
+      renderApp();
+      showToast('Batangan fisik ' + formatGr(gr, 1) + ' g ditambahkan ke portofolio terpadu.');
+    }
+
+    function updateL3BreakEven(rawPct) {
+      state.l3SimulateGainPct = parseInt(rawPct, 10) || 0;
+      renderApp();
+    }
+
+    function renderL3() {
+      const digitalGr = 5.0;
+      const physicalGr = state.l3PhysicalBars.reduce((acc, b) => acc + b.gram, 0);
+      const totalPortfolioGr = digitalGr + physicalGr;
+
+      const simBuybackPerGr = Math.round(PRICE_BUYBACK_15NOV * (1 + state.l3SimulateGainPct / 100));
+      const diffPerGr = simBuybackPerGr - AVG_BUY_PRICE;
+      const totalEstReceived = simBuybackPerGr * digitalGr;
+      const totalDiff = diffPerGr * digitalGr;
+      const diffPct = ((diffPerGr / AVG_BUY_PRICE) * 100).toFixed(1).replace('.', ',');
+      const isProfit = diffPerGr >= 0;
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <h1 class="title-screen">Bukti saldo</h1>
+            <span class="badge-pill badge-dark-glass">Uji A/B</span>
+          </div>
+
+          <div class="card-hero-2" style="margin-top:10px;">
+            <div style="font-size:14px; font-weight:600;">Saldo Anda 5,0000 gram · Didukung emas fisik ANTAM</div>
+            <div class="text-caption" style="color:rgba(255,255,255,0.82);">Diperbarui 19 Nov 2026, 09.00 WITA</div>
+            <div style="display:flex; gap:8px; margin-top:4px;">
+              <button type="button" class="btn-outline-primary" style="flex:1; background:#FFFFFF;" onclick="showToast('Keaslian pencatatan saldo digital terverifikasi pada 19 Nov 2026.')">
+                Cek keaslian
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <!-- Uji A/B: Varian A vs Varian B Berdampingan -->
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Perbandingan tampilan bukti</h2>
+              <span class="badge-pill badge-neutral">Varian A &amp; B</span>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <!-- Varian A -->
+              <div style="border:1.5px solid var(--primary); background:var(--tint); border-radius:12px; padding:10px; display:flex; flex-direction:column; gap:6px;">
+                <span class="badge-pill badge-success" style="align-self:flex-start;">Varian A · Netral</span>
+                <div style="font-size:12px; font-weight:700; color:var(--primary);">Bukti saldo dan informasi dukungan emas</div>
+                <div class="text-caption" style="font-size:11px;">Kemurnian 999,9 · Stok gudang ANTAM 1:1</div>
+              </div>
+
+              <!-- Varian B -->
+              <div style="border:1.5px dashed var(--gold); background:var(--gold-soft); border-radius:12px; padding:10px; display:flex; flex-direction:column; gap:6px;">
+                <span class="badge-pill badge-gold" style="align-self:flex-start;">Varian B · Uji</span>
+                <div style="font-size:12px; font-weight:700; color:var(--gold-ink);">Sertifikat digital bernomor seri</div>
+                <div style="font-size:11px; font-weight:600; color:var(--ink);">No. seri: [MENUNGGU KONFIRMASI ANTAM]</div>
+                <div style="font-size:10px; color:var(--gold-ink);">Hanya untuk uji, belum dikonfirmasi ANTAM</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fitur Pendamping: Portofolio Terpadu (Digital + Fisik CertiCard) -->
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Portofolio terpadu</h2>
+              <span class="badge-pill badge-success tabular">${formatGr(totalPortfolioGr, 2)} g</span>
+            </div>
+            <div class="sub-box" style="display:flex; flex-direction:column; gap:6px;">
+              <div style="display:flex; justify-content:space-between; font-size:13px;">
+                <span>Saldo digital BRANKAS</span>
+                <strong class="tabular">5,0000 g</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:13px;">
+                <span>Emas fisik CertiCard (${state.l3PhysicalBars.length} keping)</span>
+                <strong class="tabular">${formatGr(physicalGr, 4)} g</strong>
+              </div>
+            </div>
+            <button type="button" class="btn-outline-neutral" style="width:100%;" onclick="openCertiCardSheet()">
+              + Catat CertiCard fisik
+            </button>
+          </div>
+
+          <!-- Kartu Kalau Dijual Hari Ini + Simulasi Titik Impas -->
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Kalau dijual hari ini</h2>
+              <span class="badge-pill ${isProfit ? 'badge-success' : 'badge-danger'} tabular">
+                ${isProfit ? '+' : ''}${diffPct}%
+              </span>
+            </div>
+
+            <div class="sub-box" style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; justify-content:space-between; font-size:13px;">
+                <span class="text-caption">Harga beli rata-rata</span>
+                <strong class="tabular">${formatRp(AVG_BUY_PRICE)}/g</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:13px;">
+                <span class="text-caption">Harga buyback ${state.l3SimulateGainPct > 0 ? '(simulasi +' + state.l3SimulateGainPct + '%)' : 'hari ini'}</span>
+                <strong class="tabular">${formatRp(simBuybackPerGr)}/g</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:13px;">
+                <span class="text-caption">Selisih per gram</span>
+                <strong class="tabular" style="color:${isProfit ? 'var(--success)' : 'var(--danger)'};">${formatRp(diffPerGr)}/g</strong>
+              </div>
+              <div style="border-top:1px solid var(--border); padding-top:8px; display:flex; justify-content:space-between; font-size:14px;">
+                <span>Total perkiraan diterima (5 g)</span>
+                <strong class="tabular">${formatRp(totalEstReceived)}</strong>
+              </div>
+            </div>
+
+            <!-- Slider Simulasi Titik Impas -->
+            <div class="sub-box" style="display:flex; flex-direction:column; gap:6px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <label for="beSlider" class="text-caption" style="font-weight:600; color:var(--ink);">Simulasi kenaikan harga buyback</label>
+                <span class="badge-pill badge-neutral tabular">+${state.l3SimulateGainPct}%</span>
+              </div>
+              <input id="beSlider" type="range" min="0" max="20" step="1" value="${state.l3SimulateGainPct}"
+                onchange="updateL3BreakEven(this.value)" oninput="updateL3BreakEven(this.value)" style="width:100%; accent-color:var(--primary);" />
+              <span class="text-caption">
+                ${isProfit
+                  ? 'Titik impas terlampaui (' + formatRp(totalDiff) + ').'
+                  : 'Butuh kenaikan sekitar +4% dari harga hari ini untuk impas.'}
+              </span>
+            </div>
+
+            <p class="text-caption">Harga emas bisa naik dan turun.</p>
+          </div>
+
+          <!-- Kartu Cara Mencetak atau Mencairkan -->
+          <div class="card">
+            <h2 class="title-card">Cara mencetak atau mencairkan</h2>
+            <button type="button" onclick="navigateTo('L4')" class="sub-box" style="width:100%; text-align:left; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:13px; font-weight:600; color:var(--primary);">Cetak dan ambil emas fisik di butik</span>
+              <span>→</span>
+            </button>
+            <button type="button" onclick="navigateTo('N9')" class="sub-box" style="width:100%; text-align:left; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:13px; font-weight:600; color:var(--primary);">Jual kembali (buyback) ke rekening</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <p class="illustration-footer">Contoh ilustrasi · Harga acuan 15 Nov 2026</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // L4 · AMBIL EMAS DI BUTIK (WAJIB REVISI · PENYEMPURNAAN FITUR CETAK)
+    // =========================================================================
+    function renderL4() {
+      const boutique = state.l4Boutiques[state.l4BoutiqueIdx] || state.l4Boutiques[0];
+      const totalGram = state.l4Denom * state.l4Qty;
+      const isOutOfStock = state.l4Denom === 5 && !boutique.stock5g;
+
+      const dates = ['Sel 26 Nov', 'Rab 27 Nov', 'Kam 28 Nov', 'Jum 29 Nov', 'Sab 30 Nov'];
+      const slots = [
+        { time: '09.00', full: false },
+        { time: '11.00', full: false },
+        { time: '13.00', full: true },
+        { time: '15.00', full: false }
+      ];
+
+      // Rekomendasi pecahan hemat jika total >= 5 g dan pilih 1 g
+      const showDenomTip = state.l4Denom === 1 && state.l4Qty >= 5;
+      const opt5 = Math.floor(totalGram / 5);
+      const rem1 = totalGram % 5;
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <div>
+              <h1 class="title-screen">Ambil emas di butik</h1>
+              <div style="font-size:12px; color:rgba(255,255,255,0.82); margin-top:2px;">Penyempurnaan fitur cetak yang sudah ada</div>
+            </div>
+            <button type="button" class="badge-pill badge-dark-glass" onclick="navigateTo('N10')">Status cetak</button>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <!-- Stepper 3 Langkah -->
+          <div class="card" style="padding:12px 16px;">
+            <div class="h-stepper">
+              <div class="h-step active"><span class="h-step-dot">1</span><span>Pilih emas</span></div>
+              <span style="color:var(--muted);">→</span>
+              <div class="h-step active"><span class="h-step-dot">2</span><span>Butik &amp; jam</span></div>
+              <span style="color:var(--muted);">→</span>
+              <div class="h-step"><span class="h-step-dot">3</span><span>Bayar</span></div>
+            </div>
+          </div>
+
+          <!-- Pilih Pecahan & Butik -->
+          <div class="card">
+            <h2 class="title-card">Pilih pecahan &amp; jumlah</h2>
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;">
+              ${[1, 5, 10].map(d => `
+                <button type="button" class="chip-pill ${state.l4Denom === d ? 'selected' : ''}"
+                  onclick="state.l4Denom=${d}; state.l4StockAlertSet=false; renderApp();">
+                  ${d} g
+                </button>
+              `).join('')}
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="text-body">Jumlah keping (total <strong>${totalGram} g</strong>)</span>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <button type="button" class="icon-btn on-light" onclick="state.l4Qty=Math.max(1, state.l4Qty-1); renderApp();" aria-label="Kurangi">−</button>
+                <strong class="tabular" style="min-width:20px; text-align:center;">${state.l4Qty}</strong>
+                <button type="button" class="icon-btn on-light" onclick="state.l4Qty=Math.min(10, state.l4Qty+1); renderApp();" aria-label="Tambah">+</button>
+              </div>
+            </div>
+
+            ${showDenomTip ? `
+              <div class="alert-tint">
+                Saran pecahan hemat: kombinasi <strong>${opt5}×5 g${rem1 > 0 ? ' + ' + rem1 + '×1 g' : ''}</strong> memakai lebih sedikit keping dibanding ${totalGram}×1 g.
+              </div>
+            ` : ''}
+
+            <div>
+              <label class="text-caption" for="boutiqueSelect">Pilih Butik Emas LM</label>
+              <select id="boutiqueSelect" class="input-field" style="margin-top:4px;"
+                onchange="state.l4BoutiqueIdx=parseInt(this.value,10); state.l4StockAlertSet=false; renderApp();">
+                ${state.l4Boutiques.map((b, idx) => `
+                  <option value="${idx}" ${state.l4BoutiqueIdx === idx ? 'selected' : ''}>${b.name}</option>
+                `).join('')}
+              </select>
+            </div>
+
+            ${isOutOfStock ? `
+              <div class="alert-warning" style="display:flex; flex-direction:column; gap:8px;">
+                <div><strong>Stok 5 g habis di butik ini · Lihat butik terdekat</strong></div>
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                  <button type="button" class="btn-outline-primary" style="min-height:36px; font-size:12px;"
+                    onclick="state.l4BoutiqueIdx=0; renderApp();">
+                    Pindah ke Butik Jakarta
+                  </button>
+                  <button type="button" class="btn-outline-neutral" style="min-height:36px; font-size:12px;"
+                    onclick="state.l4StockAlertSet=true; renderApp(); showToast('Pengingat stok 5 g aktif.');">
+                    ${state.l4StockAlertSet ? 'Pengingat aktif ✓' : 'Kabari saat tersedia'}
+                  </button>
+                </div>
+              </div>
+            ` : ''}
+          </div>
+
+          <!-- Pilih Tanggal & Slot Jam -->
+          <div class="card">
+            <h2 class="title-card">Pilih tanggal &amp; slot jam</h2>
+            <div style="display:flex; gap:8px; overflow-x:auto; padding-bottom:4px;">
+              ${dates.map(dt => `
+                <button type="button" class="chip-pill ${state.l4Date === dt ? 'selected' : ''}" style="white-space:nowrap;"
+                  onclick="state.l4Date='${dt}'; renderApp();">
+                  ${dt}
+                </button>
+              `).join('')}
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:8px;">
+              ${slots.map(sl => `
+                <button type="button" class="chip-pill ${sl.full ? 'disabled-slot' : (state.l4Slot === sl.time ? 'selected' : '')}"
+                  ${sl.full ? 'disabled' : `onclick="state.l4Slot='${sl.time}'; renderApp();"`}>
+                  ${sl.time}
+                </button>
+              `).join('')}
+            </div>
+            <span class="text-caption">Slot bercoret menandakan kuota jam tersebut sudah penuh.</span>
+          </div>
+
+          <!-- Perkiraan Siap & Rincian Biaya Sebelum Tombol Bayar -->
+          <div class="card">
+            <div class="alert-tint">
+              <strong>Perkiraan siap diambil: Kamis, 28 Nov 2026</strong>
+            </div>
+
+            <h2 class="title-card">Rincian biaya</h2>
+            <div class="sub-box" style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; justify-content:space-between; font-size:13px;">
+                <span class="text-caption">Biaya cetak (${state.l4Qty} × ${state.l4Denom} g)</span>
+                <strong>[NOMINAL RESMI]</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:13px;">
+                <span class="text-caption">Biaya kemasan / CertiCard</span>
+                <strong>[NOMINAL RESMI]</strong>
+              </div>
+              <div style="border-top:1px solid var(--border); padding-top:8px; display:flex; justify-content:space-between; font-size:14px;">
+                <span>Total biaya cetak</span>
+                <strong>[NOMINAL RESMI]</strong>
+              </div>
+            </div>
+
+            <button type="button" class="btn-gold-primary" ${isOutOfStock ? 'disabled' : ''}
+              onclick="navigateTo('N10'); showToast('Slot pengambilan dikunci. Menunggu pembayaran.');">
+              Kunci slot &amp; bayar
+            </button>
+            <p class="text-caption" style="text-align:center;">Batas bayar 14.00 WIB (15.00 WITA)</p>
+          </div>
+
+          <p class="illustration-footer">Contoh ilustrasi</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // L1 · STATUS PENDAFTARAN & e-KYC (REVISI KECIL)
+    // =========================================================================
+    function renderL1() {
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-dark" onclick="navigateTo('N1')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="title-screen">Status pendaftaran</h1>
+            <button type="button" class="badge-pill badge-dark-glass" onclick="state.l1QuotaOpen=!state.l1QuotaOpen; renderApp();">
+              ${state.l1QuotaOpen ? 'Mode kuota penuh' : 'Simulasi dibuka'}
+            </button>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">${state.l1QuotaOpen ? 'Pendaftaran anggota dibuka' : 'Kuota anggota baru penuh'}</h2>
+              <span class="badge-pill ${state.l1QuotaOpen ? 'badge-success' : 'badge-gold'}">
+                ${state.l1QuotaOpen ? 'Tersedia' : 'Daftar tunggu'}
+              </span>
+            </div>
+
+            <p class="text-body">
+              ${state.l1QuotaOpen
+                ? 'Stok emas penjamin 1:1 tersedia. Anda dapat melanjutkan verifikasi sekarang.'
+                : 'Setiap gram saldo didukung emas fisik 1:1. Pendaftaran dibuka bertahap sesuai ketersediaan stok.'}
+            </p>
+
+            <div class="sub-box" style="display:flex; flex-direction:column; gap:6px;">
+              <div style="display:flex; justify-content:space-between; font-size:13px;">
+                <span class="text-caption">Posisi antrean</span>
+                <strong class="tabular">#1.420</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:13px;">
+                <span class="text-caption">Perkiraan dibuka</span>
+                <strong>24 Nov 2026</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:13px;">
+                <span class="text-caption">Perkiraan verifikasi</span>
+                <strong>1–2 hari kerja</strong>
+              </div>
+            </div>
+
+            <button type="button" class="btn-gold-primary"
+              onclick="${state.l1QuotaOpen ? "navigateTo('N3')" : "state.l1NotifySaved=true; renderApp(); showToast('Notifikasi dibuka telah diaktifkan.');"}">
+              ${state.l1QuotaOpen ? 'Lanjut daftar sekarang' : (state.l1NotifySaved ? 'Pengingat aktif ✓' : 'Kabari saya saat dibuka')}
+            </button>
+          </div>
+
+          <div class="card">
+            <h2 class="title-card">Kesiapan dokumen e-KYC</h2>
+            <div class="v-step-row">
+              <div class="v-step-col"><div class="v-step-circle done">✓</div><div class="v-step-line"></div></div>
+              <div style="padding-bottom:10px;">
+                <div style="font-size:13px; font-weight:600;">Data diri &amp; KTP</div>
+                <div class="text-caption">Lengkap</div>
+              </div>
+            </div>
+            <div class="v-step-row">
+              <div class="v-step-col"><div class="v-step-circle warn">!</div><div class="v-step-line"></div></div>
+              <div style="padding-bottom:10px;">
+                <div style="font-size:13px; font-weight:600;">Pemadanan NIK–NPWP</div>
+                <div class="text-caption">Perlu pemadanan di DJP Online</div>
+                <button type="button" class="btn-text" style="min-height:32px; font-size:12px;" onclick="navigateTo('N4')">Lihat detail</button>
+              </div>
+            </div>
+            <div class="v-step-row">
+              <div class="v-step-col"><div class="v-step-circle">3</div></div>
+              <div>
+                <div style="font-size:13px; font-weight:600;">Swafoto verifikasi wajah</div>
+                <div class="text-caption">Dilakukan saat kuota dibuka</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="illustration-footer">Contoh ilustrasi</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // L5 · BRANKAS MULA (MULAI RP10.000 · REVISI KECIL)
+    // =========================================================================
+    function updateL5CustomNominal(rawVal) {
+      const nom = Math.max(10000, parseInt(rawVal, 10) || 10000);
+      state.l5Nominal = nom;
+      const estGram = (nom / PRICE_BUY_15NOV).toFixed(4).replace('.', ',');
+      const gramEl = document.getElementById('l5EstGramText');
+      if (gramEl) gramEl.textContent = '≈ ' + estGram + ' gram';
+    }
+
+    function renderL5() {
+      const chips = [10000, 25000, 50000, 100000];
+      const estGram = (state.l5Nominal / PRICE_BUY_15NOV).toFixed(4).replace('.', ',');
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-dark" onclick="navigateTo('N1')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span class="badge-pill badge-gold">Usulan · bersyarat</span>
+          </div>
+          <h1 class="title-screen" style="margin-top:4px;">BRANKAS Mula</h1>
+          <p style="font-size:13px; color:rgba(255,255,255,0.85); margin-top:4px;">Mulai nabung emas ANTAM dari Rp10.000</p>
+        </div>
+
+        <div class="content-stack">
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Progres menuju 1 gram</h2>
+              <span class="badge-pill badge-success tabular">0,12 / 1,00 g</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-fill-gold" style="width:12%;"></div>
+            </div>
+            <p class="text-caption">Otomatis naik ke keanggotaan BRANKAS penuh saat saldo mencapai 1 gram.</p>
+          </div>
+
+          <div class="card">
+            <h2 class="title-card">Pilih nominal setoran</h2>
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:8px;">
+              ${chips.map(amt => `
+                <button type="button" class="chip-pill ${!state.l5CustomMode && state.l5Nominal === amt ? 'selected' : ''}"
+                  onclick="state.l5CustomMode=false; state.l5Nominal=${amt}; renderApp();">
+                  ${formatRp(amt)}
+                </button>
+              `).join('')}
+            </div>
+            <button type="button" class="chip-pill ${state.l5CustomMode ? 'selected' : ''}" style="width:100%;"
+              onclick="state.l5CustomMode=true; renderApp();">
+              Nominal lainnya
+            </button>
+            ${state.l5CustomMode ? `
+              <input type="number" min="10000" step="5000" value="${state.l5Nominal}" class="input-field"
+                oninput="updateL5CustomNominal(this.value)" />
+            ` : ''}
+
+            <div class="sub-box" style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="text-caption">Perkiraan emas didapat</span>
+              <strong id="l5EstGramText" class="tabular" style="font-size:15px; color:var(--primary);">≈ ${estGram} gram</strong>
+            </div>
+
+            <div class="sub-box" style="font-size:12px; color:var(--muted);">
+              Iuran ringan di bawah 1 gram: <strong>[NOMINAL RESMI]</strong>. Tetap didukung emas fisik 1:1.
+            </div>
+
+            <button type="button" class="btn-gold-primary" onclick="navigateTo('N6');">
+              Mulai menabung
+            </button>
+          </div>
+
+          <p class="illustration-footer">Contoh ilustrasi</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // L6 · PUSAT KEAMANAN & KONTAK KELUARGA TERPERCAYA
+    // =========================================================================
+    function openFamilyContactSheet() {
+      openSheet(`
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="title-card">Kontak keluarga terpercaya</span>
+          <button type="button" class="icon-btn on-light" onclick="closeSheet()" aria-label="Tutup">✕</button>
+        </div>
+        <p class="text-caption">Anggota keluarga pendamping terhubung ke Mode Sederhana dan catatan waris.</p>
+        <div>
+          <label class="text-caption" for="famName">Nama &amp; hubungan</label>
+          <input id="famName" type="text" class="input-field" value="${state.l6FamilyName}" />
+        </div>
+        <div>
+          <label class="text-caption" for="famPhone">Nomor telepon</label>
+          <input id="famPhone" type="text" class="input-field" value="${state.l6FamilyPhone}" />
+        </div>
+        <button type="button" class="btn-gold-primary" onclick="submitFamilyContact()">
+          Simpan kontak pendamping
+        </button>
+      `);
+    }
+
+    function submitFamilyContact() {
+      const nameEl = document.getElementById('famName');
+      const phoneEl = document.getElementById('famPhone');
+      state.l6FamilyName = (nameEl && nameEl.value ? nameEl.value : 'Rina (Anak)').trim();
+      state.l6FamilyPhone = (phoneEl && phoneEl.value ? phoneEl.value : '0812-****-8890').trim();
+      closeSheet();
+      renderApp();
+      showToast('Kontak keluarga terpercaya diperbarui.');
+    }
+
+    function updateL6Verify(rawVal) {
+      state.l6VerifyInput = rawVal;
+      const val = (rawVal || '').trim().toLowerCase();
+      const isOfficial = val.includes('logammulia.com') || val.includes('almira') || val.includes('1500088');
+      const badgeEl = document.getElementById('l6StatusBadge');
+      if (badgeEl) {
+        badgeEl.className = 'badge-pill ' + (isOfficial ? 'badge-success' : 'badge-danger');
+        badgeEl.textContent = isOfficial ? 'Kanal resmi terverifikasi' : 'Waspada · Tidak terdaftar';
+      }
+    }
+
+    function renderL6() {
+      const val = (state.l6VerifyInput || '').trim().toLowerCase();
+      const isOfficial = val.includes('logammulia.com') || val.includes('almira') || val.includes('1500088');
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-dark" onclick="navigateTo('N1')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="title-screen">Pusat Keamanan</h1>
+            <span style="width:44px;"></span>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div class="alert-warning">
+            <strong>ANTAM tidak pernah meminta PIN, kata sandi, kode OTP, atau transfer ke rekening pribadi.</strong>
+          </div>
+
+          <div class="card">
+            <h2 class="title-card">Periksa tautan atau nomor kontak</h2>
+            <input type="text" class="input-field" value="${state.l6VerifyInput}"
+              placeholder="Contoh: logammulia.com"
+              oninput="updateL6Verify(this.value)" />
+            <div class="sub-box" style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <span class="text-caption">Status kanal</span>
+              <span id="l6StatusBadge" class="badge-pill ${isOfficial ? 'badge-success' : 'badge-danger'}">
+                ${isOfficial ? 'Kanal resmi terverifikasi' : 'Waspada · Tidak terdaftar'}
+              </span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="title-card">Kanal resmi ANTAM</h2>
+            <div class="sub-box" style="display:flex; flex-direction:column; gap:6px; font-size:13px;">
+              <div>Situs resmi: <strong>www.logammulia.com</strong></div>
+              <div>WhatsApp resmi: <strong>ALMIRA (tercentang hijau)</strong></div>
+              <div>Call center: <strong>1500-088</strong></div>
+            </div>
+          </div>
+
+          <!-- Fitur Pendamping: Kontak Keluarga Terpercaya & Panduan Waris -->
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Kontak keluarga &amp; waris</h2>
+              <span class="badge-pill badge-success">Terhubung</span>
+            </div>
+            <div class="sub-box">
+              <div style="font-size:13px; font-weight:600;">${state.l6FamilyName}</div>
+              <div class="text-caption">${state.l6FamilyPhone} · Pendamping Mode Sederhana</div>
+            </div>
+            <p class="text-caption">Klaim ahli waris dilakukan resmi di Butik Emas LM dengan membawa KTP ahli waris, akta kematian, dan surat keterangan waris.</p>
+            <button type="button" class="btn-outline-primary" style="width:100%;" onclick="openFamilyContactSheet()">
+              Ubah kontak keluarga
+            </button>
+          </div>
+
+          <p class="illustration-footer">Contoh ilustrasi</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N2 · PILIH TIPE KEANGGOTAAN + BIAYA EFEKTIF
+    // =========================================================================
+    function renderN2() {
+      const tiers = [
+        { name: 'Quartz', maxGr: 100, fee: 100000 },
+        { name: 'Silver', maxGr: 200, fee: 150000 },
+        { name: 'Jade', maxGr: 300, fee: 217500 }
+      ];
+      const recommended = tiers.find(t => state.n2PlanGram <= t.maxGr) || tiers[0];
+      const planValueRp = state.n2PlanGram * PRICE_BUY_15NOV;
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-dark" onclick="navigateTo('N3')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="title-screen">Pilih keanggotaan</h1>
+            <span style="width:44px;"></span>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Rencana saldo Anda dalam setahun?</h2>
+              <span class="badge-pill badge-success tabular">${state.n2PlanGram} g</span>
+            </div>
+            <input type="range" min="1" max="100" step="1" value="${state.n2PlanGram}" style="width:100%; accent-color:var(--primary);"
+              oninput="state.n2PlanGram=parseInt(this.value,10); renderApp();" />
+            <div style="display:flex; justify-content:space-between;" class="text-caption">
+              <span>1 gram</span>
+              <span>Perkiraan nilai: ${formatRp(planValueRp)}</span>
+              <span>100 gram</span>
+            </div>
+          </div>
+
+          ${tiers.map(t => {
+            const ppn = Math.round(t.fee * 0.12);
+            const total = t.fee + ppn;
+            const effPct = ((t.fee / planValueRp) * 100).toFixed(1).replace('.', ',');
+            const isBest = t.name === recommended.name;
+            const isSelected = state.n2SelectedTier === t.name;
+
+            return `
+              <div class="card" onclick="state.n2SelectedTier='${t.name}'; renderApp();"
+                style="cursor:pointer; border:${isSelected ? '2px solid var(--primary)' : '1px solid var(--border)'};">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <div>
+                    <h3 class="title-card">${t.name}</h3>
+                    <div class="text-caption">Maksimal saldo ${t.maxGr} gram</div>
+                  </div>
+                  ${isBest ? '<span class="badge-pill badge-success">Paling sesuai</span>' : ''}
+                </div>
+
+                <div class="sub-box" style="display:flex; flex-direction:column; gap:4px; font-size:13px;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <span class="text-caption">Iuran per tahun</span>
+                    <strong class="tabular">${formatRp(t.fee)}</strong>
+                  </div>
+                  <div style="display:flex; justify-content:space-between;">
+                    <span class="text-caption">PPN 12% (jika berlaku)</span>
+                    <span class="tabular">${formatRp(ppn)}</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; border-top:1px solid var(--border); padding-top:4px;">
+                    <span>Total iuran</span>
+                    <strong class="tabular">${formatRp(total)}</strong>
+                  </div>
+                </div>
+
+                <div style="font-size:12px; font-weight:600; color:var(--primary);">
+                  Biaya efektif untuk rencana Anda: ${effPct}% per tahun
+                </div>
+              </div>
+            `;
+          }).join('')}
+
+          <div class="alert-tint">
+            Iuran dibayar di muka sebelum membeli emas pertama.
+          </div>
+
+          <button type="button" class="btn-gold-primary" onclick="navigateTo('N5'); showToast('Tipe ' + state.n2SelectedTier + ' dipilih.');">
+            Lanjut dengan ${state.n2SelectedTier}
+          </button>
+
+          <p class="illustration-footer">Tarif mengacu materi kasus; PPN dan tarif berlaku perlu konfirmasi ANTAM.</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N3 · PERSIAPAN DAFTAR + ASAL PELANGGAN (WAJIB)
+    // =========================================================================
+    function renderN3() {
+      const allReady = state.n3KtpReady && state.n3NpwpStatus === 'matched' && state.n3BankReady && state.n3Origin !== '';
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-dark" onclick="navigateTo('N1')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="title-screen">Sebelum mendaftar</h1>
+            <span style="width:44px;"></span>
+          </div>
+          <p style="font-size:13px; color:rgba(255,255,255,0.85); margin-top:4px;">Siapkan 3 hal ini (±5 menit)</p>
+        </div>
+
+        <div class="content-stack">
+          <div class="card">
+            <!-- 1. KTP -->
+            <div class="sub-box" style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <div>
+                <div style="font-size:13px; font-weight:600;">1. KTP asli</div>
+                <div class="text-caption">${state.n3KtpReady ? 'Foto KTP siap diunggah' : 'Belum diunggah'}</div>
+              </div>
+              <button type="button" class="badge-pill ${state.n3KtpReady ? 'badge-success' : 'badge-neutral'}"
+                onclick="state.n3KtpReady=!state.n3KtpReady; renderApp();">
+                ${state.n3KtpReady ? 'Siap ✓' : 'Unggah'}
+              </button>
+            </div>
+
+            <!-- 2. NIK–NPWP -->
+            <div class="sub-box" style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+                <div>
+                  <div style="font-size:13px; font-weight:600;">2. NIK sudah dipadankan dengan NPWP</div>
+                  <div class="text-caption">Wajib sesuai ketentuan pajak transaksi emas</div>
+                </div>
+                <button type="button" class="btn-outline-primary" style="min-height:36px; padding:4px 12px; font-size:12px;"
+                  onclick="state.n3NpwpStatus = state.n3NpwpStatus === 'matched' ? 'unmatched' : 'matched'; renderApp();">
+                  Cek sekarang
+                </button>
+              </div>
+              ${state.n3NpwpStatus === 'matched' ? `
+                <div style="display:flex; align-items:center; gap:6px;">
+                  <span class="badge-pill badge-success">Sudah padan ✓</span>
+                </div>
+              ` : ''}
+              ${state.n3NpwpStatus === 'unmatched' ? `
+                <div class="alert-warning" style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+                  <span><strong>Belum padan</strong></span>
+                  <button type="button" class="btn-text" style="min-height:32px; font-size:12px;"
+                    onclick="showToast('Panduan pemadanan NIK–NPWP melalui djponline.pajak.go.id dibuka.')">
+                    Cara memadankan di DJP Online
+                  </button>
+                </div>
+              ` : ''}
+            </div>
+
+            <!-- 3. Rekening Bank -->
+            <div class="sub-box" style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <div>
+                <div style="font-size:13px; font-weight:600;">3. Rekening bank atas nama sendiri</div>
+                <div class="text-caption">Untuk pencairan dana buyback</div>
+              </div>
+              <button type="button" class="badge-pill ${state.n3BankReady ? 'badge-success' : 'badge-neutral'}"
+                onclick="state.n3BankReady=!state.n3BankReady; renderApp();">
+                ${state.n3BankReady ? 'Siap ✓' : 'Isi'}
+              </button>
+            </div>
+          </div>
+
+          <!-- Kartu Pertanyaan Asal Pelanggan (1 Ketuk) -->
+          <div class="card">
+            <h2 class="title-card">Apakah Anda pernah membeli emas di butik ANTAM?</h2>
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;">
+              ${['Ya, sering', 'Ya, pernah', 'Belum pernah'].map(opt => `
+                <button type="button" class="chip-pill ${state.n3Origin === opt ? 'selected' : ''}" style="font-size:12px; padding:6px;"
+                  onclick="state.n3Origin='${opt}'; renderApp();">
+                  ${opt}
+                </button>
+              `).join('')}
+            </div>
+            <p class="text-caption">Membantu kami melayani Anda lebih baik.</p>
+          </div>
+
+          <!-- Timeline 4 Titik -->
+          <div class="card">
+            <h2 class="title-card">Yang terjadi setelah ini</h2>
+            <div style="display:flex; flex-direction:column; gap:6px; font-size:12px;">
+              <div><strong>1. Data dikirim</strong> · Dokumen diterima sistem</div>
+              <div><strong>2. Verifikasi</strong> · Perkiraan 1–2 hari kerja</div>
+              <div><strong>3. Bayar iuran</strong> · Sesuai tipe keanggotaan</div>
+              <div><strong>4. Beli emas pertama</strong> · Mulai menabung</div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-gold-primary" ${allReady ? '' : 'disabled'}
+            onclick="navigateTo('N2'); showToast('Data pendaftaran dikirim.');">
+            Mulai pendaftaran
+          </button>
+          ${!allReady ? '<p class="text-caption" style="text-align:center;">Padankan NIK–NPWP dan pilih riwayat pembelian butik untuk melanjutkan.</p>' : ''}
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N4 · e-KYC DITOLAK BESERTA ALASANNYA (WAJIB)
+    // =========================================================================
+    function openN4BoutiqueSheet() {
+      const choices = [
+        'Butik Emas LM Jakarta · Sen, 23 Nov · 10.00',
+        'Butik Emas LM Bandung · Sel, 24 Nov · 11.00',
+        'Butik Emas LM Surabaya · Rab, 25 Nov · 09.00'
+      ];
+      openSheet(`
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="title-card">Verifikasi tatap muka di butik</span>
+          <button type="button" class="icon-btn on-light" onclick="closeSheet()" aria-label="Tutup">✕</button>
+        </div>
+        <p class="text-caption">Pilih lokasi butik dan jadwal kedatangan petugas pendamping:</p>
+        ${choices.map((ch, idx) => `
+          <button type="button" class="chip-pill ${state.n4BoutiqueDate === ch ? 'selected' : ''}" style="width:100%; justify-content:flex-start;"
+            onclick="state.n4BoutiqueDate='${ch}'; openN4BoutiqueSheet();">
+            ${ch}
+          </button>
+        `).join('')}
+        <button type="button" class="btn-gold-primary" onclick="closeSheet(); showToast('Jadwal verifikasi di butik dikonfirmasi.');">
+          Konfirmasi jadwal butik
+        </button>
+      `);
+    }
+
+    function renderN4() {
+      return `
+        <div class="screen-header-light">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-light" onclick="navigateTo('L1')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="title-screen">Verifikasi belum berhasil</h1>
+            <span style="width:44px;"></span>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div class="card">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:44px; height:44px; border-radius:12px; background:var(--gold-soft); color:var(--gold-ink); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div>
+                <span class="badge-pill badge-gold">Perlu perbaikan foto</span>
+                <h2 class="title-card" style="margin-top:4px;">Alasan penolakan</h2>
+              </div>
+            </div>
+
+            <div class="alert-warning">
+              <strong>Foto KTP buram di bagian NIK</strong>
+            </div>
+
+            <div style="font-size:13px; font-weight:600;">Cara memperbaiki:</div>
+            <div style="display:flex; flex-direction:column; gap:8px; font-size:13px;">
+              <div class="sub-box">1. Pastikan cahaya ruangan cukup tanpa pantulan lampu.</div>
+              <div class="sub-box">2. Letakkan KTP di permukaan rata dan gelap.</div>
+              <div class="sub-box">3. Pastikan seluruh tepi kartu terlihat jelas di bingkai.</div>
+            </div>
+
+            <button type="button" class="btn-gold-primary" onclick="navigateTo('L1'); showToast('Kamera foto ulang KTP dibuka (ilustrasi).');">
+              Ambil foto ulang
+            </button>
+            <button type="button" class="btn-outline-primary" style="width:100%;" onclick="openN4BoutiqueSheet()">
+              Verifikasi di butik
+            </button>
+
+            <p class="text-caption" style="text-align:center;">Percobaan 1 dari 3 · Data Anda tersimpan, tidak perlu mengisi ulang.</p>
+          </div>
+
+          <!-- Varian 2 di bawah: Alasan NIK belum padan dengan NPWP -->
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="badge-pill badge-neutral">Varian 2 · Alasan lain</span>
+              <span class="badge-pill badge-gold">Administrasi</span>
+            </div>
+            <div style="font-size:14px; font-weight:600;">Alasan: NIK belum padan dengan NPWP</div>
+            <p class="text-caption">Sistem DJP melaporkan NIK Anda belum terhubung dengan nomor NPWP 16 digit.</p>
+            <button type="button" class="btn-text" style="min-height:36px;" onclick="navigateTo('N3')">
+              Buka panduan pemadanan NIK–NPWP →
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N5 · CHECKOUT BELI + RINCIAN BIAYA TOTAL (WAJIB)
+    // =========================================================================
+    function renderN5() {
+      const spreadRp = PRICE_BUY_15NOV - PRICE_BUYBACK_15NOV;
+      const spreadPct = ((spreadRp / PRICE_BUY_15NOV) * 100).toFixed(1).replace('.', ',');
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-dark" onclick="navigateTo('N1')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="title-screen">Konfirmasi pembelian</h1>
+            <button type="button" class="badge-pill badge-dark-glass" onclick="navigateTo('N6')">Kuis risiko</button>
+          </div>
+          <p style="font-size:13px; color:rgba(255,255,255,0.85); margin-top:4px;">1,0 gram · harga Rp2.517.000/g (15 Nov 2026)</p>
+        </div>
+
+        <div class="content-stack">
+          <!-- Rincian Biaya Total Sebelum PIN -->
+          <div class="card">
+            <h2 class="title-card">Rincian biaya total</h2>
+            <div class="sub-box" style="display:flex; flex-direction:column; gap:8px; font-size:13px;">
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-caption">Harga emas (1,0 gram)</span>
+                <strong class="tabular">Rp2.517.000</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-caption">Biaya transaksi [jika ada]</span>
+                <strong>Rp0</strong>
+              </div>
+              <div style="border-top:1px solid var(--border); padding-top:8px; display:flex; justify-content:space-between; font-size:15px;">
+                <span>Total dibayar</span>
+                <strong class="tabular">Rp2.517.000</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kartu Kalau Dijual Hari Ini -->
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Kalau dijual hari ini</h2>
+              <button type="button" class="badge-pill badge-danger" onclick="state.n5ShowSpreadInfo=!state.n5ShowSpreadInfo; renderApp();">
+                −${spreadPct}% ⓘ
+              </button>
+            </div>
+            <div style="font-size:13px;">Perkiraan diterima: <strong class="tabular">Rp2.293.000</strong></div>
+            <div class="text-caption tabular">Selisih harga beli dan jual: Rp224.000 (−${spreadPct}%)</div>
+            ${state.n5ShowSpreadInfo ? `
+              <div class="alert-warning">
+                Selisih harga beli dan jual kembali adalah kondisi wajar pada perdagangan emas. Emas cocok untuk penyimpanan jangka panjang hingga kenaikan harga melampaui selisih tersebut.
+              </div>
+            ` : ''}
+          </div>
+
+          <!-- Metode Bayar -->
+          <div class="card">
+            <h2 class="title-card">Metode pembayaran</h2>
+            <select class="input-field" onchange="state.n5Bank=this.value">
+              <option value="BCA Virtual Account" ${state.n5Bank === 'BCA Virtual Account' ? 'selected' : ''}>BCA Virtual Account</option>
+              <option value="Mandiri Virtual Account" ${state.n5Bank === 'Mandiri Virtual Account' ? 'selected' : ''}>Mandiri Virtual Account</option>
+              <option value="BRI Virtual Account" ${state.n5Bank === 'BRI Virtual Account' ? 'selected' : ''}>BRI Virtual Account</option>
+            </select>
+
+            <label style="display:flex; align-items:center; gap:10px; min-height:44px; cursor:pointer; font-size:13px; font-weight:500;">
+              <input type="checkbox" ${state.n5RiskChecked ? 'checked' : ''} onchange="state.n5RiskChecked=this.checked; renderApp();"
+                style="width:20px; height:20px; accent-color:var(--primary);" />
+              <span>Saya paham harga emas bisa turun.</span>
+            </label>
+
+            <button type="button" class="btn-gold-primary" ${state.n5RiskChecked ? '' : 'disabled'}
+              onclick="navigateTo('N1'); showToast('Instruksi Virtual Account diterbitkan (ilustrasi).');">
+              Bayar Rp2.517.000
+            </button>
+            <p class="text-caption" style="text-align:center;">Batas bayar 60 menit.</p>
+          </div>
+
+          <p class="illustration-footer">Contoh ilustrasi · Harga acuan 15 Nov 2026</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N6 · KARTU RISIKO + KUIS SEBELUM BELI PERTAMA
+    // =========================================================================
+    function renderN6() {
+      return `
+        <div class="screen-header-light">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-light" onclick="navigateTo('N5')" aria-label="Tutup">✕</button>
+            <h1 class="title-screen">Sebelum membeli emas pertama</h1>
+            <span style="width:44px;"></span>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Ilustrasi pergerakan harga</h2>
+              <span class="badge-pill badge-danger">Turun ±24%</span>
+            </div>
+
+            <!-- Grafik SVG Sederhana -->
+            <div class="sub-box">
+              <svg width="100%" height="96" viewBox="0 0 320 96" aria-label="Grafik harga 25 Feb ke 15 Nov 2026">
+                <line x1="16" y1="20" x2="304" y2="20" stroke="#E3E8E4" stroke-dasharray="4 4" />
+                <line x1="16" y1="74" x2="304" y2="74" stroke="#E3E8E4" stroke-dasharray="4 4" />
+                <polyline fill="none" stroke="#B42318" stroke-width="3" stroke-linecap="round"
+                  points="24,22 95,30 165,48 235,62 296,72" />
+                <circle cx="24" cy="22" r="5" fill="#0E3B2E" />
+                <circle cx="296" cy="72" r="5" fill="#B42318" />
+              </svg>
+              <div style="display:flex; justify-content:space-between; font-size:11px; margin-top:4px;">
+                <span>25 Feb 2026: <strong>Rp3.326.000</strong></span>
+                <span>15 Nov 2026: <strong>Rp2.517.000</strong></span>
+              </div>
+            </div>
+
+            <p class="text-body">
+              Harga emas bisa turun. Menabung jangka panjang membantu, tetapi rugi tetap mungkin jika dijual saat harga rendah.
+            </p>
+          </div>
+
+          <!-- Kuis 1 Pertanyaan -->
+          <div class="card">
+            <h2 class="title-card">Benarkah emas tidak mungkin rugi?</h2>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <button type="button" class="chip-pill ${state.n6QuizAnswer === 'benar' ? 'selected' : ''}"
+                onclick="state.n6QuizAnswer='benar'; renderApp();">
+                Benar
+              </button>
+              <button type="button" class="chip-pill ${state.n6QuizAnswer === 'salah' ? 'selected' : ''}"
+                onclick="state.n6QuizAnswer='salah'; renderApp();">
+                Salah
+              </button>
+            </div>
+
+            ${state.n6QuizAnswer === 'salah' ? `
+              <div class="alert-tint">
+                <strong>Tepat!</strong> Emas tetap memiliki risiko fluktuasi harga dan selisih jual-beli.
+              </div>
+            ` : ''}
+
+            ${state.n6QuizAnswer === 'benar' ? `
+              <div class="alert-warning">
+                Belum tepat. Harga emas dapat turun dalam jangka pendek, sehingga penjualan saat harga rendah bisa menimbulkan selisih rugi.
+              </div>
+            ` : ''}
+
+            <button type="button" class="btn-gold-primary" onclick="navigateTo('N5')">
+              Saya mengerti, lanjut
+            </button>
+
+            <div style="text-align:center;">
+              <button type="button" class="btn-text" style="min-height:36px; font-size:12px;"
+                onclick="state.n6ShowLearnMore=!state.n6ShowLearnMore; renderApp();">
+                Pelajari 2 menit
+              </button>
+            </div>
+
+            ${state.n6ShowLearnMore ? `
+              <div class="sub-box text-caption">
+                1. Harga buyback selalu lebih rendah dari harga beli harian.<br/>
+                2. Simpan emas minimal 1–3 tahun agar kenaikan harga berpeluang menutup selisih spread.
+              </div>
+            ` : ''}
+          </div>
+
+          <p class="illustration-footer">Sumber harga: harga butik ANTAM</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N8 · ATUR AUTODEBET (OPSIONAL)
+    // =========================================================================
+    function renderN8() {
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-dark" onclick="navigateTo('L2')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="title-screen">Setoran otomatis (opsional)</h1>
+            <span style="width:44px;"></span>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div class="card">
+            <h2 class="title-card">Cara kerja setoran otomatis</h2>
+            <div style="display:flex; flex-direction:column; gap:6px; font-size:13px;">
+              <div class="sub-box"><strong>1. Apa itu:</strong> Pembelian saldo emas terjadwal sesuai nominal pilihan Anda.</div>
+              <div class="sub-box"><strong>2. Kapan dipotong:</strong> Pada tanggal pilihan tiap bulan pukul 10.00 WIB.</div>
+              <div class="sub-box"><strong>3. Cara berhenti:</strong> Tekan tombol jeda atau batal di halaman Tujuan kapan saja.</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <label class="text-caption" for="n8Nom">Nominal setoran (Rp, fleksibel)</label>
+              <input id="n8Nom" type="number" step="50000" min="50000" value="${state.n8Nominal}" class="input-field"
+                oninput="state.n8Nominal=parseInt(this.value,10)||50000" />
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <div>
+                <label class="text-caption" for="n8Day">Tanggal potong</label>
+                <select id="n8Day" class="input-field" onchange="state.n8Day=this.value">
+                  <option value="1" ${state.n8Day === '1' ? 'selected' : ''}>Tanggal 1</option>
+                  <option value="15" ${state.n8Day === '15' ? 'selected' : ''}>Tanggal 15</option>
+                  <option value="25" ${state.n8Day === '25' ? 'selected' : ''}>Tanggal 25</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-caption" for="n8Bank">Sumber rekening</label>
+                <input id="n8Bank" type="text" class="input-field" value="${state.n8Bank}" readonly />
+              </div>
+            </div>
+
+            <label style="display:flex; justify-content:space-between; align-items:center; min-height:44px; cursor:pointer; font-size:13px; font-weight:600;">
+              <span>Kirim pengingat H-1 sebelum dipotong</span>
+              <input type="checkbox" ${state.n8ReminderH1 ? 'checked' : ''} onchange="state.n8ReminderH1=this.checked"
+                style="width:20px; height:20px; accent-color:var(--primary);" />
+            </label>
+
+            <div class="alert-tint">
+              Anda bisa jeda atau batalkan kapan saja, tanpa biaya.
+            </div>
+
+            <button type="button" class="btn-gold-primary" onclick="navigateTo('L2'); showToast('Setoran otomatis terjadwal diaktifkan.');">
+              Aktifkan
+            </button>
+            <div style="text-align:center;">
+              <button type="button" class="btn-text" style="min-height:36px;" onclick="navigateTo('L2')">Nanti saja</button>
+            </div>
+          </div>
+
+          <p class="illustration-footer">Contoh ilustrasi</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N9 · JUAL + RINCIAN POTONGAN + ESTIMASI DANA (WAJIB)
+    // =========================================================================
+    function renderN9() {
+      const gross = state.n9Gram * PRICE_BUYBACK_15NOV;
+      const stampDuty = 10000;
+      const pphRate = state.n9HasNpwp ? 0.015 : 0.03;
+      const pphAmount = gross > 10000000 ? Math.round(gross * pphRate) : 0;
+      const netReceived = Math.max(0, gross - stampDuty - pphAmount);
+
+      const buyCost = state.n9Gram * AVG_BUY_PRICE;
+      const plDiff = netReceived - buyCost;
+      const plPct = ((plDiff / buyCost) * 100).toFixed(1).replace('.', ',');
+      const isGain = plDiff >= 0;
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-dark" onclick="navigateTo('N1')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="title-screen">Jual emas</h1>
+            <span class="badge-pill badge-dark-glass tabular">Saldo 9,30 g</span>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Gramasi jual (kelipatan 0,5 g)</h2>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <button type="button" class="icon-btn on-light" onclick="state.n9Gram=Math.max(0.5, +(state.n9Gram-0.5).toFixed(1)); renderApp();">−</button>
+                <strong class="tabular" style="font-size:16px;">${formatGr(state.n9Gram, 1)} g</strong>
+                <button type="button" class="icon-btn on-light" onclick="state.n9Gram=Math.min(9.0, +(state.n9Gram+0.5).toFixed(1)); renderApp();">+</button>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:8px;">
+              <button type="button" class="chip-pill ${state.n9HasNpwp ? 'selected' : ''}" style="flex:1; font-size:12px;"
+                onclick="state.n9HasNpwp=true; renderApp();">Dengan NPWP (1,5%)</button>
+              <button type="button" class="chip-pill ${!state.n9HasNpwp ? 'selected' : ''}" style="flex:1; font-size:12px;"
+                onclick="state.n9HasNpwp=false; renderApp();">Tanpa NPWP (3%)</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="title-card">Rincian</h2>
+            <div class="sub-box" style="display:flex; flex-direction:column; gap:8px; font-size:13px;">
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-caption">Buyback (${formatGr(state.n9Gram, 1)} g × Rp2.293.000)</span>
+                <strong class="tabular">${formatRp(gross)}</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-caption">Meterai</span>
+                <span class="tabular">−Rp10.000</span>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span class="text-caption">PPh 22 (${gross > 10000000 ? (state.n9HasNpwp ? '1,5%' : '3%') : '0% ≤ Rp10 jt'})</span>
+                <span class="tabular">${pphAmount > 0 ? '−' + formatRp(pphAmount) : 'Rp0'}</span>
+              </div>
+              <div style="border-top:1px solid var(--border); padding-top:8px; display:flex; justify-content:space-between; font-size:15px;">
+                <span>Perkiraan diterima</span>
+                <strong class="tabular">${formatRp(netReceived)}</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <h2 class="title-card">Dibanding harga beli rata-rata Anda</h2>
+              <span class="badge-pill ${isGain ? 'badge-success' : 'badge-danger'} tabular">${isGain ? '+' : ''}${plPct}%</span>
+            </div>
+            <div class="tabular" style="font-size:14px; font-weight:700; color:${isGain ? 'var(--success)' : 'var(--danger)'};">
+              ${formatRp(plDiff)}
+            </div>
+          </div>
+
+          <div class="alert-tint">
+            Perkiraan dana masuk: paling lambat <strong>Jumat, 22 Nov 2026 (≤ 3 hari kerja)</strong> ke BCA ****4417.
+          </div>
+
+          <button type="button" class="btn-gold-primary" onclick="navigateTo('N12'); showToast('Permintaan jual kembali dicatat (ilustrasi).');">
+            Jual ${formatGr(state.n9Gram, 1)} gram
+          </button>
+          <div style="text-align:center;">
+            <button type="button" class="btn-text" style="min-height:36px;" onclick="navigateTo('L4')">Atau cetak jadi emas fisik</button>
+          </div>
+
+          <p class="illustration-footer">Contoh ilustrasi · Harga acuan 15 Nov 2026</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N10 · STATUS CETAK PER TAHAP + JANJI WAKTU (WAJIB)
+    // =========================================================================
+    function renderN10() {
+      const steps = [
+        { title: 'Dibayar', date: '18 Nov 2026', state: 'done' },
+        { title: 'Diverifikasi', date: '19 Nov 2026', state: 'done' },
+        { title: 'Dicetak', date: state.n10Delayed ? 'Perkiraan 27 Nov' : 'Perkiraan 25 Nov', state: state.n10ReadyState ? 'done' : 'active' },
+        { title: 'Siap diambil', date: state.n10Delayed ? 'Perkiraan 30 Nov' : 'Perkiraan 28 Nov', state: state.n10ReadyState ? 'active' : 'pending' },
+        { title: 'Diambil', date: 'Menunggu pengambilan', state: 'pending' }
+      ];
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-dark" onclick="navigateTo('L4')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div>
+              <h1 class="title-screen">Status cetak · 5 gram</h1>
+              <div style="font-size:11px; color:rgba(255,255,255,0.8);">Penyempurnaan fitur yang sudah ada</div>
+            </div>
+            <span style="width:44px;"></span>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <!-- Tombol Simulasi State -->
+          <div style="display:flex; gap:8px;">
+            <button type="button" class="chip-pill ${!state.n10Delayed && !state.n10ReadyState ? 'selected' : ''}" style="flex:1; font-size:12px;"
+              onclick="state.n10Delayed=false; state.n10ReadyState=false; renderApp();">Normal</button>
+            <button type="button" class="chip-pill ${state.n10Delayed ? 'selected' : ''}" style="flex:1; font-size:12px;"
+              onclick="state.n10Delayed=true; state.n10ReadyState=false; renderApp();">Terlambat</button>
+            <button type="button" class="chip-pill ${state.n10ReadyState ? 'selected' : ''}" style="flex:1; font-size:12px;"
+              onclick="state.n10Delayed=false; state.n10ReadyState=true; renderApp();">Siap diambil</button>
+          </div>
+
+          ${state.n10Delayed ? `
+            <div class="alert-warning" style="display:flex; flex-direction:column; gap:8px;">
+              <div><strong>Terlambat 2 hari dari perkiraan. Perkiraan baru 30 Nov. Maaf atas ketidaknyamanannya.</strong></div>
+              <button type="button" class="btn-outline-primary" style="min-height:38px; font-size:12px;"
+                onclick="showToast('Menghubungkan ke layanan bantuan resmi ANTAM...')">
+                Hubungi layanan
+              </button>
+            </div>
+          ` : `
+            <div class="alert-tint">
+              <strong>Perkiraan siap 28 Nov · Kami kabari jika berubah.</strong>
+            </div>
+          `}
+
+          <div class="card">
+            <h2 class="title-card">Tahapan proses (15–20 hari kerja)</h2>
+            ${steps.map((st, idx) => `
+              <div class="v-step-row">
+                <div class="v-step-col">
+                  <div class="v-step-circle ${st.state === 'done' ? 'done' : (st.state === 'active' ? 'active' : '')}">
+                    ${st.state === 'done' ? '✓' : (idx + 1)}
+                  </div>
+                  ${idx < steps.length - 1 ? '<div class="v-step-line"></div>' : ''}
+                </div>
+                <div style="padding-bottom:10px;">
+                  <div style="font-size:13px; font-weight:600;">${st.title}</div>
+                  <div class="text-caption">${st.date}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          ${state.n10ReadyState ? `
+            <div class="card" style="align-items:center; text-align:center;">
+              <span class="badge-pill badge-success">Kode QR pengambilan</span>
+              <div style="width:140px; height:140px; border:2px solid var(--primary); border-radius:16px; display:flex; align-items:center; justify-content:center; background:#FFFFFF;">
+                <svg width="110" height="110" viewBox="0 0 100 100">
+                  <rect x="8" y="8" width="26" height="26" fill="none" stroke="#0E3B2E" stroke-width="6"/>
+                  <rect x="15" y="15" width="12" height="12" fill="#0E3B2E"/>
+                  <rect x="66" y="8" width="26" height="26" fill="none" stroke="#0E3B2E" stroke-width="6"/>
+                  <rect x="73" y="15" width="12" height="12" fill="#0E3B2E"/>
+                  <rect x="8" y="66" width="26" height="26" fill="none" stroke="#0E3B2E" stroke-width="6"/>
+                  <rect x="15" y="73" width="12" height="12" fill="#0E3B2E"/>
+                  <rect x="44" y="14" width="10" height="10" fill="#0E3B2E"/>
+                  <rect x="44" y="44" width="14" height="14" fill="#C9952B"/>
+                  <rect x="66" y="46" width="10" height="24" fill="#0E3B2E"/>
+                  <rect x="46" y="70" width="26" height="10" fill="#0E3B2E"/>
+                </svg>
+              </div>
+              <div style="font-size:14px; font-weight:700;">Butik Emas LM Jakarta</div>
+              <div class="text-caption">Kamis, 28 Nov 2026 · Pukul 11.00 WIB · Bawa KTP asli</div>
+            </div>
+          ` : ''}
+
+          <p class="illustration-footer">Contoh ilustrasi</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N11 · MODE SEDERHANA (RAMAH PENSIUNAN · HURUF >= 18 PX)
+    // =========================================================================
+    function openN11HelpSheet() {
+      openSheet(`
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:20px; font-weight:700;">Pilih bantuan</span>
+          <button type="button" class="icon-btn on-light" onclick="closeSheet()" aria-label="Tutup">✕</button>
+        </div>
+        <button type="button" class="btn-gold-primary" style="min-height:60px; font-size:18px;"
+          onclick="closeSheet(); showToast('Menghubungi ${state.l6FamilyName} (${state.l6FamilyPhone})...');">
+          Telepon ${state.l6FamilyName}
+        </button>
+        <button type="button" class="btn-outline-primary" style="width:100%; min-height:60px; font-size:18px;"
+          onclick="closeSheet(); navigateTo('L4');">
+          Datang ke butik
+        </button>
+        <button type="button" class="btn-outline-neutral" style="width:100%; min-height:60px; font-size:18px;"
+          onclick="closeSheet(); showToast('Menghubungi layanan resmi ANTAM 1500-088...');">
+          Telepon resmi ANTAM
+        </button>
+      `);
+    }
+
+    function renderN11() {
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <h1 style="font-size:24px; font-weight:700;">Mode sederhana</h1>
+            <span class="badge-pill badge-dark-glass">Huruf besar</span>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div class="card-hero">
+            <div style="font-size:20px; font-weight:600; line-height:1.4;">
+              Emas Anda <strong>12 gram</strong>. Aman tersimpan di ANTAM.
+            </div>
+          </div>
+
+          <button type="button" onclick="navigateTo('L3')"
+            style="width:100%; height:88px; border-radius:18px; background:var(--surface); border:2px solid var(--primary); color:var(--primary); font-size:20px; font-weight:700; display:flex; align-items:center; justify-content:center; gap:10px;">
+            Lihat emas saya
+          </button>
+
+          <button type="button" onclick="navigateTo('N5')"
+            style="width:100%; height:88px; border-radius:18px; background:var(--gold); color:var(--ink); font-size:20px; font-weight:700; display:flex; align-items:center; justify-content:center; gap:10px;">
+            Beli emas
+          </button>
+
+          <button type="button" onclick="openN11HelpSheet()"
+            style="width:100%; height:88px; border-radius:18px; background:var(--surface); border:2px solid var(--border); color:var(--ink); font-size:20px; font-weight:700; display:flex; align-items:center; justify-content:center; gap:10px;">
+            Minta bantuan
+          </button>
+
+          <div class="alert-warning" style="font-size:18px; font-weight:600; line-height:1.4;">
+            ANTAM tidak pernah meminta PIN atau kode OTP.
+          </div>
+
+          <div style="text-align:center; padding-top:4px;">
+            <button type="button" class="btn-text" style="font-size:16px;" onclick="navigateTo('N1')">
+              Kembali ke tampilan biasa
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N12 · PUSAT STATUS / NOTIFIKASI
+    // =========================================================================
+    function renderN12() {
+      const items = [
+        { cat: 'Proses', title: 'Verifikasi akun selesai · tepat waktu', time: '19 Nov 2026 · 08.45', badge: 'badge-success', status: 'Tepat waktu' },
+        { cat: 'Proses', title: 'Dana jual masuk Rp2,4 jt · 1 hari lebih cepat', time: '18 Nov 2026 · 14.20', badge: 'badge-success', status: 'Lebih cepat' },
+        { cat: 'Keamanan', title: 'Login dari perangkat baru · Bukan Anda?', time: '17 Nov 2026 · 19.10', badge: 'badge-danger', status: 'Perlu cek' }
+      ];
+      const filtered = state.n12Tab === 'Semua' ? items : items.filter(i => i.cat === state.n12Tab);
+
+      return `
+        <div class="screen-header-dark">
+          <div class="topbar-row">
+            <button type="button" class="icon-btn on-dark" onclick="navigateTo('N1')" aria-label="Kembali">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <h1 class="title-screen">Status &amp; notifikasi</h1>
+            <button type="button" class="badge-pill badge-dark-glass" onclick="state.n12EmptyMode=!state.n12EmptyMode; renderApp();">
+              ${state.n12EmptyMode ? 'Isi contoh' : 'State kosong'}
+            </button>
+          </div>
+        </div>
+
+        <div class="content-stack">
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;">
+            ${['Semua', 'Proses', 'Keamanan'].map(tb => `
+              <button type="button" class="chip-pill ${state.n12Tab === tb ? 'selected' : ''}"
+                onclick="state.n12Tab='${tb}'; renderApp();">${tb}</button>
+            `).join('')}
+          </div>
+
+          ${state.n12EmptyMode ? `
+            <div class="card" style="text-align:center; padding:32px 16px;">
+              <div class="title-card">Belum ada proses berjalan.</div>
+              <p class="text-caption">Semua pembaruan cetak, pencairan dana, dan keamanan akan muncul di sini.</p>
+            </div>
+          ` : filtered.map(it => `
+            <div class="card" onclick="${it.cat === 'Keamanan' ? "navigateTo('L6')" : "navigateTo('N10')"}" style="cursor:pointer;">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
+                <div style="font-size:14px; font-weight:600; color:${it.cat === 'Keamanan' ? 'var(--danger)' : 'var(--ink)'};">
+                  ${it.title}
+                </div>
+                <span class="badge-pill ${it.badge}" style="white-space:nowrap;">${it.status}</span>
+              </div>
+              <div class="text-caption">${it.time}</div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // N13 · DASHBOARD KPI INTERNAL (DESKTOP 1440 × 900)
+    // =========================================================================
+    function renderN13Desktop() {
+      const kpis = [
+        { label: 'Pendaftar baru', val: '18.420', delta: '+24%' },
+        { label: 'Lolos e-KYC %', val: '86,4%', delta: '+18,2%' },
+        { label: 'Aktivasi ≤ 7 hari %', val: '64,0%', delta: '+15,0%' },
+        { label: 'Setoran ulang 90 hari %', val: '52,8%', delta: '+21,4%' },
+        { label: 'Saldo bertahan (ton)', val: '4,82 ton', delta: '+0,64 ton' },
+        { label: 'Ketepatan janji waktu %', val: '94,2%', delta: 'Target ≥ 92%' }
+      ];
+
+      const funnel = [
+        { stage: 'Kesadaran', pct: 100 },
+        { stage: 'Mulai daftar', pct: 74 },
+        { stage: 'Lolos e-KYC', pct: 64 },
+        { stage: 'Beli pertama', pct: 48 },
+        { stage: 'Setor ulang', pct: 31 },
+        { stage: 'Cetak / Jual', pct: 19 }
+      ];
+
+      const gates = [
+        { gate: 'G1 · Kesiapan e-KYC & Transparansi', target: 'Lolos e-KYC ≥ 85%', current: '86,4%', status: 'Lolos' },
+        { gate: 'G2 · Retensi Setoran Ulang 90 Hari', target: 'Setor ulang ≥ 50%', current: '52,8%', status: 'Lolos' },
+        { gate: 'G3 · Ketepatan Janji Cetak & Dana', target: 'Tepat waktu ≥ 95%', current: '94,2%', status: 'Belum' }
+      ];
+
+      return `
+        <div style="display:grid; grid-template-columns:230px 1fr; min-height:760px;">
+          <!-- Sidebar Kiri -->
+          <aside style="background:var(--primary); color:#FFFFFF; padding:20px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div>
+                <div style="font-size:11px; color:var(--gold-light); font-weight:700;">MEASURE · INTERNAL</div>
+                <div style="font-size:18px; font-weight:700; margin-top:4px;">BRANKAS Terbuka</div>
+                <div style="font-size:12px; color:rgba(255,255,255,0.75);">KPI 2027 (Data simulasi)</div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:6px; font-size:13px;">
+                <div style="padding:10px 12px; border-radius:10px; background:rgba(255,255,255,0.14); font-weight:600;">Ringkasan Eksekutif</div>
+                <div style="padding:10px 12px; color:rgba(255,255,255,0.75);">Corong Pendaftaran</div>
+                <div style="padding:10px 12px; color:rgba(255,255,255,0.75);">Retensi Kohort</div>
+                <div style="padding:10px 12px; color:rgba(255,255,255,0.75);">Gerbang Keputusan G1–G3</div>
+              </div>
+            </div>
+            <button type="button" class="btn-gold-primary" onclick="navigateTo('N1')">
+              ← Kembali ke Mockup Mobile
+            </button>
+          </aside>
+
+          <!-- Area Utama -->
+          <div style="padding:24px; display:flex; flex-direction:column; gap:18px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+              <div>
+                <h1 class="title-screen">BRANKAS Terbuka · KPI 2027</h1>
+                <span class="text-caption">Data simulasi untuk evaluasi pilot 3 kota vs pembanding</span>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <span class="chip-pill selected">Periode: Q1–Q2 2027</span>
+                <span class="chip-pill">Kanal: Semua</span>
+                <span class="chip-pill">Kota Pilot vs Pembanding</span>
+              </div>
+            </div>
+
+            <!-- Baris 1: 6 Kartu KPI -->
+            <div style="display:grid; grid-template-columns:repeat(6, 1fr); gap:12px;">
+              ${kpis.map(k => `
+                <div class="card" style="padding:14px;">
+                  <div class="text-caption">${k.label}</div>
+                  <div class="tabular" style="font-size:20px; font-weight:700; color:var(--primary);">${k.val}</div>
+                  <span class="badge-pill badge-success" style="align-self:flex-start;">${k.delta}</span>
+                </div>
+              `).join('')}
+            </div>
+
+            <!-- Baris 2: Funnel Horizontal & Asal Pelanggan -->
+            <div style="display:grid; grid-template-columns:1.5fr 1fr; gap:16px;">
+              <div class="card">
+                <h2 class="title-card">Funnel 6 tahap (Kesadaran → Cetak/Jual)</h2>
+                ${funnel.map(f => `
+                  <div style="display:grid; grid-template-columns:120px 1fr 48px; align-items:center; gap:10px; font-size:12px;">
+                    <span>${f.stage}</span>
+                    <div class="bar-track"><div class="bar-fill-primary" style="width:${f.pct}%;"></div></div>
+                    <strong class="tabular" style="text-align:right;">${f.pct}%</strong>
+                  </div>
+                `).join('')}
+              </div>
+
+              <div class="card">
+                <h2 class="title-card">Asal pelanggan</h2>
+                <div class="sub-box" style="display:flex; flex-direction:column; gap:8px; font-size:13px;">
+                  <div style="display:flex; justify-content:space-between;"><span>Nasabah baru digital</span><strong>52%</strong></div>
+                  <div style="display:flex; justify-content:space-between;"><span>Pindahan pembeli butik</span><strong>31%</strong></div>
+                  <div style="display:flex; justify-content:space-between;"><span>Migrasi akun lama</span><strong>17%</strong></div>
+                </div>
+                <span class="text-caption">Data simulasi · Survei 1 ketuk saat pendaftaran (N3)</span>
+              </div>
+            </div>
+
+            <!-- Baris 3 & 4: Retensi & Tabel Gerbang G1–G3 -->
+            <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:16px;">
+              <div class="card">
+                <h2 class="title-card">Setoran ulang: Kota Pilot vs Pembanding</h2>
+                <div class="sub-box" style="display:flex; flex-direction:column; gap:8px; font-size:13px;">
+                  <div><strong>Kota Pilot (M0 → M6):</strong> 100% → 72% → 61% → 53%</div>
+                  <div><strong>Kota Pembanding (M0 → M6):</strong> 100% → 51% → 38% → 31%</div>
+                </div>
+                <span class="text-caption">Data simulasi</span>
+              </div>
+
+              <div class="card">
+                <h2 class="title-card">Tabel gerbang keputusan G1–G3</h2>
+                <table style="width:100%; border-collapse:collapse; font-size:12px; text-align:left;">
+                  <thead>
+                    <tr style="border-bottom:1px solid var(--border); color:var(--muted);">
+                      <th style="padding:6px 4px;">Gerbang</th>
+                      <th style="padding:6px 4px;">Target</th>
+                      <th style="padding:6px 4px;">Saat ini</th>
+                      <th style="padding:6px 4px;">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${gates.map(g => `
+                      <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:8px 4px; font-weight:600;">${g.gate}</td>
+                        <td style="padding:8px 4px;">${g.target}</td>
+                        <td style="padding:8px 4px;" class="tabular"><strong>${g.current}</strong></td>
+                        <td style="padding:8px 4px;">
+                          <span class="badge-pill ${g.status === 'Lolos' ? 'badge-success' : 'badge-gold'}">${g.status}</span>
+                        </td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+                <span class="text-caption">Data simulasi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // RENDERER UTAMA & NAVIGASI
+    // =========================================================================
+    function renderApp() {
+      try {
+        const phoneContainer = document.getElementById('phoneContainer');
+        const desktopContainer = document.getElementById('desktopKpiContainer');
+        const viewport = document.getElementById('phoneViewport');
+        const statusBar = document.getElementById('phoneStatusBar');
+        const islandLabel = document.getElementById('islandScreenLabel');
+        const screenMeta = SCREEN_LIST.find(s => s.id === state.currentScreen) || SCREEN_LIST[0];
+
+        if (state.currentScreen === 'N13') {
+          if (phoneContainer) phoneContainer.style.display = 'none';
+          if (desktopContainer) {
+            desktopContainer.style.display = 'block';
+            desktopContainer.innerHTML = renderN13Desktop();
+          }
+          return;
+        }
+
+        if (phoneContainer) phoneContainer.style.display = 'flex';
+        if (desktopContainer) desktopContainer.style.display = 'none';
+
+        if (islandLabel) {
+          islandLabel.textContent = screenMeta.code + ' · ' + screenMeta.title.split(' ')[0];
+        }
+
+        const lightHeaderScreens = ['N4', 'N6'];
+        if (statusBar) {
+          if (lightHeaderScreens.includes(state.currentScreen)) {
+            statusBar.classList.add('light-bar');
+          } else {
+            statusBar.classList.remove('light-bar');
+          }
+        }
+
+        document.querySelectorAll('.bnav-btn').forEach(btn => {
+          if (btn.getAttribute('data-tab') === screenMeta.tab) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+
+        const renderers = {
+          L1: renderL1,
+          L2: renderL2,
+          L3: renderL3,
+          L4: renderL4,
+          L5: renderL5,
+          L6: renderL6,
+          N1: renderN1,
+          N2: renderN2,
+          N3: renderN3,
+          N4: renderN4,
+          N5: renderN5,
+          N6: renderN6,
+          N7: renderN7,
+          N8: renderN8,
+          N9: renderN9,
+          N10: renderN10,
+          N11: renderN11,
+          N12: renderN12
+        };
+
+        const fn = renderers[state.currentScreen] || renderN1;
+        if (viewport) {
+          viewport.innerHTML = fn();
+        }
+      } catch (err) {
+        console.error('Error renderApp:', err);
+        const viewport = document.getElementById('phoneViewport');
+        if (viewport) {
+          viewport.innerHTML = '<div class="content-stack"><div class="card"><div class="title-card">Memuat ulang tampilan</div><button type="button" class="btn-gold-primary" onclick="navigateTo(\'N1\')">Kembali ke Beranda</button></div></div>';
+        }
+      }
+    }
+
+    function navigateTo(screenId) {
+      state.currentScreen = screenId;
+      const viewport = document.getElementById('phoneViewport');
+      if (viewport) viewport.scrollTop = 0;
+      renderApp();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderApp);
+    } else {
+      renderApp();
+    }
+    window.onload = renderApp;
+  </script>
+</body>
+</html>
