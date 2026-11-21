@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BRANKAS 2027: Emas Langsung dari Sumbernya — Prototipe Mobile &amp; Peta Funnel v4</title>
+  <title>BRANKAS 2027: Emas Langsung dari Sumbernya, Terbuka dan Terukur — Prototipe v5.0</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -151,7 +151,7 @@
       padding: 24px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
       box-shadow: 0 12px 32px rgba(22, 37, 24, 0.06);
     }
 
@@ -197,6 +197,23 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+    }
+
+    .lp-metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      background: var(--pine-oak);
+      color: var(--ivory);
+      border: 1px solid var(--gold);
+      border-radius: 18px;
+      padding: 12px 14px;
+    }
+
+    @media (max-width: 640px) {
+      .lp-metrics-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .lp-footer-strip {
@@ -501,6 +518,11 @@
       color: #8A5A00;
     }
 
+    .badge-danger {
+      background: var(--danger-bg);
+      color: var(--danger);
+    }
+
     .banner-warn {
       background: var(--warn-bg);
       border: 1px solid rgba(181, 138, 58, 0.5);
@@ -758,7 +780,7 @@
       flex-direction: column;
       gap: 12px;
       border-top: 2px solid var(--gold);
-      max-height: 80%;
+      max-height: 82%;
       overflow-y: auto;
     }
 
@@ -833,6 +855,37 @@
       border: 1px solid var(--border);
       padding: 8px 6px;
     }
+
+    /* Denomination Grid for Cetak & Ambil Tanpa Antre */
+    .denom-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .denom-card {
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      padding: 8px 4px;
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .denom-card.active {
+      border-color: var(--primary);
+      background: var(--tint);
+    }
+
+    .denom-card.out {
+      opacity: 0.5;
+      background: #F3EFE6;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
@@ -850,8 +903,8 @@
           </svg>
         </div>
         <div>
-          <div style="font-size:15px; font-weight:700; color:var(--forest-earth);">BRANKAS 2027: Emas Langsung dari Sumbernya</div>
-          <div class="text-caption">Buka · Buktikan · Tanamkan · 9 layar jalur utama + 9 pendukung</div>
+          <div style="font-size:15px; font-weight:700; color:var(--forest-earth);">BRANKAS 2027: Emas Langsung dari Sumbernya, Terbuka dan Terukur</div>
+          <div class="text-caption">Tim Pdsr Order · Universitas Tadulako, Palu · Versi 5.0 (21 Nov 2026)</div>
         </div>
       </div>
 
@@ -873,22 +926,47 @@
 
     <!-- Main Grid -->
     <div class="lp-main-grid" id="lpGridMain">
-      <!-- Kolom Kiri: Hero + Ornamen Sertifikasi + 3 Pilar Funnel -->
+      <!-- Kolom Kiri: Hero + Ornamen Sertifikasi + 3 Langkah Strategis (7 Pilar A-G) -->
       <section class="lp-hero-panel" id="lpHeroSection">
         <div style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; flex-wrap:wrap; gap:6px; align-items:center;">
-            <span class="badge-pill badge-gold">BCC FES × ANTAM 2026 · Kasus 03 · v4</span>
+            <span class="badge-pill badge-gold">BCC FES × ANTAM 2026 · Kasus 03 · Versi 5.0</span>
             <span class="fbadge fbadge-updated">Acuan 17 Nov 2026 · Spread 7,29%</span>
+            <span class="fbadge fbadge-proposed">Reposisi Skor: (1,6; 7,6) → (8,3; 9,1)</span>
           </div>
-          <h1 style="font-size:26px; font-weight:700; line-height:1.25; color:var(--forest-earth);">
-            BRANKAS 2027: Emas Langsung dari Sumbernya
+          <h1 style="font-size:25px; font-weight:700; line-height:1.25; color:var(--forest-earth);">
+            BRANKAS 2027: Emas Langsung dari Sumbernya, Terbuka dan Terukur
           </h1>
-          <div style="font-size:14px; font-weight:700; color:var(--primary);">
-            Buka · Buktikan · Tanamkan · 9 layar jalur utama + 9 pendukung
+          <div style="font-size:13.5px; font-weight:700; color:var(--primary);">
+            Memisahkan pertumbuhan nyata, memilih kanal, dan mengukur pelanggan yang bertahan
           </div>
           <p class="text-body" style="color:var(--muted);">
-            Prototipe perbaikan pengalaman digital ANTAM Logam Mulia dengan acuan seragam 17 Nov 2026 (<strong>beli Rp2.457.120/g · buyback Rp2.278.000/g · spread 7,29%</strong>), penanda status fitur, serta 18 layar terstruktur.
+            Disusun oleh <strong>Tim Pdsr Order (Universitas Tadulako, Palu)</strong>. Mengatasi akar masalah biaya dan akses BRANKAS (tiket 1 g, iuran Rp100 rb, spread melebar ke 12,17%) melalui strategi tiga langkah <strong>Buka · Buktikan · Tanamkan</strong> (7 Pilar A–G, 11 fitur purwarupa, 9 layar jalur utama + 9 pendukung).
           </p>
+        </div>
+
+        <!-- Ringkasan Bukti Kuantitatif Proposal v5.0 -->
+        <div class="lp-metrics-strip">
+          <div>
+            <div style="font-size:10px; color:var(--gold-light); font-weight:700;">SHAPLEY 1Q25–1Q26</div>
+            <div class="tabular" style="font-size:16px; font-weight:700;">64% Nyata</div>
+            <div style="font-size:10.5px; color:rgba(248,244,236,0.8);">36% efek penyebut</div>
+          </div>
+          <div>
+            <div style="font-size:10px; color:var(--gold-light); font-weight:700;">RASIO BRANKAS/ICDX</div>
+            <div class="tabular" style="font-size:16px; font-weight:700;">7,7% → 5,5%</div>
+            <div style="font-size:10.5px; color:rgba(248,244,236,0.8);">Target pulih ≥7,7%</div>
+          </div>
+          <div>
+            <div style="font-size:10px; color:var(--gold-light); font-weight:700;">KANAL INTI (AHP)</div>
+            <div class="tabular" style="font-size:16px; font-weight:700;">79,2 &amp; 79,1</div>
+            <div style="font-size:10.5px; color:rgba(248,244,236,0.8);">Situs + App BRANKAS</div>
+          </div>
+          <div>
+            <div style="font-size:10px; color:var(--gold-light); font-weight:700;">AMBANG IMPAS</div>
+            <div class="tabular" style="font-size:16px; font-weight:700;">0,33 ton/thn</div>
+            <div style="font-size:10.5px; color:rgba(248,244,236,0.8);">Biaya kebijakan Rp32,1 M</div>
+          </div>
         </div>
 
         <!-- Lencana Kepercayaan: Bappebti · Komdigi · 999,9 LBMA · Cadangan 1:1 -->
@@ -896,17 +974,17 @@
           <div class="cert-badge-card">
             <span style="font-size:10px; font-weight:700; color:var(--primary); letter-spacing:0.05em;">PENGAWASAN</span>
             <strong style="font-size:13px; color:var(--forest-earth);">Bappebti</strong>
-            <span class="text-caption" style="font-size:11px;">Terdaftar resmi di Bappebti</span>
+            <span class="text-caption" style="font-size:11px;">Perba 4/2019 jo. 13/2019</span>
           </div>
           <div class="cert-badge-card">
             <span style="font-size:10px; font-weight:700; color:var(--gold-ink); letter-spacing:0.05em;">PERLINDUNGAN DIGITAL</span>
-            <strong style="font-size:13px; color:var(--forest-earth);">Komdigi</strong>
-            <span class="text-caption" style="font-size:11px;">Diawasi oleh Komdigi</span>
+            <strong style="font-size:13px; color:var(--forest-earth);">Komdigi &amp; UU PDP</strong>
+            <span class="text-caption" style="font-size:11px;">Diawasi Komdigi · UU 27/2022</span>
           </div>
           <div class="cert-badge-card">
             <span style="font-size:10px; font-weight:700; color:var(--primary); letter-spacing:0.05em;">KEMURNIAN</span>
             <strong style="font-size:13px; color:var(--forest-earth);">999,9 LBMA</strong>
-            <span class="text-caption" style="font-size:11px;">Pemurni LBMA Indonesia</span>
+            <span class="text-caption" style="font-size:11px;">Satu-satunya pemurni RI</span>
           </div>
           <div class="cert-badge-card">
             <span style="font-size:10px; font-weight:700; color:var(--gold-ink); letter-spacing:0.05em;">JAMINAN FISIK</span>
@@ -915,12 +993,12 @@
           </div>
         </div>
 
-        <!-- Tiga Kartu Pilar: 01 BUKA · 02 BUKTIKAN · 03 TANAMKAN -->
+        <!-- Tiga Langkah Strategis (Tujuh Pilar A-G) -->
         <div class="lp-pillars-grid">
           <div class="lp-pillar-box">
-            <span style="font-size:11px; font-weight:700; color:var(--primary);">01 BUKA (J3, J5, J6)</span>
-            <div style="font-size:13px; font-weight:700; color:var(--forest-earth);">Daftar 1 Alur, Beli Rp10rb &amp; Kunci Harga</div>
-            <p class="text-caption">Daftar satu alur HP–NIK–Swafoto (J3), beli Rupiah/Gram mulai Rp10.000 (J5), dan checkout kunci harga 05:00 (J6).</p>
+            <span style="font-size:11px; font-weight:700; color:var(--primary);">01 BUKA (Pilar A–C)</span>
+            <div style="font-size:13px; font-weight:700; color:var(--forest-earth);">Fondasi, BRANKAS Mula &amp; Nabung Otomatis</div>
+            <p class="text-caption">Daftar 1 alur NIK=NPWP (J3), tiket Rp10.000 via QRIS/autodebet (J5), tanpa iuran ≤10 g, batas spread 8%, kartu risiko &amp; checkout 05:00 (J6).</p>
             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:2px;">
               <button type="button" class="btn-text" style="padding:2px 0; min-height:28px; font-size:12px;" onclick="navigateTo('J3')">J3 ›</button>
               <button type="button" class="btn-text" style="padding:2px 0; min-height:28px; font-size:12px;" onclick="navigateTo('J5')">J5 ›</button>
@@ -929,19 +1007,20 @@
           </div>
 
           <div class="lp-pillar-box">
-            <span style="font-size:11px; font-weight:700; color:var(--gold-ink);">02 BUKTIKAN (J8, J9)</span>
-            <div style="font-size:13px; font-weight:700; color:var(--forest-earth);">Laporan Cadangan 1:1 &amp; Jual / Cetak</div>
-            <p class="text-caption">Bukti saldo, laporan cadangan bulanan &amp; CertiEye (J8), serta jual ≤3 hari kerja atau cetak ±Rp55 rb/g (J9).</p>
+            <span style="font-size:11px; font-weight:700; color:var(--gold-ink);">02 BUKTIKAN (Pilar D–E)</span>
+            <div style="font-size:13px; font-weight:700; color:var(--forest-earth);">Cadangan Teraudit &amp; Cetak Reservasi</div>
+            <p class="text-caption">Bukti saldo bernomor seri batangan penjamin &amp; laporan cadangan bulanan teraudit (J8), serta cetak ±Rp55 rb/g dengan slot ambil (J9).</p>
             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:2px;">
               <button type="button" class="btn-text" style="padding:2px 0; min-height:28px; font-size:12px;" onclick="navigateTo('J8')">J8 ›</button>
               <button type="button" class="btn-text" style="padding:2px 0; min-height:28px; font-size:12px;" onclick="navigateTo('J9')">J9 ›</button>
+              <button type="button" class="btn-text" style="padding:2px 0; min-height:28px; font-size:12px;" onclick="navigateTo('P4')">P4 ›</button>
             </div>
           </div>
 
           <div class="lp-pillar-box">
-            <span style="font-size:11px; font-weight:700; color:var(--primary);">03 TANAMKAN (P9, P3, P2)</span>
-            <div style="font-size:13px; font-weight:700; color:var(--forest-earth);">Hubungkan Bank, Nabung Rutin &amp; Anggota</div>
-            <p class="text-caption">Hubungkan bank mitra opsional (P9), Nabung Rutin mulai Rp50rb/bulan + nisab 85 g (P3), dan Beranda anggota (P2).</p>
+            <span style="font-size:11px; font-weight:700; color:var(--primary);">03 TANAMKAN (Pilar F–G)</span>
+            <div style="font-size:13px; font-weight:700; color:var(--forest-earth);">Mitra Bank Bertahap, Rutin &amp; Tahap Hidup</div>
+            <p class="text-caption">Aliran logammulia.com, kemitraan bank bertahap Model 1–3 sesuai beban hukum (P9), Nabung Rutin min. Rp50rb/bln (P3), &amp; Beranda anggota (P2).</p>
             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:2px;">
               <button type="button" class="btn-text" style="padding:2px 0; min-height:28px; font-size:12px;" onclick="navigateTo('P9')">P9 ›</button>
               <button type="button" class="btn-text" style="padding:2px 0; min-height:28px; font-size:12px;" onclick="navigateTo('P3')">P3 ›</button>
@@ -1065,15 +1144,15 @@
     <!-- Footer Sertifikasi & Catatan Transparansi -->
     <footer class="lp-footer-strip" id="lpFooterStrip">
       <div>
-        <strong style="color:var(--forest-earth);">Lencana Acuan:</strong> Bappebti · Komdigi · 999,9 LBMA · Cadangan 1:1
+        <strong style="color:var(--forest-earth);">Tim Pdsr Order · Universitas Tadulako, Palu:</strong> Bappebti · Komdigi · 999,9 LBMA · Cadangan 1:1
       </div>
-      <div>Konsep usulan tim · bukan tampilan resmi ANTAM · Contoh ilustrasi</div>
+      <div>Konsep usulan tim, bukan materi resmi ANTAM · Versi 5.0 (21 Nov 2026) · Contoh ilustrasi</div>
     </footer>
   </div>
 
   <script>
     // =========================================================================
-    // DATA & KONSTANTA ACUAN BRANKAS 2027 v4 (TANGGAL ACUAN 17 NOV 2026)
+    // DATA & KONSTANTA ACUAN BRANKAS 2027 v5.0 (PROPOSAL TERPADU 21 NOV 2026)
     // =========================================================================
     const PRICE_DATE = '17 Nov 2026';
     const PRICE_NOTE = 'Harga acuan BRANKAS 17 Nov 2026 (ilustrasi)';
@@ -1081,7 +1160,7 @@
     const BUYBACK_PRICE = 2278000;
     const SPREAD_RP = BUY_PRICE - BUYBACK_PRICE; // Rp179.120/g
     const SPREAD_PCT = '7,29%';
-    const WATERMARK_TEXT = 'Konsep usulan tim · bukan tampilan resmi ANTAM · Contoh ilustrasi';
+    const WATERMARK_TEXT = 'Konsep usulan tim, bukan materi resmi ANTAM · Versi 5.0 · Contoh ilustrasi';
 
     function calcGramFromNominal(nominal) {
       return nominal / BUY_PRICE;
@@ -1093,26 +1172,26 @@
 
     const SCREENS_META = {
       // J1–J9: Jalur Utama (diputar default oleh mode demo)
-      J1: { group: 'J', num: 1, code: 'J1', name: 'Beranda calon pengguna', stage: 'TAHAP 1 · KESADARAN', status: 'updated' },
-      J2: { group: 'J', num: 2, code: 'J2', name: 'Kenalan BRANKAS', stage: 'TAHAP 1 · KESADARAN', status: 'proposed' },
-      J3: { group: 'J', num: 3, code: 'J3', name: 'Daftar satu alur', stage: 'TAHAP 2 · DAFTAR AKUN', status: 'updated' },
-      J4: { group: 'J', num: 4, code: 'J4', name: 'Status verifikasi', stage: 'TAHAP 3 · AKTIVASI', status: 'proposed' },
-      J5: { group: 'J', num: 5, code: 'J5', name: 'Beli: Rupiah / Gram', stage: 'TAHAP 4 · TRANSAKSI PERTAMA', status: 'updated' },
-      J6: { group: 'J', num: 6, code: 'J6', name: 'Checkout satu layar', stage: 'TAHAP 4 · TRANSAKSI PERTAMA', status: 'updated' },
-      J7: { group: 'J', num: 7, code: 'J7', name: 'Berhasil + nabung rutin', stage: 'TAHAP 4 · TRANSAKSI PERTAMA', status: 'proposed' },
-      J8: { group: 'J', num: 8, code: 'J8', name: 'Bukti saldo & cadangan', stage: 'TAHAP 5 · BUKTI & CADANGAN', status: 'proposed' },
-      J9: { group: 'J', num: 9, code: 'J9', name: 'Jual atau cetak', stage: 'TAHAP 6 · PENCAIRAN & FISIK', status: 'updated' },
+      J1: { group: 'J', num: 1, code: 'J1', name: 'Beranda calon pengguna', stage: 'TAHAP 1 · KESADARAN (PILAR A & F)', status: 'updated' },
+      J2: { group: 'J', num: 2, code: 'J2', name: 'Kenalan BRANKAS', stage: 'TAHAP 1 · KESADARAN (PILAR D & F)', status: 'proposed' },
+      J3: { group: 'J', num: 3, code: 'J3', name: 'Daftar satu alur', stage: 'TAHAP 2 · DAFTAR AKUN (PILAR A)', status: 'updated' },
+      J4: { group: 'J', num: 4, code: 'J4', name: 'Status verifikasi', stage: 'TAHAP 3 · AKTIVASI (PILAR A)', status: 'proposed' },
+      J5: { group: 'J', num: 5, code: 'J5', name: 'BRANKAS Mula: Rupiah / Gram', stage: 'TAHAP 4 · TRANSAKSI PERTAMA (PILAR B)', status: 'updated' },
+      J6: { group: 'J', num: 6, code: 'J6', name: 'Checkout satu layar', stage: 'TAHAP 4 · TRANSAKSI PERTAMA (PILAR B)', status: 'updated' },
+      J7: { group: 'J', num: 7, code: 'J7', name: 'Berhasil + nabung rutin', stage: 'TAHAP 4 · TRANSAKSI PERTAMA (PILAR B–C)', status: 'proposed' },
+      J8: { group: 'J', num: 8, code: 'J8', name: 'Bukti saldo & cadangan', stage: 'TAHAP 5 · BUKTI & CADANGAN (PILAR D)', status: 'proposed' },
+      J9: { group: 'J', num: 9, code: 'J9', name: 'Jual atau cetak-ambil', stage: 'TAHAP 6 · PENCAIRAN & FISIK (PILAR E)', status: 'updated' },
 
       // P1–P9: Layar Pendukung (dibuka dari menu "Layar lainnya")
-      P1: { group: 'P', num: 1, code: 'P1', name: 'Splash status pengawasan', stage: 'PENDUKUNG · KESADARAN', status: 'updated' },
-      P2: { group: 'P', num: 2, code: 'P2', name: 'Beranda anggota', stage: 'PENDUKUNG · RETENSI', status: 'updated' },
-      P3: { group: 'P', num: 3, code: 'P3', name: 'Nabung Rutin', stage: 'PENDUKUNG · RETENSI', status: 'proposed' },
-      P4: { group: 'P', num: 4, code: 'P4', name: 'Status cetak', stage: 'PENDUKUNG · PENCAIRAN', status: 'updated' },
-      P5: { group: 'P', num: 5, code: 'P5', name: 'Pusat Keamanan', stage: 'PENDUKUNG · PERLINDUNGAN', status: 'updated' },
-      P6: { group: 'P', num: 6, code: 'P6', name: 'Mode sederhana', stage: 'PENDUKUNG · INKLUSI', status: 'proposed' },
-      P7: { group: 'P', num: 7, code: 'P7', name: 'Pusat status & notifikasi', stage: 'PENDUKUNG · NOTIFIKASI', status: 'updated' },
-      P8: { group: 'P', num: 8, code: 'P8', name: 'ALMIRA kontekstual', stage: 'PENDUKUNG · AKTIVASI', status: 'updated' },
-      P9: { group: 'P', num: 9, code: 'P9', name: 'Hubungkan bank', stage: 'PENDUKUNG · AKTIVASI', status: 'p9-legal' }
+      P1: { group: 'P', num: 1, code: 'P1', name: 'Splash status pengawasan', stage: 'PENDUKUNG · KESADARAN (PILAR A)', status: 'updated' },
+      P2: { group: 'P', num: 2, code: 'P2', name: 'Beranda anggota', stage: 'PENDUKUNG · RETENSI (PILAR C & G)', status: 'updated' },
+      P3: { group: 'P', num: 3, code: 'P3', name: 'Nabung Otomatis & Target', stage: 'PENDUKUNG · RETENSI (PILAR C & G)', status: 'proposed' },
+      P4: { group: 'P', num: 4, code: 'P4', name: 'Status cetak per tahap', stage: 'PENDUKUNG · PENCAIRAN (PILAR E)', status: 'updated' },
+      P5: { group: 'P', num: 5, code: 'P5', name: 'Pusat Keamanan', stage: 'PENDUKUNG · PERLINDUNGAN (PILAR A)', status: 'updated' },
+      P6: { group: 'P', num: 6, code: 'P6', name: 'Mode sederhana', stage: 'PENDUKUNG · INKLUSI SOSIAL (PILAR A)', status: 'proposed' },
+      P7: { group: 'P', num: 7, code: 'P7', name: 'Pusat status & notifikasi', stage: 'PENDUKUNG · NOTIFIKASI (PILAR A & E)', status: 'updated' },
+      P8: { group: 'P', num: 8, code: 'P8', name: 'ALMIRA kontekstual', stage: 'PENDUKUNG · AKTIVASI (PILAR A)', status: 'updated' },
+      P9: { group: 'P', num: 9, code: 'P9', name: 'Hubungkan bank mitra', stage: 'PENDUKUNG · EKOSISTEM KANAL (PILAR F)', status: 'p9-legal' }
     };
 
     const MAIN_SEQUENCE = ['J1', 'J2', 'J3', 'J4', 'J5', 'J6', 'J7', 'J8', 'J9'];
@@ -1127,18 +1206,29 @@
 
     const J3_ORIGINS = ['butik', 'logammulia.com', 'bank mitra', 'marketplace', 'teman', 'media sosial'];
     const J5_PAY_METHODS = [
-      { id: 'QRIS', label: 'QRIS', min: 10000 },
+      { id: 'QRIS', label: 'QRIS (biaya 0,7% · tanpa batas bawah)', min: 10000 },
       { id: 'Dompet digital', label: 'Dompet digital', min: 10000 },
-      { id: 'Autodebet bank mitra', label: 'Autodebet bank mitra', min: 10000 },
+      { id: 'Autodebet bank mitra', label: 'Autodebet bank mitra (Pilar F)', min: 10000 },
       { id: 'Virtual Account', label: 'Virtual Account (min. Rp100.000)', min: 100000 }
     ];
+    const J9_DENOM_STOCKS = [
+      { gram: 1, stockText: 'Tersedia', available: true },
+      { gram: 2, stockText: 'Tersedia', available: true },
+      { gram: 5, stockText: 'Habis', available: false },
+      { gram: 10, stockText: 'Sisa 3', available: true }
+    ];
     const J9_DATES = ['Rab 9 Des', 'Kam 10 Des', 'Jum 11 Des', 'Sen 14 Des', 'Sel 15 Des'];
-    const J9_SLOTS = ['09.00', '11.00', '13.00', '15.00'];
-    const P3_GOALS = ['Umrah', 'Pendidikan', 'Mahar', 'Dana darurat'];
+    const J9_SLOTS = [
+      { time: '09.00', full: false },
+      { time: '11.00', full: false },
+      { time: '13.00', full: true },
+      { time: '15.00', full: false }
+    ];
+    const P3_GOALS = ['Umrah / Haji', 'Pendidikan', 'Mahar', 'Dana darurat', 'Tabungan anak'];
     const P3_SCHEDULES = ['Harian', 'Mingguan', 'Tanggal gajian (tgl 25)'];
-    const P8_CTX_CHIPS = ['NIK sebagai NPWP?', 'Kenapa butuh NPWP?', 'Lewati dulu, isi nanti', 'Bicara dengan petugas'];
+    const P8_CTX_CHIPS = ['NIK sebagai NPWP (PMK 136/2023)?', 'Kenapa butuh NPWP?', 'Lewati dulu, isi nanti', 'Bicara dengan petugas (1×24 jam)'];
     const P8_ORIG_TOPICS = ['Harga 17 Nov 2026', 'Cetak ±Rp55 rb/g', 'Buyback ≤ 3 hari', 'Laporan Cadangan', 'CertiEye', 'Lokasi Butik', 'Reset PIN', 'Keluhan Transaksi'];
-    const P9_BANKS = ['Bank Mandiri (Livin)', 'BRI (BRImo)', 'BNI (wondr)', 'BCA (myBCA)'];
+    const P9_BANKS = ['Bank Muamalat (syariah mitra)', 'BRI (BRImo)', 'BNI (wondr)', 'BCA (myBCA)'];
 
     const GRID_8_MENUS = [
       { label: 'Emas & Perak', target: 'J5', gold: false },
@@ -1159,7 +1249,7 @@
         title: 'Tampilan baru website dan aplikasi ANTAM Logam Mulia',
         body: [
           'ANTAM Logam Mulia memperbarui tampilan website resmi www.logammulia.com dan aplikasi seluler untuk memudahkan layanan transaksi emas.',
-          'Purwarupa BRANKAS 2027: Emas Langsung dari Sumbernya melengkapi pembaruan tersebut dengan mulai nabung Rp10.000, bebas iuran hingga 10 g (usulan), dan laporan cadangan bulanan.'
+          'Purwarupa BRANKAS 2027: Emas Langsung dari Sumbernya, Terbuka dan Terukur (Versi 5.0) melengkapi pembaruan tersebut dengan BRANKAS Mula mulai Rp10.000, bebas iuran untuk saldo ≤10 g (usulan), batas spread 8%, dan laporan cadangan bulanan teraudit.'
         ]
       }
     ];
@@ -1175,12 +1265,9 @@
       j1Slide: 0,
       j1BoutiqueIdx: 0,
       // J3 · Daftar satu alur
-      j3Step: 1,
       j3Phone: '0812-4500-8812 (ilustrasi)',
-      j3OtpSent: true,
       j3OtpCode: '482910',
       j3Nik: '7271021405980003',
-      j3DukcapilMatched: true,
       j3SelfieDone: false,
       j3Origin: 'butik',
       // J4 · Status verifikasi
@@ -1193,6 +1280,8 @@
       // J6 · Checkout satu layar
       j6LockSeconds: 298,
       j6FirstPurchase: true,
+      j6VolatileSim: false, // Simulasi 20 Nov 2026: membuktikan batas pelebaran spread maks. 8% vs 12,17%
+      j6QuizAnswer: null,
       // J7 · Berhasil + ajakan nabung rutin
       j7SavedGram: 0.0407,
       j7SavedNominal: 100000,
@@ -1204,36 +1293,37 @@
       j9SellGram: 1.0,
       j9SellLockSeconds: 294,
       j9Denom: 1,
+      j9Qty: 1,
       j9Delivery: 'butik',
       j9Boutique: BOUTIQUES[0],
       j9Date: 'Rab 9 Des',
       j9Slot: '11.00',
       j9PaidQr: false,
-      // P3 · Nabung Rutin
-      p3Goal: 'Umrah',
+      // P3 · Nabung Otomatis & Target Emas
+      p3Goal: 'Umrah / Haji',
       p3RoutineNominal: 100000,
       p3Schedule: 'Tanggal gajian (tgl 25)',
       p3AutodebetOn: true,
       p3PriceAlertOn: true,
-      p3TargetPrice: 2450000,
       p3ZakatReminderOn: true,
       // P4 · Status cetak per tahap
       p4Delayed: false,
       // P5 · Pusat Keamanan
-      p5UrlInput: 'https://promo-antam-hadiah.xyz/klaim',
+      p5NotifActive: false, // 2 dari 3 aktif -> bisa diaktifkan menjadi 3 dari 3 aktif (sesuai Gambar 5 Layar 6)
+      p5UrlInput: 'https://antam-promo-emas.xyz/klaim',
       // P8 · ALMIRA kontekstual
-      p8Context: 'Pendaftaran › Data pajak',
+      p8Context: 'J5 · Beli BRANKAS Mula › Metode bayar',
       p8ShowAllTopics: false,
       p8Input: '',
       p8Messages: [
         {
           from: 'bot',
           time: '20.04',
-          text: 'Hai Rani (ilustrasi) 😊 Kamu sedang di Pendaftaran › Data pajak. Belum punya NPWP? Tidak masalah—NPWP hanya diminta saat menjual di atas Rp10 juta, dan NIK kamu sudah berfungsi sebagai NPWP.'
+          text: 'Hai Rani (ilustrasi) 😊 Kamu sedang memilih metode bayar di BRANKAS Mula. Untuk pembelian mulai Rp10.000 s.d. di bawah Rp100.000 gunakan QRIS (0,7%), dompet digital, atau autodebet bank mitra. Virtual Account minimal Rp100.000.'
         }
       ],
       // P9 · Hubungkan bank
-      p9PartnerBank: 'Bank Mandiri (Livin)',
+      p9PartnerBank: 'Bank Muamalat (syariah mitra)',
       p9Consent: true,
       p9MakeAutodebet: true,
       n15ActiveArticle: null
@@ -1339,7 +1429,7 @@
     function renderFeatureBadge(status) {
       if (status === 'existing') return '<span class="fbadge fbadge-existing">Sudah ada</span>';
       if (status === 'updated') return '<span class="fbadge fbadge-updated">Diperbarui</span>';
-      if (status === 'p9-legal') return '<span class="fbadge fbadge-conditional">Usulan · tahap 1–2, mengikuti tinjauan hukum</span>';
+      if (status === 'p9-legal') return '<span class="fbadge fbadge-conditional">Usulan · tahap 1–2, tinjauan hukum</span>';
       return '<span class="fbadge fbadge-proposed">Usulan</span>';
     }
 
@@ -1356,6 +1446,27 @@
         state.j5Nominal = item.min;
         showToast('Minimal transaksi ' + item.id + ' adalah ' + formatRp(item.min));
       }
+      renderApp();
+    }
+
+    function selectJ9Denom(idx) {
+      const item = J9_DENOM_STOCKS[idx];
+      if (!item || !item.available) {
+        showToast('Pecahan ' + item.gram + ' g sedang habis di butik ini');
+        return;
+      }
+      state.j9Denom = item.gram;
+      state.j9PaidQr = false;
+      renderApp();
+    }
+
+    function selectJ9Slot(idx) {
+      const sl = J9_SLOTS[idx];
+      if (!sl || sl.full) {
+        showToast('Slot pukul ' + sl.time + ' sudah penuh, pilih jam lain');
+        return;
+      }
+      state.j9Slot = sl.time;
       renderApp();
     }
 
@@ -1395,13 +1506,13 @@
       return `
         <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
           <button type="button" onclick="state.j1BoutiqueIdx = (state.j1BoutiqueIdx + 1) % BOUTIQUES.length; renderApp();" style="background:transparent; border:none; text-align:left; cursor:pointer; flex:1; min-width:0;">
-            <div style="font-size:10.5px; color:var(--muted); font-weight:600;">Lokasi Butik · buka 08.30–15.00</div>
+            <div style="font-size:10.5px; color:var(--muted); font-weight:600;">Lokasi Butik · stok diperbarui tiap 15 menit</div>
             <div style="font-size:12.5px; font-weight:700; color:var(--forest-earth); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
               ${bName} ▾
             </div>
           </button>
           <div style="display:flex; gap:6px; align-items:center;">
-            <button type="button" onclick="showToast('Pencarian produk & lokasi butik ANTAM')" style="width:36px; height:36px; border-radius:999px; border:1px solid var(--border); background:var(--surface); display:flex; align-items:center; justify-content:center; cursor:pointer;" aria-label="Cari">
+            <button type="button" onclick="showToast('Pencarian produk & lokasi 22 butik ANTAM (18 kota)')" style="width:36px; height:36px; border-radius:999px; border:1px solid var(--border); background:var(--surface); display:flex; align-items:center; justify-content:center; cursor:pointer;" aria-label="Cari">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </button>
             <button type="button" onclick="navigateTo('P7')" style="width:36px; height:36px; border-radius:999px; border:1px solid var(--border); background:var(--surface); display:flex; align-items:center; justify-content:center; cursor:pointer; position:relative;" aria-label="Notifikasi">
@@ -1445,22 +1556,22 @@
     // J1–J9: JALUR UTAMA
     // =========================================================================
 
-    // J1 · BERANDA CALON PENGGUNA (basis Layar 2 v3, badge Diperbarui)
+    // J1 · BERANDA CALON PENGGUNA
     function renderJ1() {
       const slides = [
         {
           tag: 'Slide 1 · Khusus calon anggota',
           title: 'Emas langsung dari sumbernya',
-          desc: 'Dimurnikan ANTAM (LBMA), didukung emas fisik 1:1 dan laporan cadangan bulanan.',
+          desc: 'Dimurnikan ANTAM (LBMA), didukung emas fisik 1:1 dan laporan cadangan bulanan teraudit.',
           cta: 'Kenalan BRANKAS',
           action: "navigateTo('J2')"
         },
         {
-          tag: 'Slide 2 · Koleksi ANTAM',
-          title: 'Dua Warisan Satu Kebanggaan',
-          desc: 'Seri tematik dan emas batangan CertiCard resmi ANTAM Logam Mulia.',
-          cta: 'Lihat produk',
-          action: "navigateTo('J9')"
+          tag: 'Slide 2 · BRANKAS Mula',
+          title: 'Mulai nabung emas dari Rp10.000',
+          desc: 'Tanpa harus punya 1 gram dulu dan tanpa iuran tahunan di muka untuk saldo ≤10 g (usulan).',
+          cta: 'Lihat simulasi beli',
+          action: "navigateTo('J5')"
         }
       ];
       const activeSlide = slides[state.j1Slide % slides.length];
@@ -1492,35 +1603,35 @@
           </div>
         </div>
 
-        <!-- SATU Kartu Ajakan Daftar: Mulai nabung emas ANTAM dari Rp10.000 + Langkah 1 dari 3 + Mulai -->
+        <!-- SATU Kartu Ajakan Daftar: Langkah 1 dari 3 (menggantikan dua ajakan bersaing) -->
         <div class="card" style="border:1.5px solid var(--brass); display:flex; flex-direction:column; gap:10px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <span class="badge-pill badge-gold">Langkah 1 dari 3</span>
-            <span class="text-caption">±3 menit selesai</span>
+            <span class="text-caption">±3 menit selesai · tanpa iuran di muka</span>
           </div>
           <div class="card-title">Mulai nabung emas ANTAM dari Rp10.000</div>
           <div class="progress-track">
             <div class="progress-fill" style="width:33%;"></div>
           </div>
           <div class="text-caption" style="color:var(--ink);">
-            1. Daftar satu alur (HP · NIK · Swafoto) › 2. Verifikasi 1–2 hari kerja › 3. Beli pertama
+            1. Daftar satu alur (HP · NIK=NPWP · Swafoto) › 2. Verifikasi 1–2 hari kerja › 3. Beli pertama
           </div>
           <button type="button" class="btn-gold-primary" onclick="navigateTo('J3')">
-            Mulai
+            Mulai daftar
           </button>
         </div>
 
-        <!-- Kartu Keanggotaan BRANKAS -->
+        <!-- Kartu Keanggotaan BRANKAS Mula -->
         <div class="brankas-cream-card" style="display:flex; flex-direction:column; gap:6px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:13px; font-weight:700; color:var(--forest-earth);">Total Saldo BRANKAS · Khusus untuk member</span>
+            <span style="font-size:13px; font-weight:700; color:var(--forest-earth);">BRANKAS Mula · Konsep usulan</span>
             <span class="fbadge fbadge-proposed">Usulan</span>
           </div>
           <div style="font-size:14px; font-weight:700; color:var(--primary);">
-            Tanpa iuran untuk saldo hingga 10 g (usulan)
+            Tanpa iuran untuk saldo ≤10 g · naik ke BRANKAS penuh setelah 1 g*
           </div>
           <div class="text-caption" style="color:var(--walnut);">
-            • Didukung emas fisik 1:1 dan laporan cadangan bulanan<br />
+            • Tetap emas ANTAM, didukung cadangan emas fisik 1:1*<br />
             • Cetak mulai ±Rp55 rb/g, ambil di butik atau kirim
           </div>
           <button type="button" class="btn-text" style="justify-content:flex-start; padding:2px 0; min-height:28px;" onclick="navigateTo('J2')">
@@ -1528,7 +1639,7 @@
           </button>
         </div>
 
-        <!-- Grid 8 Menu -->
+        <!-- Grid 8 Menu (ALMIRA 48 px tidak menutupi baris kedua) -->
         ${getGrid8Block()}
 
         <!-- Blok Bukti dan keamanan -->
@@ -1569,23 +1680,23 @@
       `;
     }
 
-    // J2 · KENALAN BRANKAS (basis Layar 3 v3, badge Usulan)
+    // J2 · KENALAN BRANKAS
     function renderJ2() {
       const points = [
         {
           num: '01',
           title: 'Dimurnikan & dicetak ANTAM, satu-satunya pemurni LBMA di Indonesia',
-          desc: 'Emas langsung dari sumbernya dengan standar kemurnian 999,9 terakreditasi LBMA.'
+          desc: 'Emas langsung dari sumbernya dengan kemurnian 999,9; UBPP Logam Mulia terdaftar di Good Delivery List LBMA (kapasitas 100 t/tahun).'
         },
         {
           num: '02',
           title: 'Setiap gram didukung emas fisik dan laporan cadangan bulanan',
-          desc: 'Cadangan fisik 1:1 tersimpan di gudang ANTAM dan diaudit secara berkala.'
+          desc: 'Saldo dijamin emas fisik 1:1 sesuai Perba Bappebti 4/2019 jo. 13/2019, dilengkapi nomor seri batangan penjamin & laporan audit bulanan (usulan).'
         },
         {
           num: '03',
-          title: 'Cetak mulai ±Rp55 rb/g, ambil di butik atau kirim',
-          desc: 'Saldo emas dapat dicetak menjadi kepingan fisik kapan saja atau dijual kembali ≤ 3 hari kerja.'
+          title: 'Biaya cetak termurah di pasar (±Rp55 rb/g), ambil di butik atau kirim',
+          desc: 'Jauh di bawah pesaing (Pegadaian Rp115 rb, Mandiri Rp135 rb, Treasury Rp241,5 rb). Jual kembali (buyback) masuk ≤ 3 hari kerja.'
         }
       ];
 
@@ -1607,7 +1718,7 @@
 
       return `
         <div>
-          <div class="stage-kicker">JALUR UTAMA · TAHAP 1 · KESADARAN</div>
+          <div class="stage-kicker">JALUR UTAMA · TAHAP 1 · KESADARAN (PILAR D &amp; F)</div>
           <h1 class="screen-title">Emas langsung dari sumbernya</h1>
         </div>
 
@@ -1620,11 +1731,16 @@
             Tabungan emas digital langsung dari produsen emas batangan terpercaya di Indonesia.
           </div>
           <div style="font-size:12px; color:rgba(248,244,236,0.9);">
-            Tanpa iuran untuk saldo hingga 10 g (usulan) · Acuan ${PRICE_DATE}: beli Rp2.457.120/g · buyback Rp2.278.000/g.
+            Tanpa iuran untuk saldo ≤10 g (usulan) · Acuan ${PRICE_DATE}: beli Rp2.457.120/g · buyback Rp2.278.000/g.
           </div>
         </div>
 
         <div style="display:flex; flex-direction:column; gap:8px;">${pointsHtml}</div>
+
+        <!-- Ringkasan Reposisi dari Peta Persaingan (Gambar 2 Proposal) -->
+        <div class="brankas-cream-card" style="font-size:12px; color:var(--walnut);">
+          <strong>Perbaikan akses &amp; biaya BRANKAS:</strong> Tiket turun dari 1 g menjadi Rp10.000, tanpa iuran tahunan di muka untuk saldo ≤10 g, dan batas pelebaran spread maks. 8% saat harga bergejolak.
+        </div>
 
         <button type="button" class="btn-gold-primary" onclick="navigateTo('J3')">
           Mulai daftar
@@ -1636,7 +1752,7 @@
       `;
     }
 
-    // J3 · DAFTAR SATU ALUR (gabungan Layar 4, 5, 6 v3, badge Diperbarui)
+    // J3 · DAFTAR SATU ALUR
     function renderJ3() {
       let originChips = '';
       for (let i = 0; i < J3_ORIGINS.length; i++) {
@@ -1646,19 +1762,19 @@
 
       return `
         <div>
-          <div class="stage-kicker">JALUR UTAMA · TAHAP 2 · DAFTAR AKUN</div>
+          <div class="stage-kicker">JALUR UTAMA · TAHAP 2 · DAFTAR AKUN (PILAR A)</div>
           <h1 class="screen-title">Daftar satu alur</h1>
-          <div class="text-caption">Tanpa pilih paket keanggotaan atau bayar iuran di muka</div>
+          <div class="text-caption">Menggabungkan pendaftaran akun &amp; BRANKAS tanpa iuran di muka</div>
         </div>
 
         <!-- Opsi Cepat Bank Mitra -> buka P9 -->
         <div class="brankas-cream-card" style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
           <div>
             <div style="font-size:13px; font-weight:700; color:var(--forest-earth);">Punya rekening bank mitra?</div>
-            <div class="text-caption" style="color:var(--walnut);">Isi otomatis data terverifikasi dari bank mitra</div>
+            <div class="text-caption" style="color:var(--walnut);">Gunakan data KYC bank mitra terverifikasi (Pilar F)</div>
           </div>
           <button type="button" class="btn-outline-primary" style="min-height:38px; padding:6px 12px; font-size:12px; white-space:nowrap;" onclick="navigateTo('P9')">
-            Daftar dengan data bank mitra ›
+            Daftar via bank mitra ›
           </button>
         </div>
 
@@ -1677,11 +1793,11 @@
           </div>
         </div>
 
-        <!-- Langkah 2: NIK (nama & tgl lahir terisi otomatis dari Dukcapil) -->
+        <!-- Langkah 2: NIK diterima sebagai NPWP (PMK 136/2023) -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span class="card-title" style="font-size:14px;">2. NIK (otomatis Dukcapil)</span>
-            <span class="badge-pill badge-success">✓ Padan Dukcapil</span>
+            <span class="card-title" style="font-size:14px;">2. NIK (otomatis Dukcapil &amp; sah sebagai NPWP)</span>
+            <span class="badge-pill badge-success">✓ Padan</span>
           </div>
           <input type="text" class="input-field tabular" value="${state.j3Nik}" readonly />
           <div style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px; font-size:12.5px;">
@@ -1689,7 +1805,7 @@
             <div style="margin-top:2px;"><strong>Tanggal lahir:</strong> 14 Mei 1998 (ilustrasi)</div>
           </div>
           <div class="text-caption" style="color:var(--primary); font-weight:600;">
-            NPWP diminta saat menjual di atas Rp10 juta. Ahli waris bisa diisi nanti.
+            Sesuai PMK 136/2023, NIK berfungsi sebagai NPWP orang pribadi. NPWP 16 digit baru diminta saat jual di atas Rp10 juta. Ahli waris opsional (bisa diisi nanti).
           </div>
         </div>
 
@@ -1707,7 +1823,7 @@
           </button>
         </div>
 
-        <!-- Pertanyaan Asal Pelanggan (1 klik) -->
+        <!-- Pertanyaan Asal Pelanggan (KPI Akuisisi & Atribusi M8) -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
           <div class="card-title" style="font-size:14px;">Dari mana Anda mengenal BRANKAS? (1 klik)</div>
           <div style="display:flex; flex-wrap:wrap; gap:6px;">${originChips}</div>
@@ -1720,11 +1836,11 @@
       `;
     }
 
-    // J4 · STATUS VERIFIKASI (gabungan Layar 8 & 9 v3, badge Usulan)
+    // J4 · STATUS VERIFIKASI
     function renderJ4() {
       return `
         <div>
-          <div class="stage-kicker">JALUR UTAMA · TAHAP 3 · AKTIVASI</div>
+          <div class="stage-kicker">JALUR UTAMA · TAHAP 3 · AKTIVASI (PILAR A)</div>
           <h1 class="screen-title">Status verifikasi</h1>
         </div>
 
@@ -1743,23 +1859,23 @@
               <span style="width:24px; height:24px; border-radius:999px; background:var(--tint); color:var(--primary); font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center;">✓</span>
               <div>
                 <div style="font-size:13.5px; font-weight:700; color:var(--forest-earth);">1. Data diterima</div>
-                <div class="text-caption">Jum, 20 Nov 2026 · 20.05 WITA</div>
+                <div class="text-caption">Sab, 21 Nov 2026 · 20.05 WITA</div>
               </div>
             </div>
 
             <div style="display:flex; align-items:flex-start; gap:10px;">
               <span style="width:24px; height:24px; border-radius:999px; background:var(--warn-bg); border:1.5px solid var(--brass); color:var(--gold-ink); font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center;">●</span>
               <div>
-                <div style="font-size:13.5px; font-weight:700; color:var(--gold-ink);">2. Verifikasi identitas</div>
-                <div class="text-caption">Perkiraan 1–2 hari kerja (paling lambat Sel, 24 Nov 2026)</div>
+                <div style="font-size:13.5px; font-weight:700; color:var(--gold-ink);">2. Verifikasi identitas (SLA)</div>
+                <div class="text-caption">Perkiraan 1–2 hari kerja (paling lambat Rab, 25 Nov 2026)</div>
               </div>
             </div>
 
             <div style="display:flex; align-items:flex-start; gap:10px;">
               <span style="width:24px; height:24px; border-radius:999px; background:#EAE2D1; color:var(--muted); font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center;">○</span>
               <div>
-                <div style="font-size:13.5px; font-weight:700; color:var(--muted);">3. Akun aktif &amp; siap menabung</div>
-                <div class="text-caption">Tanpa iuran untuk saldo hingga 10 g (usulan)</div>
+                <div style="font-size:13.5px; font-weight:700; color:var(--muted);">3. Akun BRANKAS Mula aktif</div>
+                <div class="text-caption">Tanpa iuran untuk saldo ≤10 g (usulan)</div>
               </div>
             </div>
           </div>
@@ -1767,7 +1883,7 @@
           <div class="brankas-cream-card" style="display:flex; flex-direction:column; gap:8px;">
             <div class="card-title" style="font-size:14px;">Sambil menunggu verifikasi</div>
             <div class="text-caption" style="color:var(--walnut);">
-              Anda dapat mencoba simulasi pembelian emas (non-transaksi) untuk melihat rincian harga dan spread sebelum akun aktif.
+              Anda dapat mencoba simulasi pembelian emas BRANKAS Mula mulai Rp10.000 (non-transaksi) untuk melihat rincian harga dan spread sebelum akun aktif.
             </div>
             <button type="button" class="btn-outline-primary" onclick="navigateTo('J5')">
               Lihat simulasi beli
@@ -1781,7 +1897,7 @@
           <div class="banner-warn" style="display:flex; flex-direction:column; gap:8px;">
             <div style="display:flex; justify-content:space-between; align-items:center;">
               <strong style="font-size:14px;">Verifikasi belum berhasil</strong>
-              <span class="badge-pill badge-warn">Perlu perbaikan</span>
+              <span class="badge-pill badge-warn">Kode alasan: KTP-02</span>
             </div>
             <div style="font-size:13px;">
               <strong>Alasan spesifik:</strong> Pantulan cahaya menutupi nomor NIK pada foto KTP dan pencahayaan swafoto kurang terang.
@@ -1803,7 +1919,7 @@
       `;
     }
 
-    // J5 · BELI: RUPIAH / GRAM (gabungan Layar 11 & 13 v3, badge Diperbarui)
+    // J5 · BRANKAS MULA: RUPIAH / GRAM (selaras Gambar 5 Layar 5 Proposal)
     function renderJ5() {
       const rupiahChips = [50000, 100000, 250000, 500000];
       const gramChips = [0.5, 1.0, 2.0, 5.0];
@@ -1843,15 +1959,15 @@
 
       return `
         <div>
-          <div class="stage-kicker">JALUR UTAMA · TAHAP 4 · TRANSAKSI PERTAMA</div>
-          <h1 class="screen-title">Beli emas BRANKAS</h1>
-          <div class="text-caption">Beli Rp2.457.120/g · Buyback Rp2.278.000/g (${PRICE_DATE})</div>
+          <div class="stage-kicker">BRANKAS MULA · TAHAP 4 · TRANSAKSI PERTAMA (PILAR B)</div>
+          <h1 class="screen-title">Mulai nabung emas ANTAM dari Rp10.000</h1>
+          <div class="text-caption">Tanpa harus punya 1 gram dulu · Saran setoran pertama Rp50.000–100.000</div>
         </div>
 
         <!-- Dua Tab: Rupiah (default) dan Gram -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; background:#EAE2D1; padding:4px; border-radius:999px;">
           <button type="button" class="chip ${state.j5Mode === 'rupiah' ? 'active' : ''}" style="border:none;" onclick="state.j5Mode='rupiah'; renderApp();">
-            Rupiah
+            Rupiah (min. Rp10rb)
           </button>
           <button type="button" class="chip ${state.j5Mode === 'gram' ? 'active' : ''}" style="border:none;" onclick="state.j5Mode='gram'; renderApp();">
             Gram
@@ -1861,20 +1977,20 @@
         ${state.j5Mode === 'rupiah' ? `
           <div class="card" style="display:flex; flex-direction:column; gap:10px;">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span class="card-title" style="font-size:14px;">Pilih nominal Rupiah</span>
-              <span class="text-caption">Min. Rp10.000</span>
+              <span class="card-title" style="font-size:14px;">Pilih setoran pertama</span>
+              <span class="badge-pill badge-gold">Saran Rp50rb–100rb</span>
             </div>
             <div style="display:flex; gap:6px;">${rupiahChipsHtml}</div>
             <div>
-              <label class="text-caption" style="display:block; margin-bottom:4px;">Atau isi nominal sendiri (Rp)</label>
+              <label class="text-caption" style="display:block; margin-bottom:4px;">Atau isi nominal sendiri (min. Rp10.000)</label>
               <input type="number" min="10000" step="5000" class="input-field tabular" value="${state.j5Nominal}" oninput="updateJ5NominalInput(this.value)" />
             </div>
             <div id="j5RupiahPreview" style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px;">
               <div class="tabular" style="font-size:15px; font-weight:700; color:var(--forest-earth);">
-                ${formatRp(effectiveNominal)} ≈ ${formatGram(effectiveGram, 4)} g
+                Anda mendapat ${formatGram(effectiveGram, 4)} g
               </div>
               <div class="text-caption" style="color:var(--walnut); margin-top:2px;">
-                Pada harga beli Rp2.457.120/g (${PRICE_DATE}) · Contoh: Rp100.000 ≈ 0,0407 g
+                Harga beli Rp2.457.120/g (${PRICE_DATE}) · Contoh: Rp100.000 ≈ 0,0407 g
               </div>
             </div>
           </div>
@@ -1896,54 +2012,70 @@
           </div>
         `}
 
+        <!-- Jaminan & Jalur Naik ke BRANKAS Penuh (sesuai Gambar 5 Layar 5) -->
+        <div class="brankas-cream-card" style="display:flex; flex-direction:column; gap:6px; font-size:12px; color:var(--walnut);">
+          <div><strong>✓ Tetap emas ANTAM, didukung fisik 1:1</strong> — Didukung cadangan emas fisik ANTAM*.</div>
+          <div><strong>↗ Bisa naik ke BRANKAS penuh</strong> — Setelah saldo 1 gram dan syarat terpenuhi*.</div>
+          <div><strong>✓ Tanpa iuran tahunan di muka</strong> — Tanpa iuran untuk saldo ≤10 g*.</div>
+          <div style="font-size:10.5px; color:var(--muted);">*Usulan tim, menunggu kajian biaya dan regulasi.</div>
+        </div>
+
         <!-- Metode Bayar -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
-          <div class="card-title" style="font-size:14px;">Metode pembayaran</div>
+          <div class="card-title" style="font-size:14px;">Metode pembayaran (biaya rendah untuk tiket kecil)</div>
           <div style="display:flex; flex-direction:column; gap:6px;">${payMethodsHtml}</div>
         </div>
 
         <button type="button" class="btn-gold-primary" onclick="state.j7SavedNominal=${effectiveNominal}; state.j7SavedGram=Number(calcGramFromNominal(${effectiveNominal}).toFixed(4)); navigateTo('J6');">
-          Lanjut ke checkout
+          Mulai menabung ${formatRp(effectiveNominal)}
         </button>
         <div class="illust-note">${WATERMARK_TEXT} · ${PRICE_NOTE}</div>
       `;
     }
 
-    // J6 · CHECKOUT SATU LAYAR (gabungan Layar 10, N5, N6 v3, badge Diperbarui)
+    // J6 · CHECKOUT SATU LAYAR (dengan simulasi batas spread 8% & kuis pemahaman risiko/biaya)
     function renderJ6() {
       const nominal = state.j7SavedNominal || 100000;
-      const gram = calcGramFromNominal(nominal);
-      const sellNow = calcSellValue(gram);
+      const buyRate = state.j6VolatileSim ? 2442120 : BUY_PRICE; // 20 Nov vs 17 Nov 2026
+      // Bila gejolak 20 Nov: buyback pasar turun ke Rp2.145.000 (12,17%), namun ditahan batas spread maks. 8% -> Rp2.246.750
+      const buybackRate = state.j6VolatileSim ? 2246750 : BUYBACK_PRICE;
+      const spreadRp = buyRate - buybackRate;
+      const spreadPctText = state.j6VolatileSim ? '8,00% (ditahan dari 12,17%)' : SPREAD_PCT;
+
+      const gram = nominal / buyRate;
+      const sellNow = gram * buybackRate;
 
       return `
         <div>
-          <div class="stage-kicker">JALUR UTAMA · TAHAP 4 · TRANSAKSI PERTAMA</div>
+          <div class="stage-kicker">JALUR UTAMA · TAHAP 4 · TRANSAKSI PERTAMA (PILAR B)</div>
           <h1 class="screen-title">Checkout satu layar</h1>
         </div>
 
         <!-- Penghitung Harga Dikunci 05:00 -->
         <div style="background:var(--pine-oak); color:var(--gold-light); border:1px solid var(--gold); border-radius:14px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
-          <span style="font-size:12.5px; font-weight:700;">Harga dikunci</span>
+          <span style="font-size:12.5px; font-weight:700;">Harga dikunci sebelum PIN</span>
           <span class="tabular" id="j6TimerText" style="font-size:15px; font-weight:700;">${formatTimer(state.j6LockSeconds)}</span>
         </div>
 
-        <!-- Ringkasan Harga & Batas Spread Maks. 8% -->
+        <!-- Ringkasan Harga & Simulasi Batas Spread Maks. 8% -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span class="card-title" style="font-size:14px;">Acuan harga ${PRICE_DATE}</span>
-            <span class="badge-pill badge-gold">Batas spread maks. 8%</span>
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:6px;">
+            <span class="card-title" style="font-size:14px;">${state.j6VolatileSim ? 'Simulasi gejolak (20 Nov)' : 'Acuan harga ' + PRICE_DATE}</span>
+            <button type="button" class="chip" style="min-height:28px; font-size:10.5px; padding:3px 9px;" onclick="state.j6VolatileSim = !state.j6VolatileSim; renderApp();">
+              ${state.j6VolatileSim ? 'Kembali ke 17 Nov' : 'Uji batas spread 8%'}
+            </button>
           </div>
           <div style="display:flex; justify-content:space-between; font-size:13px;">
             <span class="text-caption">Harga beli BRANKAS</span>
-            <strong class="tabular">Rp2.457.120/g</strong>
+            <strong class="tabular">${formatRp(buyRate)}/g</strong>
           </div>
           <div style="display:flex; justify-content:space-between; font-size:13px;">
             <span class="text-caption">Harga buyback</span>
-            <strong class="tabular">Rp2.278.000/g</strong>
+            <strong class="tabular">${formatRp(buybackRate)}/g</strong>
           </div>
           <div style="display:flex; justify-content:space-between; font-size:13px;">
-            <span class="text-caption">Selisih (spread)</span>
-            <strong class="tabular" style="color:var(--burgundy);">Rp179.120/g (${SPREAD_PCT})</strong>
+            <span class="text-caption">Selisih (spread · batas maks. 8%)</span>
+            <strong class="tabular" style="color:var(--burgundy);">${formatRp(spreadRp)}/g (${spreadPctText})</strong>
           </div>
         </div>
 
@@ -1956,49 +2088,67 @@
           </div>
           <div style="display:flex; justify-content:space-between; font-size:13px;">
             <span class="text-caption">Biaya bayar (${state.j5Payment})</span>
-            <span class="tabular">[NOMINAL RESMI]</span>
+            <span class="tabular">${state.j5Payment === 'QRIS' ? 'Rp0 (ditanggung program)' : '[NOMINAL RESMI]'}</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:13px;">
+            <span class="text-caption">Iuran tahunan (saldo ≤10 g)</span>
+            <span class="tabular" style="color:var(--primary); font-weight:700;">Rp0 (usulan)</span>
           </div>
           <div style="border-top:1px solid var(--border); padding-top:8px; display:flex; justify-content:space-between; align-items:center;">
             <strong style="font-size:14px;">Total dibayar</strong>
             <strong class="tabular" style="font-size:16px; color:var(--primary);">${formatRp(nominal)}</strong>
           </div>
           <div class="text-caption">
-            Perkiraan nilai jual hari ini: <strong>${formatRp(sellNow)}</strong> (−${SPREAD_PCT})
+            Kalau dijual hari ini: <strong>${formatRp(sellNow)}</strong>. Emas baru untung bila harganya naik melebihi selisih (spread).
           </div>
         </div>
 
         <!-- Kartu Risiko HANYA pada pembelian pertama -->
         <div style="display:flex; justify-content:space-between; align-items:center;">
-          <span class="text-caption" style="font-weight:600;">Status transaksi:</span>
+          <span class="text-caption" style="font-weight:600;">Mode transaksi:</span>
           <button type="button" class="chip" style="min-height:30px; font-size:11px; padding:4px 10px;" onclick="state.j6FirstPurchase = !state.j6FirstPurchase; renderApp();">
-            ${state.j6FirstPurchase ? 'Pembelian pertama (kartu risiko tampil)' : 'Pembelian ulang (kartu risiko disembunyikan)'}
+            ${state.j6FirstPurchase ? 'Pembelian pertama (kartu risiko aktif)' : 'Pembelian ulang (ringkas)'}
           </button>
         </div>
 
         ${state.j6FirstPurchase ? `
-          <div class="banner-warn" style="display:flex; flex-direction:column; gap:6px;">
-            <div style="font-size:13px; font-weight:700; color:var(--walnut);">Pahami risiko sebelum beli pertama</div>
+          <div class="banner-warn" style="display:flex; flex-direction:column; gap:8px;">
+            <div style="font-size:13px; font-weight:700; color:var(--walnut);">Sebelum mulai: harga emas bisa turun</div>
             <div style="font-size:12.5px; line-height:1.45;">
-              Harga emas bisa turun. Contoh: Feb 2026 Rp3,33 juta → Nov 2026 Rp2,52 juta (harga batangan butik). Jika dijual hari ini, nilainya turun ±7,3%.
+              Harga ANTAM 1 g turun dari <strong>Rp3,33 juta (Feb 2026)</strong> ke <strong>Rp2,52 juta (Nov 2026)</strong> (simulasi butik). Cocok untuk tujuan jangka panjang, bukan jual-beli cepat.
+            </div>
+            <!-- Kuis Singkat Pemahaman Risiko & Biaya (KPI Dampak Sosial: target ≥80% paham biaya & ≥50% paham risiko) -->
+            <div style="background:rgba(255,253,249,0.85); border-radius:10px; padding:8px; font-size:12px;">
+              <div style="font-weight:700; margin-bottom:4px;">Cek singkat: Kapan tabungan emas mulai untung?</div>
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <button type="button" class="chip ${state.j6QuizAnswer === 'right' ? 'active' : ''}" style="min-height:32px; font-size:11.5px; justify-content:flex-start;" onclick="state.j6QuizAnswer='right'; renderApp();">
+                  ✓ Saat harga jual naik melebihi selisih (spread)
+                </button>
+                <button type="button" class="chip ${state.j6QuizAnswer === 'wrong' ? 'active' : ''}" style="min-height:32px; font-size:11.5px; justify-content:flex-start;" onclick="state.j6QuizAnswer='wrong'; renderApp();">
+                  ○ Harga emas selalu naik setiap hari
+                </button>
+              </div>
+              ${state.j6QuizAnswer === 'right' ? '<div style="color:var(--primary); font-weight:700; margin-top:4px;">Tepat! Pemahaman biaya & risiko tercatat.</div>' : ''}
+              ${state.j6QuizAnswer === 'wrong' ? '<div style="color:var(--danger); font-weight:700; margin-top:4px;">Hati-hati: harga emas bisa turun dalam jangka pendek.</div>' : ''}
             </div>
           </div>
         ` : ''}
 
-        <button type="button" class="btn-gold-primary" onclick="navigateTo('J7')">
+        <button type="button" class="btn-gold-primary" onclick="state.j7SavedNominal=${nominal}; state.j7SavedGram=Number((${nominal}/${buyRate}).toFixed(4)); navigateTo('J7');">
           Bayar dengan PIN
         </button>
         <div class="illust-note">${WATERMARK_TEXT} · ${PRICE_NOTE}</div>
       `;
     }
 
-    // J7 · BERHASIL + AJAKAN NABUNG RUTIN (basis Layar 12 v3, badge Usulan)
+    // J7 · BERHASIL + AJAKAN NABUNG RUTIN
     function renderJ7() {
       const savedGram = state.j7SavedGram || 0.0407;
       const savedNominal = state.j7SavedNominal || 100000;
 
       return `
         <div>
-          <div class="stage-kicker">JALUR UTAMA · TAHAP 4 · TRANSAKSI PERTAMA</div>
+          <div class="stage-kicker">JALUR UTAMA · TAHAP 4 · TRANSAKSI PERTAMA (PILAR B–C)</div>
           <h1 class="screen-title">Pembelian berhasil</h1>
         </div>
 
@@ -2010,22 +2160,22 @@
             Emas pertamamu tersimpan: ${formatGram(savedGram, 4)} g
           </div>
           <div style="font-size:12px; color:rgba(248,244,236,0.9);">
-            Senilai ${formatRp(savedNominal)} (${PRICE_DATE}) · Didukung emas fisik ANTAM
+            Senilai ${formatRp(savedNominal)} (${PRICE_DATE}) · Didukung emas fisik ANTAM 1:1
           </div>
           <button type="button" onclick="navigateTo('J8')" style="background:rgba(255,253,249,0.16); border:1px solid var(--gold); color:var(--gold-light); border-radius:999px; padding:6px 14px; font-size:12px; font-weight:700; cursor:pointer; margin-top:4px;">
-            Lihat bukti saldo ›
+            Lihat bukti saldo &amp; cadangan ›
           </button>
         </div>
 
-        <!-- Kartu Ajakan Nabung Rutin mulai Rp50.000/bulan -> buka P3 -->
+        <!-- Kartu Ajakan Nabung Otomatis mulai Rp50.000/bulan (titik impas biaya layanan tetap Rp20 rb/tahun) -->
         <div class="brankas-cream-card" style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span class="badge-pill badge-gold">Kebiasaan menabung</span>
+            <span class="badge-pill badge-gold">Pilar C · Kebiasaan menabung</span>
             <span class="fbadge fbadge-proposed">Usulan</span>
           </div>
           <div class="card-title">Nabung Rutin mulai Rp50.000/bulan</div>
           <div class="text-caption" style="color:var(--walnut);">
-            Tetapkan tujuan seperti Umrah, Pendidikan, Mahar, atau Dana darurat dengan pengingat jadwal dan pantauan harga.
+            Tetapkan tujuan seperti Umrah/Haji, Pendidikan, Mahar, atau Dana darurat dengan jadwal rutin dan pengingat harga.
           </div>
           <button type="button" class="btn-gold-primary" onclick="navigateTo('P3')">
             Atur Nabung Rutin
@@ -2039,47 +2189,48 @@
       `;
     }
 
-    // J8 · BUKTI SALDO & CADANGAN (basis Layar 19 v3, badge Usulan)
+    // J8 · BUKTI SALDO & CADANGAN (selaras Halaman 1 Proposal: Bukti bahwa saldo benar-benar ada wujudnya)
     function renderJ8() {
       const saldoGram = state.j8SaldoGram;
-      const sellTotal = calcSellValue(saldoGram); // 9,30 x 2.278.000 = 21.185.400
+      const sellTotal = calcSellValue(saldoGram);
       const meterai = 10000;
       const pph22 = sellTotal > 10000000 ? Math.round(sellTotal * 0.015) : 0;
       const netReceive = sellTotal - meterai - pph22;
 
       return `
         <div>
-          <div class="stage-kicker">JALUR UTAMA · TAHAP 5 · BUKTI &amp; CADANGAN</div>
-          <h1 class="screen-title">Bukti saldo &amp; cadangan</h1>
+          <div class="stage-kicker">PILAR D · BUKTI CADANGAN TERBUKA &amp; LACAK EMASKU</div>
+          <h1 class="screen-title">Bukti saldo &amp; dukungan emas</h1>
+          <div class="text-caption">Bukti bahwa saldo Anda benar-benar ada wujudnya (label netral, bukan jaminan harga)</div>
         </div>
 
-        <!-- Atas: Saldo gram, nilai jual hari ini (gram x buyback), rincian potongan -->
-        <div class="hero-card" style="display:flex; flex-direction:column; gap:6px;">
+        <!-- Kartu Bukti Saldo & Dukungan Emas (sesuai Halaman 1 Proposal) -->
+        <div class="hero-card" style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:12px; color:var(--gold-light);">Saldo emas BRANKAS (ilustrasi)</span>
-            <span class="badge-pill" style="background:rgba(212,178,84,0.24); color:var(--gold-light);">Didukung emas fisik 1:1</span>
+            <span style="font-size:11.5px; color:var(--gold-light); font-weight:700;">RANI (ILUSTRASI) · PEMILIK SAH</span>
+            <span class="badge-pill" style="background:rgba(212,178,84,0.24); color:var(--gold-light);">Kemurnian 999,9</span>
           </div>
-          <div class="hero-number">${formatGram(saldoGram, 2)} g</div>
-          <div style="font-size:12.5px; color:rgba(248,244,236,0.92);">
-            Nilai jual hari ini: <strong>${formatRp(sellTotal)}</strong> (${formatGram(saldoGram, 2)} g × Rp2.278.000/g)
+          <div class="hero-number">${formatGram(saldoGram, 4)} gram</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; background:rgba(22,37,24,0.45); border-radius:12px; padding:8px 10px; font-size:11.5px;">
+            <div>
+              <div style="color:var(--gold-light); font-size:10px;">Batangan penjamin</div>
+              <strong>[KETENTUAN RESMI]</strong>
+            </div>
+            <div>
+              <div style="color:var(--gold-light); font-size:10px;">Ref. dukungan</div>
+              <strong class="tabular">[REF · LM-2026-8841]</strong>
+            </div>
+            <div style="grid-column:span 2; border-top:1px solid rgba(212,178,84,0.25); padding-top:4px;">
+              <span style="color:var(--gold-light); font-size:10px;">Disimpan di: </span>
+              <strong>[LOKASI PENYIMPANAN RESMI ANTAM]</strong>
+            </div>
           </div>
-          <div style="background:rgba(22,37,24,0.45); border-radius:12px; padding:8px 10px; font-size:11.5px; margin-top:4px; display:flex; flex-direction:column; gap:3px;">
-            <div style="display:flex; justify-content:space-between;">
-              <span>Perkiraan meterai</span>
-              <span class="tabular">−${formatRp(meterai)}</span>
-            </div>
-            <div style="display:flex; justify-content:space-between;">
-              <span>PPh 22 (1,5% dengan NIK/NPWP, &gt;Rp10 jt)</span>
-              <span class="tabular">−${formatRp(pph22)}</span>
-            </div>
-            <div style="display:flex; justify-content:space-between; font-weight:700; color:var(--gold-light); border-top:1px solid rgba(212,178,84,0.3); padding-top:3px;">
-              <span>Perkiraan bersih diterima</span>
-              <span class="tabular">${formatRp(netReceive)}</span>
-            </div>
+          <div style="font-size:12px; color:rgba(248,244,236,0.92);">
+            Kalau dijual hari ini: <strong>${formatRp(sellTotal)}</strong> (${formatGram(saldoGram, 2)} g × Rp2.278.000/g) · Bersih setelah meterai &amp; PPh 22: <strong>${formatRp(netReceive)}</strong>
           </div>
         </div>
 
-        <!-- Kartu Baru: Laporan cadangan November 2026 [ilustrasi] -->
+        <!-- Kartu Laporan Cadangan Bulanan Teraudit (Pilar D) -->
         <div class="brankas-cream-card" style="display:flex; flex-direction:column; gap:6px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <span class="card-title" style="font-size:14px;">Laporan cadangan November 2026</span>
@@ -2094,12 +2245,8 @@
             <strong class="tabular">1.245,00 kg (ilustrasi)</strong>
           </div>
           <div style="display:flex; justify-content:space-between; font-size:12.5px;">
-            <span class="text-caption">Rasio cadangan</span>
+            <span class="text-caption">Rasio cadangan fisik</span>
             <strong class="tabular" style="color:var(--primary);">100,36% (≥ 1:1)</strong>
-          </div>
-          <div style="display:flex; justify-content:space-between; font-size:12.5px;">
-            <span class="text-caption">Tempat penyimpanan</span>
-            <strong>[KETENTUAN RESMI ANTAM]</strong>
           </div>
           <div style="display:flex; justify-content:space-between; font-size:12.5px;">
             <span class="text-caption">Auditor independen</span>
@@ -2111,23 +2258,22 @@
           </div>
         </div>
 
-        <!-- Kartu Lacak Emasku -->
+        <!-- Kartu Lacak Emasku & Verifikasi CertiEye -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span class="card-title" style="font-size:14px;">Lacak Emasku</span>
+            <span class="card-title" style="font-size:14px;">Lacak Emasku (CertiEye)</span>
             <span class="badge-pill ${state.j8CertiVerified ? 'badge-success' : 'badge-gold'}">
-              ${state.j8CertiVerified ? '✓ Terverifikasi CertiEye' : 'Batangan penjamin'}
+              ${state.j8CertiVerified ? '✓ Terverifikasi CertiEye' : 'Siap diverifikasi'}
             </span>
           </div>
-          <div style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px; font-size:12.5px;">
-            <div class="text-caption">Nomor seri batangan penjamin:</div>
-            <strong class="tabular" style="color:var(--forest-earth);">[KETENTUAN RESMI ANTAM · Contoh: LM-2026-88412]</strong>
+          <div class="text-caption">
+            Emas baru untung bila harganya naik melebihi selisih (spread). Cocok untuk tujuan jangka panjang, bukan jual-beli cepat.
           </div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-            <button type="button" class="btn-outline-primary" style="font-size:12px;" onclick="state.j8CertiVerified = true; showToast('Nomor seri terverifikasi di CertiEye'); renderApp();">
-              Cek di CertiEye
+            <button type="button" class="btn-outline-primary" style="font-size:12px;" onclick="state.j8CertiVerified = true; showToast('Nomor seri batangan terverifikasi di CertiEye'); renderApp();">
+              Cek keaslian CertiEye
             </button>
-            <button type="button" class="btn-outline-neutral" style="font-size:12px;" onclick="showToast('Laporan bukti saldo & cadangan (PDF) diunduh')">
+            <button type="button" class="btn-outline-neutral" style="font-size:12px;" onclick="showToast('Bukti saldo & laporan cadangan (PDF) diunduh')">
               Unduh PDF
             </button>
           </div>
@@ -2140,7 +2286,7 @@
       `;
     }
 
-    // J9 · JUAL ATAU CETAK (gabungan Layar 20 & 21 v3, dua tab, badge Diperbarui)
+    // J9 · JUAL ATAU CETAK-AMBIL TANPA ANTRE (selaras Gambar 5 Layar 4 Proposal)
     function renderJ9() {
       const sellGram = state.j9SellGram;
       const sellGross = calcSellValue(sellGram);
@@ -2155,11 +2301,16 @@
         sellChipsHtml += '<button type="button" class="chip ' + (state.j9SellGram === g ? 'active' : '') + '" style="flex:1;" onclick="state.j9SellGram=' + g + '; renderApp();">' + formatGram(g, 1) + ' g</button>';
       }
 
-      const denoms = [1, 5, 10];
-      let denomChipsHtml = '';
-      for (let i = 0; i < denoms.length; i++) {
-        const d = denoms[i];
-        denomChipsHtml += '<button type="button" class="chip ' + (state.j9Denom === d ? 'active' : '') + '" style="flex:1;" onclick="state.j9Denom=' + d + '; state.j9PaidQr=false; renderApp();">' + d + ' g</button>';
+      let denomCardsHtml = '';
+      for (let i = 0; i < J9_DENOM_STOCKS.length; i++) {
+        const d = J9_DENOM_STOCKS[i];
+        const isSel = state.j9Denom === d.gram;
+        denomCardsHtml += `
+          <button type="button" class="denom-card ${isSel ? 'active' : ''} ${!d.available ? 'out' : ''}" onclick="selectJ9Denom(${i})">
+            <strong style="font-size:14px; color:var(--forest-earth);">${d.gram} g</strong>
+            <span style="font-size:10px; font-weight:700; color:${d.available ? 'var(--primary)' : 'var(--danger)'};">${d.stockText}</span>
+          </button>
+        `;
       }
 
       let boutiqueOpts = '';
@@ -2177,13 +2328,20 @@
       let slotChipsHtml = '';
       for (let i = 0; i < J9_SLOTS.length; i++) {
         const sl = J9_SLOTS[i];
-        slotChipsHtml += '<button type="button" class="chip ' + (state.j9Slot === sl ? 'active' : '') + '" style="flex:1;" onclick="state.j9Slot=\'' + sl + '\'; renderApp();">' + sl + '</button>';
+        const isSel = state.j9Slot === sl.time;
+        slotChipsHtml += `
+          <button type="button" class="chip ${isSel ? 'active' : ''}" style="flex:1; ${sl.full ? 'opacity:0.45; text-decoration:line-through;' : ''}" onclick="selectJ9Slot(${i})">
+            ${sl.full ? 'Penuh' : sl.time}
+          </button>
+        `;
       }
+
+      const totalPrintGram = state.j9Denom * state.j9Qty;
 
       return `
         <div>
-          <div class="stage-kicker">JALUR UTAMA · TAHAP 6 · PENCAIRAN &amp; FISIK</div>
-          <h1 class="screen-title">Jual atau cetak</h1>
+          <div class="stage-kicker">JALUR UTAMA · TAHAP 6 · PENCAIRAN &amp; FISIK (PILAR E)</div>
+          <h1 class="screen-title">Jual atau ambil tanpa antre</h1>
         </div>
 
         <!-- Dua Tab: Jual & Cetak -->
@@ -2192,7 +2350,7 @@
             Jual (Buyback)
           </button>
           <button type="button" class="chip ${state.j9Tab === 'cetak' ? 'active' : ''}" style="border:none;" onclick="state.j9Tab='cetak'; renderApp();">
-            Cetak fisik
+            Cetak &amp; ambil
           </button>
         </div>
 
@@ -2240,20 +2398,28 @@
         ` : `
           <div class="card" style="display:flex; flex-direction:column; gap:8px;">
             <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span class="card-title" style="font-size:14px;">Pilih pecahan cetak</span>
-              <span class="badge-pill badge-gold">Biaya cetak 1 g ±Rp55 rb · termurah di pasar</span>
+              <span class="card-title" style="font-size:14px;">Pilih pecahan (stok tiap 15 menit)</span>
+              <span class="badge-pill badge-gold">Cetak 1 g ±Rp55 rb</span>
             </div>
-            <div style="display:flex; gap:6px;">${denomChipsHtml}</div>
+            <div class="denom-grid-4">${denomCardsHtml}</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding-top:4px;">
+              <span class="text-caption" style="font-weight:600;">Jumlah keping (${totalPrintGram} g total)</span>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <button type="button" class="chip" style="min-height:32px; width:34px; padding:0;" onclick="state.j9Qty = Math.max(1, state.j9Qty - 1); renderApp();">−</button>
+                <strong class="tabular">${state.j9Qty}</strong>
+                <button type="button" class="chip" style="min-height:32px; width:34px; padding:0;" onclick="state.j9Qty = Math.min(3, state.j9Qty + 1); renderApp();">+</button>
+              </div>
+            </div>
           </div>
 
           <div class="card" style="display:flex; flex-direction:column; gap:8px;">
-            <div class="card-title" style="font-size:14px;">Metode penerimaan</div>
+            <div class="card-title" style="font-size:14px;">Pesan sekarang, emas disisihkan atas nama Anda</div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
               <button type="button" class="chip ${state.j9Delivery === 'butik' ? 'active' : ''}" onclick="state.j9Delivery='butik'; renderApp();">
                 Ambil di butik/mitra
               </button>
               <button type="button" class="chip ${state.j9Delivery === 'kirim' ? 'active' : ''}" onclick="state.j9Delivery='kirim'; renderApp();">
-                Kirim ke alamat
+                Kirim berasuransi
               </button>
             </div>
             ${state.j9Delivery === 'butik' ? `
@@ -2271,8 +2437,8 @@
           <div class="card" style="display:flex; flex-direction:column; gap:6px;">
             <div class="card-title" style="font-size:14px;">Rincian biaya sebelum PIN</div>
             <div style="display:flex; justify-content:space-between; font-size:13px;">
-              <span class="text-caption">Biaya cetak (${state.j9Denom} g)</span>
-              <span class="tabular">${state.j9Denom === 1 ? '±Rp55.000 (ilustrasi)' : '[NOMINAL RESMI]'}</span>
+              <span class="text-caption">Biaya cetak (${state.j9Qty} × ${state.j9Denom} g)</span>
+              <span class="tabular">${state.j9Denom === 1 ? '±' + formatRp(55000 * state.j9Qty) + ' (ilustrasi)' : '[NOMINAL RESMI]'}</span>
             </div>
             <div style="display:flex; justify-content:space-between; font-size:13px;">
               <span class="text-caption">${state.j9Delivery === 'butik' ? 'Biaya ambil di butik' : 'Ongkos kirim berasuransi'}</span>
@@ -2280,7 +2446,7 @@
             </div>
             <div style="border-top:1px solid var(--border); padding-top:6px; display:flex; justify-content:space-between;">
               <strong>Total biaya cetak</strong>
-              <strong>${state.j9Denom === 1 && state.j9Delivery === 'butik' ? '±Rp55.000 (ilustrasi)' : '[NOMINAL RESMI]'}</strong>
+              <strong>${state.j9Denom === 1 && state.j9Delivery === 'butik' ? '±' + formatRp(55000 * state.j9Qty) + ' (ilustrasi)' : '[NOMINAL RESMI]'}</strong>
             </div>
           </div>
 
@@ -2307,11 +2473,11 @@
     // P1–P9: LAYAR PENDUKUNG
     // =========================================================================
 
-    // P1 · SPLASH STATUS PENGAWASAN (tetap seperti Layar 1 v3)
+    // P1 · SPLASH STATUS PENGAWASAN
     function renderP1() {
       return `
         <div>
-          <div class="stage-kicker">PENDUKUNG · TAHAP 1 · KESADARAN</div>
+          <div class="stage-kicker">PENDUKUNG · TAHAP 1 · KESADARAN (PILAR A)</div>
           <h1 class="screen-title">Splash status pengawasan</h1>
         </div>
 
@@ -2326,7 +2492,7 @@
               </svg>
             </div>
             <div style="font-size:20px; font-weight:700; letter-spacing:0.02em;">LOGAM MULIA · ANTAM</div>
-            <div style="font-size:12px; color:var(--gold-light);">Emas Langsung dari Sumbernya</div>
+            <div style="font-size:12px; color:var(--gold-light);">Emas Langsung dari Sumbernya, Terbuka dan Terukur</div>
           </div>
 
           <div style="background:rgba(22,37,24,0.55); border:1px solid rgba(212,178,84,0.45); border-radius:16px; padding:12px; width:100%; display:flex; flex-direction:column; gap:6px;">
@@ -2334,7 +2500,7 @@
               PT ANTAM (Persero) Tbk terdaftar di Bappebti dan diawasi oleh Komdigi
             </div>
             <div style="font-size:11.5px; color:var(--gold-light);">
-              Cek status ini kapan saja di Profil › Pusat Keamanan
+              Cek status pengawasan &amp; nomor izin kapan saja di Profil › Pusat Keamanan
             </div>
           </div>
         </div>
@@ -2346,7 +2512,7 @@
       `;
     }
 
-    // P2 · BERANDA ANGGOTA (tetap seperti Layar 14 v3; harga mengikuti aturan global)
+    // P2 · BERANDA ANGGOTA
     function renderP2() {
       const saldoGram = state.j8SaldoGram;
       const sellVal = calcSellValue(saldoGram);
@@ -2359,12 +2525,12 @@
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <span style="font-size:12px; font-weight:700; color:var(--primary);">Saldo BRANKAS · Rani (ilustrasi)</span>
             <button type="button" class="btn-text" style="padding:0; min-height:24px; font-size:12px;" onclick="navigateTo('J8')">
-              Lihat bukti ›
+              Lihat bukti saldo ›
             </button>
           </div>
           <div class="hero-number" style="color:var(--forest-earth);">${formatGram(saldoGram, 2)} g</div>
           <div class="text-caption" style="color:var(--walnut);">
-            Perkiraan nilai jual hari ini: <strong>${formatRp(sellVal)}</strong> (buyback Rp2.278.000/g · ${PRICE_DATE})
+            Kalau dijual hari ini: <strong>${formatRp(sellVal)}</strong> (buyback Rp2.278.000/g · ${PRICE_DATE})
           </div>
         </div>
 
@@ -2396,7 +2562,7 @@
           </button>
         </div>
 
-        <!-- Kartu Sedang diproses (maks. 2) -->
+        <!-- Kartu Sedang diproses -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
           <div class="card-title" style="font-size:14px;">Sedang diproses</div>
           <button type="button" onclick="navigateTo('P4')" style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; text-align:left;">
@@ -2415,17 +2581,17 @@
           </button>
         </div>
 
-        <!-- Kartu Tujuan Terdekat (Umrah 64%) + Setor lagi -->
+        <!-- Kartu Tujuan Terdekat (Pilar C & G) -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
-            <span class="card-title" style="font-size:14px;">Tujuan terdekat: Umrah (64%)</span>
+            <span class="card-title" style="font-size:14px;">Tujuan terdekat: ${state.p3Goal} (64%)</span>
             <span class="tabular" style="font-size:12px; font-weight:700; color:var(--primary);">6,40 / 10,0 g</span>
           </div>
           <div class="progress-track">
             <div class="progress-fill" style="width:64%;"></div>
           </div>
           <button type="button" class="btn-outline-primary" style="width:100%;" onclick="navigateTo('P3')">
-            Setor lagi ke Umrah
+            Setor lagi ke ${state.p3Goal}
           </button>
         </div>
 
@@ -2434,7 +2600,7 @@
       `;
     }
 
-    // P3 · NABUNG RUTIN (gabungan Layar 15–18 v3, badge Usulan)
+    // P3 · NABUNG OTOMATIS & TARGET EMAS (Pilar C & G)
     function renderP3() {
       let goalChips = '';
       for (let i = 0; i < P3_GOALS.length; i++) {
@@ -2452,13 +2618,13 @@
 
       return `
         <div>
-          <div class="stage-kicker">PENDUKUNG · TAHAP 5 · RETENSI</div>
-          <h1 class="screen-title">Nabung Rutin</h1>
+          <div class="stage-kicker">PILAR C &amp; G · NABUNG OTOMATIS, TARGET EMAS &amp; TAHAP HIDUP</div>
+          <h1 class="screen-title">Nabung Rutin &amp; Target</h1>
         </div>
 
-        <!-- Tujuan Tabungan -->
+        <!-- Tujuan Tabungan & Tahap Hidup -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
-          <div class="card-title" style="font-size:14px;">Pilih tujuan tabungan</div>
+          <div class="card-title" style="font-size:14px;">Pilih tujuan tabungan (mental accounting)</div>
           <div class="chip-row">${goalChips}</div>
           <div style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px;">
             <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700;">
@@ -2475,13 +2641,13 @@
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <span class="card-title" style="font-size:14px;">Nominal &amp; jadwal setoran</span>
-            <span class="text-caption">Min. Rp50.000/bulan</span>
+            <span class="badge-pill badge-gold">Min. Rp50.000/bln (impas biaya layanan)</span>
           </div>
           <input type="number" min="50000" step="10000" class="input-field tabular" value="${state.p3RoutineNominal}" onchange="state.p3RoutineNominal = Math.max(50000, Number(this.value) || 50000); renderApp();" />
           <div class="chip-row">${schedChips}</div>
         </div>
 
-        <!-- Sumber Dana Autodebet Bank Mitra (opsional, bisa dijeda/dibatalkan) -->
+        <!-- Sumber Dana Autodebet Bank Mitra -->
         <div class="brankas-cream-card" style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <span class="card-title" style="font-size:14px;">Autodebet bank mitra (opsional)</span>
@@ -2490,18 +2656,18 @@
             </button>
           </div>
           <div class="text-caption" style="color:var(--walnut);">
-            Sumber dana: <strong>${state.p9PartnerBank}</strong> · Bisa dijeda atau dibatalkan kapan saja tanpa biaya.
+            Sumber dana: <strong>${state.p9PartnerBank}</strong> · Dapat dijeda atau dibatalkan kapan saja tanpa biaya, dengan notifikasi sebelum pendebetan.
           </div>
           <button type="button" class="btn-text" style="justify-content:flex-start; padding:0; min-height:28px;" onclick="navigateTo('P9')">
             Ubah atau hubungkan bank mitra (P9) ›
           </button>
         </div>
 
-        <!-- Pengingat Harga sebagai Sakelar di layar ini -->
+        <!-- Kampanye Beli Berkala saat Harga Terkoreksi -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <div>
-              <div class="card-title" style="font-size:14px;">Pengingat harga beli</div>
+              <div class="card-title" style="font-size:14px;">Pengingat harga terkoreksi</div>
               <div class="text-caption">Kabari jika harga beli di bawah Rp2.450.000/g</div>
             </div>
             <button type="button" class="chip ${state.p3PriceAlertOn ? 'active' : ''}" style="min-height:34px; font-size:11.5px;" onclick="state.p3PriceAlertOn = !state.p3PriceAlertOn; renderApp();">
@@ -2515,7 +2681,7 @@
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <div>
-              <div class="card-title" style="font-size:14px;">Pengingat nisab zakat (85 g)</div>
+              <div class="card-title" style="font-size:14px;">Pengingat nisab zakat emas (85 g)</div>
               <div class="text-caption">Saldo saat ini: ${formatGram(state.j8SaldoGram, 2)} g dari 85,00 g (${zakatPct}%)</div>
             </div>
             <button type="button" class="chip ${state.p3ZakatReminderOn ? 'active' : ''}" style="min-height:34px; font-size:11.5px;" onclick="state.p3ZakatReminderOn = !state.p3ZakatReminderOn; renderApp();">
@@ -2527,20 +2693,20 @@
           </div>
         </div>
 
-        <button type="button" class="btn-gold-primary" onclick="showToast('Pengaturan Nabung Rutin disimpan')">
+        <button type="button" class="btn-gold-primary" onclick="showToast('Pengaturan Nabung Rutin & Target Emas disimpan')">
           Simpan rencana Nabung Rutin
         </button>
         <div class="illust-note">${WATERMARK_TEXT} · ${PRICE_NOTE}</div>
       `;
     }
 
-    // P4 · STATUS CETAK PER TAHAP (tetap seperti Layar 22 v3)
+    // P4 · STATUS CETAK PER TAHAP
     function renderP4() {
       const steps = [
         { title: 'Dibayar', date: 'Rab, 18 Nov 2026', state: 'done' },
-        { title: 'Dicetak', date: 'Jum, 4 Des 2026', state: 'active' },
-        { title: 'Siap diambil', date: state.p4Delayed ? 'Jum, 11 Des 2026 (bergeser)' : 'Rab, 9 Des 2026', state: 'pending' },
-        { title: 'Diambil', date: 'Menunggu pengambilan di butik', state: 'pending' }
+        { title: 'Dicetak di UBPP Logam Mulia', date: 'Jum, 4 Des 2026', state: 'active' },
+        { title: 'Siap diambil di butik', date: state.p4Delayed ? 'Jum, 11 Des 2026 (bergeser)' : 'Rab, 9 Des 2026', state: 'pending' },
+        { title: 'Diambil & dikonfirmasi', date: 'Menunggu pengambilan dengan QR', state: 'pending' }
       ];
 
       let stepsHtml = '';
@@ -2564,9 +2730,9 @@
 
       return `
         <div>
-          <div class="stage-kicker">PENDUKUNG · TAHAP 6 · PENCAIRAN &amp; FISIK</div>
+          <div class="stage-kicker">PENDUKUNG · TAHAP 6 · PENCAIRAN &amp; FISIK (PILAR E)</div>
           <h1 class="screen-title">Status cetak · 5 gram</h1>
-          <div class="text-caption">Penyempurnaan pelacakan fitur cetak yang sudah ada</div>
+          <div class="text-caption">Pelacakan per tahap &amp; pengaman KPI ketepatan janji waktu (target ≥95%)</div>
         </div>
 
         <div style="display:flex; gap:8px;">
@@ -2580,7 +2746,7 @@
 
         ${state.p4Delayed ? `
           <div class="banner-warn" style="font-size:12.5px;">
-            <strong>Perkiraan bergeser ke Jum, 11 Des.</strong> Maaf, kami kabari lagi begitu siap diambil di butik.
+            <strong>Perkiraan bergeser ke Jum, 11 Des.</strong> Maaf atas keterlambatan antrean cetak, kami kabari lagi begitu siap diambil di butik.
           </div>
         ` : ''}
 
@@ -2592,25 +2758,47 @@
           Ubah slot pengambilan
         </button>
         <button type="button" class="btn-outline-primary" style="width:100%;" onclick="openAlmiraChat('Status cetak 5 g')">
-          Hubungi butik / ALMIRA
+          Hubungi butik / ALMIRA (1×24 jam)
         </button>
         <div class="illust-note">${WATERMARK_TEXT}</div>
       `;
     }
 
-    // P5 · PUSAT KEAMANAN (tetap seperti Layar 23 v3; tanpa klaim ISO/IEC 27001)
+    // P5 · PUSAT KEAMANAN (selaras Gambar 5 Layar 6 Proposal: Status akun 2 dari 3 aktif, Cek tautan, Kanal resmi, Laporkan penipuan)
     function renderP5() {
       const val = (state.p5UrlInput || '').toLowerCase();
       const isOfficial = val.indexOf('logammulia.com') !== -1 || val.indexOf('antam.com') !== -1;
+      const activeCount = state.p5NotifActive ? 3 : 2;
 
       return `
         <div>
-          <div class="stage-kicker">PENDUKUNG · PERLINDUNGAN NASABAH</div>
-          <h1 class="screen-title">Pusat Keamanan</h1>
+          <div class="stage-kicker">PILAR A · FONDASI ANDAL &amp; PERLINDUNGAN NASABAH</div>
+          <h1 class="screen-title">Akun Anda terlindungi</h1>
+          <div class="text-caption">Pastikan Anda bertransaksi di kanal resmi ANTAM</div>
         </div>
 
-        <!-- Status pengawasan -->
-        <div class="brankas-cream-card" style="display:flex; flex-direction:column; gap:6px;">
+        <!-- Status Akun (2 dari 3 aktif -> bisa diaktifkan menjadi 3 dari 3 aktif) -->
+        <div class="card" style="display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="card-title" style="font-size:14px;">Status akun</span>
+            <span class="badge-pill ${activeCount === 3 ? 'badge-success' : 'badge-gold'}">${activeCount} dari 3 aktif</span>
+          </div>
+          <div style="font-size:13px; color:var(--primary); font-weight:600;">✓ PIN transaksi aktif</div>
+          <div style="font-size:13px; color:var(--primary); font-weight:600;">✓ Login biometrik aktif</div>
+          ${state.p5NotifActive ? `
+            <div style="font-size:13px; color:var(--primary); font-weight:600;">✓ Notifikasi transaksi aktif</div>
+          ` : `
+            <div style="background:var(--danger-bg); border-radius:10px; padding:8px 10px; display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <span style="font-size:12.5px; font-weight:700; color:var(--danger);">! Notifikasi transaksi mati</span>
+              <button type="button" class="btn-outline-primary" style="min-height:30px; font-size:11.5px; padding:3px 10px;" onclick="state.p5NotifActive = true; showToast('Notifikasi transaksi berhasil diaktifkan (3 dari 3 aktif)'); renderApp();">
+                Aktifkan
+              </button>
+            </div>
+          `}
+        </div>
+
+        <!-- Status Pengawasan Resmi -->
+        <div class="brankas-cream-card" style="display:flex; flex-direction:column; gap:4px;">
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <span class="card-title" style="font-size:14px;">Status pengawasan</span>
             <span class="badge-pill badge-success">Aktif</span>
@@ -2619,47 +2807,46 @@
             Terdaftar di Bappebti · diawasi Komdigi
           </div>
           <div class="text-caption" style="color:var(--walnut);">
-            Nomor izin: [KETENTUAN RESMI ANTAM] · Diperbarui 20 Nov 2026
+            Nomor izin: [KETENTUAN RESMI ANTAM] · Masa tunggu 24 jam aktif setelah ganti perangkat
           </div>
         </div>
 
-        <!-- Cek tautan -->
+        <!-- Cek tautan atau nomor -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
-          <div class="card-title" style="font-size:14px;">Cek tautan mencurigakan</div>
-          <input type="text" class="input-field" value="${state.p5UrlInput}" oninput="updateP5UrlInput(this.value)" placeholder="Tempel tautan di sini..." />
+          <div class="card-title" style="font-size:14px;">Cek tautan atau nomor</div>
+          <input type="text" class="input-field" value="${state.p5UrlInput}" oninput="updateP5UrlInput(this.value)" placeholder="Tempel tautan atau nomor di sini..." />
           <div id="p5UrlResult" style="border-radius:12px; padding:10px; font-size:12.5px; font-weight:700; background:${isOfficial ? 'var(--tint)' : 'var(--danger-bg)'}; color:${isOfficial ? 'var(--primary)' : 'var(--danger)'};">
-            ${isOfficial ? '✓ Domain resmi ANTAM Logam Mulia' : '⚠ Bukan kanal resmi ANTAM — jangan masukkan PIN atau OTP'}
+            ${isOfficial ? '✓ Domain resmi ANTAM Logam Mulia' : '⚠ Bukan kanal resmi ANTAM. Jangan isi data, OTP, atau transfer apa pun.'}
           </div>
         </div>
 
         <!-- Kanal resmi -->
         <div class="card" style="display:flex; flex-direction:column; gap:6px;">
           <div class="card-title" style="font-size:14px;">Kanal resmi ANTAM</div>
-          <div class="text-caption">• Situs resmi: <strong>www.logammulia.com</strong></div>
-          <div class="text-caption">• WhatsApp resmi ALMIRA: <strong>0811-1-002-002</strong></div>
-          <div class="text-caption">• Call center resmi: <strong>[KONTAK RESMI]</strong></div>
+          <div class="text-caption">• Situs: <strong>www.logammulia.com</strong></div>
+          <div class="text-caption">• WhatsApp ALMIRA: <strong>0811-1-002-002</strong></div>
+          <div class="text-caption">• Aplikasi: <strong>ANTAM Logam Mulia</strong></div>
         </div>
 
-        <!-- Ahli waris -->
-        <div class="card" style="display:flex; flex-direction:column; gap:6px;">
-          <div class="card-title" style="font-size:14px;">Ahli waris &amp; klaim</div>
-          <div class="text-caption">
-            Data ahli waris bersifat opsional dan dapat diperbarui kapan saja. Tata cara klaim ahli waris mengikuti [KETENTUAN RESMI ANTAM].
-          </div>
+        <div class="banner-warn" style="font-size:12px;">
+          Petugas resmi <strong>tidak pernah</strong> meminta OTP, PIN, atau transfer ke rekening pribadi. Ragu? Lapor lewat tombol di bawah (diteruskan ke IASC &amp; Kontak OJK 157 ≤24 jam).
         </div>
 
-        <button type="button" style="width:100%; min-height:48px; border-radius:999px; border:1px solid var(--danger); background:var(--danger); color:#fff; font-size:14px; font-weight:700; cursor:pointer;" onclick="showToast('Mode darurat: akun dibekukan sementara. Hubungi [KONTAK RESMI] untuk buka kembali.')">
+        <button type="button" class="btn-outline-primary" style="width:100%;" onclick="showToast('Laporan penipuan dicatat & diteruskan ke IASC dan Kontak OJK 157')">
+          Laporkan penipuan
+        </button>
+        <button type="button" style="width:100%; min-height:46px; border-radius:999px; border:1px solid var(--danger); background:var(--danger); color:#fff; font-size:13.5px; font-weight:700; cursor:pointer;" onclick="showToast('Mode darurat: akun dibekukan sementara. Hubungi [KONTAK RESMI] untuk buka kembali.')">
           Bekukan akun sementara
         </button>
         <div class="illust-note">${WATERMARK_TEXT}</div>
       `;
     }
 
-    // P6 · MODE SEDERHANA (tetap seperti Layar 24 v3)
+    // P6 · MODE SEDERHANA
     function renderP6() {
       return `
         <div>
-          <div class="stage-kicker">PENDUKUNG · INKLUSI &amp; LANSIA</div>
+          <div class="stage-kicker">PENDUKUNG · INKLUSI &amp; LANSIA (SNLIK USIA 51–79 THN)</div>
           <h1 class="screen-title" style="font-size:24px;">Mode sederhana</h1>
           <div style="font-size:14px; color:var(--muted);">Huruf besar (19 px) · Tampilan ringkas</div>
         </div>
@@ -2700,7 +2887,7 @@
       `;
     }
 
-    // P7 · PUSAT STATUS & NOTIFIKASI (basis Layar 25 v3; pantauan harga diganti Rp2.450.000/g)
+    // P7 · PUSAT STATUS & NOTIFIKASI
     function renderP7() {
       return `
         <div>
@@ -2708,7 +2895,6 @@
           <h1 class="screen-title">Status &amp; notifikasi</h1>
         </div>
 
-        <!-- Kelompok 1: Proses berjalan dengan janji waktu -->
         <div class="card" style="display:flex; flex-direction:column; gap:10px;">
           <div class="card-title" style="font-size:14px;">Proses berjalan (janji waktu)</div>
           <div style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px; display:flex; flex-direction:column; gap:6px;">
@@ -2732,22 +2918,20 @@
           </div>
         </div>
 
-        <!-- Kelompok 2: Pengingat (setoran, pantauan harga Rp2.450.000/g) -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
           <div class="card-title" style="font-size:14px;">Pengingat setoran &amp; harga</div>
           <div style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px; font-size:12.5px;">
-            <strong>Pantauan harga aktif:</strong> Kabari saya bila harga beli menyentuh <strong>Rp2.450.000/g</strong> (harga hari ini Rp2.457.120/g).
+            <strong>Pantauan harga aktif:</strong> Kabari saya bila harga beli menyentuh <strong>Rp2.450.000/g</strong> (harga acuan ${PRICE_DATE}: Rp2.457.120/g).
           </div>
           <div style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px; font-size:12.5px;">
             <strong>Pengingat Nabung Rutin:</strong> Tujuan ${state.p3Goal} setiap ${state.p3Schedule}.
           </div>
         </div>
 
-        <!-- Kelompok 3: Info ANTAM -->
         <div class="card" style="display:flex; flex-direction:column; gap:6px;">
           <div class="card-title" style="font-size:14px;">Info ANTAM</div>
           <div class="text-caption">
-            Laporan cadangan November 2026 [ilustrasi] tersedia untuk diperiksa pada menu Bukti saldo &amp; cadangan (J8).
+            Laporan cadangan November 2026 [ilustrasi] tersedia untuk diperiksa pada menu Bukti saldo &amp; dukungan emas (J8).
           </div>
         </div>
 
@@ -2755,7 +2939,7 @@
       `;
     }
 
-    // P8 · ALMIRA KONTEKSTUAL (tetap seperti Layar 7 v3)
+    // P8 · ALMIRA KONTEKSTUAL
     function renderP8() {
       let msgHtml = '';
       for (let i = 0; i < state.p8Messages.length; i++) {
@@ -2783,24 +2967,21 @@
 
       return `
         <div>
-          <div class="stage-kicker">PENDUKUNG · ASISTEN KONTEKSTUAL</div>
+          <div class="stage-kicker">PILAR A · LAYANAN PELANGGAN BERTIKET 1×24 JAM</div>
           <h1 class="screen-title">Chat dengan ALMIRA</h1>
         </div>
 
-        <!-- Baris konteks di atas chat -->
         <div class="brankas-cream-card" style="padding:10px 12px; display:flex; justify-content:space-between; align-items:center; gap:8px;">
           <div style="font-size:12px; color:var(--walnut);">
             Kamu sedang di: <strong>${state.p8Context}</strong>
           </div>
-          <button type="button" class="btn-text" style="padding:0; min-height:24px; font-size:11.5px;" onclick="navigateTo('J3')">
+          <button type="button" class="btn-text" style="padding:0; min-height:24px; font-size:11.5px;" onclick="navigateTo('J5')">
             Kembali ›
           </button>
         </div>
 
-        <!-- Gelembung Chat -->
         <div style="display:flex; flex-direction:column; gap:8px;">${msgHtml}</div>
 
-        <!-- Chip Mengikuti Konteks -->
         <div style="display:flex; flex-direction:column; gap:6px;">
           <div class="text-caption" style="font-weight:700;">Pertanyaan sesuai layar kamu:</div>
           <div style="display:flex; flex-wrap:wrap; gap:6px;">${ctxChipsHtml}</div>
@@ -2810,7 +2991,6 @@
           ${state.p8ShowAllTopics ? '<div style="display:flex; flex-wrap:wrap; gap:6px;">' + origChipsHtml + '</div>' : ''}
         </div>
 
-        <!-- Kolom Ketik Bebas -->
         <div style="display:flex; gap:8px; align-items:center;">
           <input type="text" class="input-field" placeholder="Tulis pertanyaan untuk ALMIRA..." value="${state.p8Input}" oninput="state.p8Input = this.value" onkeydown="if(event.key==='Enter'){ sendAlmiraMessage(this.value); }" />
           <button type="button" class="btn-gold-primary" style="width:auto; min-width:74px; padding:10px 14px;" onclick="sendAlmiraMessage(state.p8Input)">
@@ -2821,7 +3001,7 @@
       `;
     }
 
-    // P9 · HUBUNGKAN BANK (BARU, badge "Usulan · tahap 1–2, mengikuti tinjauan hukum")
+    // P9 · HUBUNGKAN BANK MITRA (Pilar F · Tabel 5 Proposal)
     function renderP9() {
       let bankHtml = '';
       for (let i = 0; i < P9_BANKS.length; i++) {
@@ -2837,25 +3017,26 @@
 
       return `
         <div>
-          <div class="stage-kicker">PENDUKUNG · INTEGRASI BANK MITRA</div>
+          <div class="stage-kicker">PILAR F · EKOSISTEM KANAL &amp; KEMITRAAN PERBANKAN</div>
           <h1 class="screen-title">Hubungkan bank mitra</h1>
-          <div class="text-caption">Tahap 1–2, mengikuti tinjauan hukum</div>
+          <div class="text-caption">Model 1–2 (Tahap 1–2) · Model 3 BRANKAS Inside bersyarat tinjauan Bappebti &amp; OJK (POJK 17/2024)</div>
         </div>
 
-        <!-- Langkah 1: Pilih bank mitra -->
         <div class="card" style="display:flex; flex-direction:column; gap:8px;">
           <div class="card-title" style="font-size:14px;">1. Pilih bank mitra</div>
           <div style="display:flex; flex-direction:column; gap:6px;">${bankHtml}</div>
+          <div class="text-caption" style="color:var(--primary); font-weight:600;">
+            Prioritas mitra: bank yang belum memiliki buku besar emas sendiri (seperti bank syariah mitra &amp; bank digital).
+          </div>
         </div>
 
-        <!-- Langkah 2: Persetujuan berbagi data (rincian data yang dibagikan, bisa dicabut) -->
         <div class="brankas-cream-card" style="display:flex; flex-direction:column; gap:8px;">
-          <div class="card-title" style="font-size:14px;">2. Persetujuan berbagi data</div>
+          <div class="card-title" style="font-size:14px;">2. Persetujuan berbagi data (UU PDP 27/2022)</div>
           <div class="text-caption" style="color:var(--walnut);">
             Data yang dibagikan dari <strong>${state.p9PartnerBank}</strong> ke BRANKAS ANTAM:
           </div>
           <ul style="padding-left:18px; font-size:12.5px; color:var(--ink); display:flex; flex-direction:column; gap:3px;">
-            <li>Nama lengkap, NIK, dan status verifikasi KYC bank</li>
+            <li>Nama lengkap, NIK, dan status verifikasi KYC / APU-PPT bank</li>
             <li>Nomor rekening sumber dana untuk pencairan buyback</li>
             <li>Izin pendebetan terjadwal (hanya jika Anda aktifkan)</li>
           </ul>
@@ -2868,7 +3049,6 @@
           </label>
         </div>
 
-        <!-- Langkah 3: Jadikan sumber autodebet -->
         <div class="card" style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
           <div>
             <div class="card-title" style="font-size:14px;">3. Jadikan sumber autodebet</div>
@@ -2890,51 +3070,51 @@
     }
 
     // =========================================================================
-    // F0 (PETA FUNNEL) & N13 (DASBOR KPI)
+    // F0 (PETA FUNNEL) & N13 (DASBOR KPI + SHAPLEY + TCO + PETA JALAN)
     // =========================================================================
     function renderF0Desktop() {
       const stages = [
         {
           title: '1. Kesadaran',
-          barrier: 'Calon pengguna belum mengenal BRANKAS dari beranda awal.',
-          pilar: 'Pilar A · Edukasi & Transparansi',
+          barrier: '14/18 non-pengguna & 0/25 narasumber belum kenal BRANKAS; 1 dari 8 ikon beranda.',
+          pilar: 'Pilar F · BRANKAS Inside & positioning "Emas Langsung dari Sumbernya"',
           codes: ['J1', 'J2', 'P1'],
           kpi: 'Pendaftar per kanal; asal pelanggan'
         },
         {
           title: '2. Daftar akun',
-          barrier: 'Alur profil dan aktivasi terpisah tanpa urutan jelas.',
-          pilar: 'Pilar B · Pendaftaran 1 Alur',
+          barrier: 'Dua lapis pendaftaran & dua ajakan daftar bersaing tanpa urutan/estimasi.',
+          pilar: 'Pilar A · Satu kartu progres & Pilar F · Mitra bank membawa pengguna',
           codes: ['J3', 'P9'],
           kpi: 'Selesai daftar akun'
         },
         {
           title: '3. Aktivasi',
-          barrier: 'Kendala NIK/NPWP dan e-KYC ditolak tanpa alasan spesifik.',
-          pilar: 'Pilar C · Verifikasi & ALMIRA',
+          barrier: '6+ tahap wajib; NIK ditolak di kolom NPWP; 104/192 ulasan negatif soal daftar.',
+          pilar: 'Pilar A · NIK=NPWP (PMK 136/2023), e-KYC beralasan, status & estimasi verifikasi',
           codes: ['J4', 'P8'],
           kpi: 'Lolos e-KYC; waktu median verifikasi'
         },
         {
           title: '4. Transaksi pertama',
-          barrier: 'Nominal awal tinggi & kekhawatiran risiko turunnya harga emas.',
-          pilar: 'Pilar D · Mulai Rp10rb & Kunci Harga',
+          barrier: 'Saldo awal 1 g (±Rp2,44 jt) vs 94,9% transaksi pasar <1 g; biaya muncul setelah PIN.',
+          pilar: 'Pilar B · BRANKAS Mula Rp10.000, bebas iuran ≤10 g, batas spread 8%, kartu risiko',
           codes: ['J5', 'J6', 'J7'],
           kpi: 'Transaksi pertama ≤ 7 hari setelah e-KYC'
         },
         {
           title: '5. Retensi & Bukti',
-          barrier: 'Pembelian sporadis & keraguan atas cadangan emas fisik.',
-          pilar: 'Pilar E & F · Cadangan 1:1 & Rutin',
+          barrier: '26/45 beli hanya saat ada uang lebih; ±8 isian diulang tiap pembelian.',
+          pilar: 'Pilar C · Nabung Otomatis & Target Emas (+ Pilar G · Tahap hidup & agunan)',
           codes: ['J8', 'P2', 'P3'],
-          kpi: 'Setoran ulang 30/90 hari; saldo bertahan'
+          kpi: 'Setoran ulang 30/90 hari; retensi kohort M1/M3'
         },
         {
           title: '6. Pencairan & fisik',
-          barrier: 'Biaya cetak & jadwal ambil butik baru terlihat di akhir.',
-          pilar: 'Pilar G · Jual ≤3 Hari & Cetak ±Rp55rb',
+          barrier: 'Cetak tanpa estimasi & slot; kapasitas cetak 40–50 t/thn; bukti cadangan tak terlihat.',
+          pilar: 'Pilar D · Bukti cadangan & Lacak Emasku · Pilar E · Cetak-ambil dengan reservasi',
           codes: ['J9', 'P4', 'P5', 'P6', 'P7'],
-          kpi: 'Ketepatan janji waktu; aduan/1.000 trx'
+          kpi: 'Ketepatan janji waktu (≥95%); saldo gram bertahan'
         }
       ];
 
@@ -2979,12 +3159,12 @@
         <div class="desktop-canvas">
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px;">
             <div>
-              <span class="badge-pill badge-gold">F0 · PETA PERJALANAN PENGGUNA (1440 × 900)</span>
+              <span class="badge-pill badge-gold">F0 · PETA PERJALANAN PENGGUNA (GAMBAR 4 PROPOSAL v5.0)</span>
               <h1 style="font-size:24px; font-weight:700; color:var(--forest-earth); margin-top:4px;">
-                BRANKAS 2027: Emas Langsung dari Sumbernya — Peta Funnel
+                BRANKAS 2027: Emas Langsung dari Sumbernya, Terbuka dan Terukur — Peta Funnel
               </h1>
               <div style="font-size:13px; font-weight:700; color:var(--primary); margin-top:2px;">
-                Target kecepatan aktivasi: Unduh → beli pertama ≤5 layar, ≤5 menit
+                Target kecepatan aktivasi: Unduh → beli pertama ≤5 layar, ≤5 menit · Tim Pdsr Order (Universitas Tadulako)
               </div>
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
@@ -2992,33 +3172,36 @@
                 Mulai demo jalur utama (J1)
               </button>
               <button type="button" class="btn-outline-neutral" onclick="navigateTo('N13')">
-                Buka Dasbor KPI (N13)
+                Buka Dasbor KPI &amp; Analitik (N13)
               </button>
             </div>
           </div>
 
-          <!-- Baris SEBELUM (Audit 3 layar asli) -->
+          <!-- Baris SEBELUM (Audit 3 layar asli iOS 20 Nov 2026) -->
           <div class="card" style="background:var(--warm-cream);">
             <div style="font-size:12px; font-weight:700; color:var(--gold-ink); margin-bottom:8px;">
-              SEBELUM (Audit Tampilan Aplikasi Asli iOS · Identitas Pengguna Disensor)
+              SEBELUM (Audit Tampilan Aplikasi Asli iOS · 20 November 2026 · Identitas Pengguna Disensor)
             </div>
             <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
               <div class="card">
                 <strong>1. Splash Pengawasan</strong>
-                <p class="text-caption" style="margin-top:4px;">Status Bappebti &amp; Komdigi hanya muncul 1–2 detik saat buka aplikasi dan tidak dapat dicek ulang.</p>
+                <p class="text-caption" style="margin-top:4px;">Status Bappebti &amp; Komdigi hanya muncul 1–2 detik saat buka aplikasi dan tidak dapat dicek ulang di Pusat Keamanan.</p>
               </div>
               <div class="card">
                 <strong>2. Beranda Calon Pengguna</strong>
-                <p class="text-caption" style="margin-top:4px;">Dua ajakan terpisah ("Lengkapi Profil" vs "Aktifkan"), tanpa penjelasan manfaat maupun harga awal.</p>
+                <p class="text-caption" style="margin-top:4px;">Dua ajakan terpisah ("Lengkapi Sekarang" vs "Aktifkan") tanpa urutan, biaya, maupun penjelasan BRANKAS.</p>
               </div>
               <div class="card">
                 <strong>3. ALMIRA Chat</strong>
-                <p class="text-caption" style="margin-top:4px;">Belum mengenali layar asal pengguna dan tombol mengambang menutupi ikon grid baris kedua.</p>
+                <p class="text-caption" style="margin-top:4px;">Belum mengenali layar asal pengguna (pada uji 17 Nov memberi petunjuk menu yang tidak ada) &amp; tombol mengambang menutupi grid ikon baris kedua.</p>
               </div>
             </div>
           </div>
 
           <!-- Baris SESUDAH: 6 Kolom Funnel dengan Pilar A-G & Kode J/P -->
+          <div style="font-size:12px; font-weight:700; color:var(--gold-ink);">
+            Buka = Pilar A–C · Buktikan = Pilar D–E · Tanamkan = Pilar F–G · Prasyarat semua tahap: Pilar A Fondasi andal dan aman
+          </div>
           <div class="funnel-grid-6">${colsHtml}</div>
 
           <div class="brankas-cream-card" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; font-size:12px;">
@@ -3038,23 +3221,23 @@
 
     function renderN13Desktop() {
       const existingKpis = [
-        { label: 'Pendaftar baru (pilot)', val: '4.200 akun', note: '2 kota pilot vs 2 kota pembanding (ilustrasi)' },
-        { label: 'Lolos e-KYC', val: '86,4%', note: 'Setelah perbaikan alur 1 langkah & alasan spesifik (ilustrasi)' },
-        { label: 'Transaksi pertama ≤ 7 hari', val: '68,2%', note: 'Didukung beli mulai Rp10.000 & bebas iuran ≤10 g (ilustrasi)' },
-        { label: 'Setoran ulang 30 / 90 hari', val: '54% / 47%', note: 'Dorongan Nabung Rutin & pengingat harga (ilustrasi)' },
+        { label: 'Pendaftar baru (pilot)', val: '4.200 akun', note: '2 kota pilot (Jawa & luar Jawa — Palu) vs 2 kota pembanding (ilustrasi)' },
+        { label: 'Lolos e-KYC', val: '86,4%', note: 'Setelah alur 1 langkah, NIK=NPWP & kode alasan spesifik (ilustrasi)' },
+        { label: 'Transaksi pertama ≤ 7 hari', val: '68,2%', note: 'Target ≥50%; didukung BRANKAS Mula Rp10rb & bebas iuran ≤10 g (ilustrasi)' },
+        { label: 'Setoran ulang 30 / 90 hari', val: '54% / 47%', note: 'Dorongan Nabung Otomatis & pengingat harga terkoreksi (ilustrasi)' },
         { label: 'Saldo bertahan (pilot)', val: '0,18 ton (+0,04 t)', note: 'Akumulasi saldo fisik 1:1 anggota aktif (ilustrasi)' },
-        { label: 'Ketepatan janji waktu (Gerbang G3)', val: '96,4% (target ≥ 95%)', note: 'Cetak ≤15 hari kerja & dana jual ≤3 hari kerja (ilustrasi)' }
+        { label: 'Ketepatan janji waktu (Gerbang G3)', val: '96,4% (target ≥ 95%)', note: 'Verifikasi 1–2 hr, cetak ≤15 hr kerja & dana jual ≤3 hr kerja (ilustrasi)' }
       ];
 
       const newKpis = [
-        { label: 'North Star Metric', val: '9,30 g / anggota aktif', note: 'Saldo gram bertahan anggota aktif (ilustrasi)' },
-        { label: 'Layar & waktu sampai beli pertama', val: '4 layar · 3m 40d', note: 'Target ≤5 layar, ≤5 menit (ilustrasi)' },
-        { label: 'Porsi digital', val: '5% → 20%', note: 'Shapley: 64% nyata / 36% efek total (proposal)' },
-        { label: 'Rasio volume BRANKAS / ICDX', val: '7,7% → 5,5%', note: 'Indikatif, bukan pangsa pasar (proposal)' },
-        { label: 'CLV / CAC per kanal', val: '3,4× (target ≥3×)', note: 'Rata-rata tertimbang kanal digital & butik (ilustrasi)' },
-        { label: 'Spread rata-rata & maks.', val: '7,29% (batas 8%)', note: 'Acuan 17 Nov 2026: beli Rp2.457.120 vs buyback Rp2.278.000' },
-        { label: '% anggota menabung ≥Rp50 rb/bulan', val: '61,5%', note: 'Peserta aktif fitur Nabung Rutin P3 (ilustrasi)' },
-        { label: 'Tambahan volume vs ambang impas', val: '+0,41 t vs 0,33 t', note: 'Melampaui ambang impas 0,33 ton (proposal & ilustrasi)' }
+        { label: 'North Star Metric', val: '9,30 g / anggota aktif', note: 'Saldo gram bertahan anggota aktif (ukuran underlying, bukan volume)' },
+        { label: 'Layar & waktu sampai beli pertama', val: '4 layar · 3m 40d', note: 'Target ≤5 layar, ≤5 menit (turun dari 6+ tahap wajib)' },
+        { label: 'Dekomposisi Shapley (1Q25–1Q26)', val: '64% Nyata / 36% Penyebut', note: '+9,68 pp volume BRANKAS (+148%) vs +5,41 pp susut total ANTAM' },
+        { label: 'Rasio volume BRANKAS / ICDX', val: '7,7% → 5,5%', note: 'Indikator arah, bukan pangsa pasar · Target pulih ≥7,7% (2028)' },
+        { label: 'CLV / CAC (Skenario Base)', val: '12,1× per anggota', note: 'CLV Rp1,78 jt ÷ CAC Rp147,3 rb · Target per kanal ≥3×' },
+        { label: 'Spread rata-rata & batas maks.', val: '7,29% (batas 8,00%)', note: 'Menahan pelebaran spread 12,17% saat harga bergejolak' },
+        { label: 'Total Biaya Kepemilikan (TCO 1 g)', val: '13,6% → ~5,2%', note: 'Saat ini 13,6% lebih mahal dari batangan ANTAM langsung (9,4%)' },
+        { label: 'Ambang Impas Biaya Kebijakan', val: '0,33 ton / tahun', note: 'Menutup Rp32,1 M (hapus iuran Rp19,5 M + batas spread Rp12,6 M)' }
       ];
 
       let exHtml = '';
@@ -3075,7 +3258,7 @@
         nwHtml += `
           <div class="brankas-cream-card" style="padding:12px; display:flex; flex-direction:column; gap:4px;">
             <span class="text-caption" style="font-weight:700; color:var(--gold-ink);">${k.label}</span>
-            <strong class="tabular" style="font-size:18px; color:var(--primary);">${k.val}</strong>
+            <strong class="tabular" style="font-size:17px; color:var(--primary);">${k.val}</strong>
             <span class="text-caption" style="font-size:11px; color:var(--walnut);">${k.note}</span>
           </div>
         `;
@@ -3085,11 +3268,11 @@
         <div class="desktop-canvas">
           <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px;">
             <div>
-              <span class="badge-pill badge-gold">N13 · PENGUKURAN PILOT (1440 × 900)</span>
+              <span class="badge-pill badge-gold">N13 · DASBOR ANALITIK, PENGUKURAN PILOT &amp; PETA JALAN (PROPOSAL v5.0)</span>
               <h1 style="font-size:24px; font-weight:700; color:var(--forest-earth); margin-top:4px;">
-                Dasbor BRANKAS 2027 · pilot
+                Dasbor BRANKAS 2027 · Terbuka dan Terukur
               </h1>
-              <div class="text-caption">Semua angka ilustrasi kecuali angka dari proposal · Pilot 2 kota vs 2 kota pembanding</div>
+              <div class="text-caption">Memisahkan pertumbuhan nyata, memilih kanal (AHP CR=0,009), dan mengukur pelanggan yang bertahan</div>
             </div>
             <div style="display:flex; gap:8px;">
               <button type="button" class="btn-outline-neutral" onclick="navigateTo('F0')">← Kembali ke Peta Funnel (F0)</button>
@@ -3100,17 +3283,53 @@
           <!-- Kartu KPI Utama -->
           <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">${exHtml}</div>
 
-          <!-- Kartu KPI Strategis Tambahan -->
+          <!-- Kartu KPI Strategis Tambahan (Shapley, TCO, CLV/CAC, Impas) -->
           <div>
             <div style="font-size:13px; font-weight:700; color:var(--primary); margin-bottom:8px;">
-              Metrik North Star, Efisiensi Funnel &amp; Batas Ekonomi
+              Metrik Pertumbuhan Nyata, North Star &amp; Batas Ekonomi Unit (Bagian 1, 3, &amp; 5 Proposal)
             </div>
             <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:12px;">${nwHtml}</div>
           </div>
 
-          <!-- Heatmap Retensi Kohort M0-M6 -->
+          <!-- Peta Jalan Tiga Tahap dengan Gerbang Keputusan (Tabel 9 Proposal) & Proyeksi 2027 (Tabel 13) -->
+          <div style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:14px;">
+            <div class="card" style="display:flex; flex-direction:column; gap:8px;">
+              <div style="font-size:13px; font-weight:700; color:var(--forest-earth);">Peta Jalan Tiga Tahap 2027–2028 dengan Gerbang Keputusan (Tabel 9)</div>
+              <div style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px; font-size:12px;">
+                <strong>Tahap 1 (Semester I-2027 · Fondasi):</strong> Pilar A, laporan cadangan pertama (Pilar D), dasbor KPI, aliran logammulia.com ke aplikasi, QRIS &amp; autodebet, mitra bank Model 1. <em>Gerbang:</em> transaksi gagal &lt;1%, keluhan selesai ≤1×24 jam.
+              </div>
+              <div style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px; font-size:12px;">
+                <strong>Tahap 2 (Semester II-2027 · Biaya, akses, kebiasaan):</strong> BRANKAS Mula, hapus iuran ≤10 g, batas spread 8%, Nabung Otomatis di 2 kota pilot (Jawa &amp; luar Jawa — Palu) vs 2 pembanding, reservasi cetak, mitra bank Model 2, lokapasar ≥5 g. <em>Gerbang:</em> aktivasi 7 hr ≥50%, CLV/CAC ≥3×, tambahan volume &gt;0,33 t.
+              </div>
+              <div style="background:var(--warm-cream); border:1px solid var(--border); border-radius:12px; padding:10px; font-size:12px;">
+                <strong>Tahap 3 (2028 · Perluasan):</strong> Penurunan spread dasar bertahap, BRANKAS Inside (Model 3) bila lolos tinjauan hukum Bappebti &amp; OJK (POJK 17/2024), produk tahap hidup &amp; agunan emas (Fatwa DSN-MUI 77/2010), integrasi cetak pabrik Gresik (+30 t/thn). <em>Gerbang:</em> rasio BRANKAS/ICDX ≥7,7% (+Rp286 M margin kotor).
+              </div>
+            </div>
+
+            <div class="card" style="display:flex; flex-direction:column; gap:8px;">
+              <div style="font-size:13px; font-weight:700; color:var(--forest-earth);">Proyeksi BRANKAS 2027 (Tabel 13 · 25/50/25)</div>
+              <table class="heatmap-table" style="font-size:11.5px;">
+                <thead>
+                  <tr style="background:var(--warm-cream);">
+                    <th>Hasil</th><th>2026E</th><th>Bear</th><th>Base</th><th>Bull</th><th>Harapan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Volume (t)</strong></td><td>6,65</td><td>8,94</td><td>7,42</td><td>8,19</td><td><strong>8,0</strong></td></tr>
+                  <tr><td><strong>Pendapatan</strong></td><td>Rp16,2 T</td><td>Rp19,66 T</td><td>Rp20,31 T</td><td>Rp25,02 T</td><td><strong>Rp21,3 T</strong></td></tr>
+                  <tr><td><strong>Margin kotor</strong></td><td>Rp650 M</td><td>Rp786 M</td><td>Rp812 M</td><td>Rp1.001 M</td><td><strong>Rp853 M</strong></td></tr>
+                  <tr><td><strong>Anggota</strong></td><td>150 rb</td><td>165 rb</td><td>187,5 rb</td><td>210 rb</td><td>—</td></tr>
+                </tbody>
+              </table>
+              <div class="text-caption" style="font-size:11px;">
+                Saat harga turun (Bear US$3.450), anggaran rupiah tetap membeli lebih banyak gram sehingga volume justru tertinggi (8,94 t). Kampanye beli berkala menjaga retensi saat koreksi.
+              </div>
+            </div>
+          </div>
+
+          <!-- Heatmap Retensi Kohort M0-M6 (Difference-in-Differences) -->
           <div class="card">
-            <div style="font-size:13px; font-weight:700; margin-bottom:8px;">Heatmap Retensi Kohort Bulanan M0–M6 (ilustrasi)</div>
+            <div style="font-size:13px; font-weight:700; margin-bottom:8px;">Heatmap Retensi Kohort Bulanan M0–M6 · Selisih-dalam-Selisih (2 Kota Pilot vs Pembanding · Ilustrasi)</div>
             <table class="heatmap-table">
               <thead>
                 <tr style="background:var(--warm-cream);">
@@ -3118,9 +3337,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td><strong>Pilot Kota A</strong></td><td style="background:#0F5C4D; color:#fff;">100%</td><td style="background:#1F7362; color:#fff;">74%</td><td style="background:#378B7A; color:#fff;">66%</td><td style="background:#4FA291; color:#fff;">61%</td><td style="background:#6CB7A7; color:#162518;">58%</td><td style="background:#85C8B9; color:#162518;">55%</td><td style="background:#9ED7CA; color:#162518;">53%</td></tr>
-                <tr><td><strong>Pilot Kota B</strong></td><td style="background:#0F5C4D; color:#fff;">100%</td><td style="background:#2A7F6E; color:#fff;">71%</td><td style="background:#459786; color:#fff;">63%</td><td style="background:#5EAE9D; color:#162518;">59%</td><td style="background:#78C1B2; color:#162518;">56%</td><td style="background:#90D1C3; color:#162518;">53%</td><td style="background:#A6DDD1; color:#162518;">51%</td></tr>
-                <tr><td><strong>Pembanding</strong></td><td style="background:#5C6158; color:#fff;">100%</td><td style="background:#D8D2C5;">48%</td><td style="background:#E2DDD2;">39%</td><td style="background:#EAE5DC;">33%</td><td style="background:#EFECE4;">29%</td><td style="background:#F4F1EA;">26%</td><td style="background:#F8F6F0;">24%</td></tr>
+                <tr><td><strong>Pilot Kota Luar Jawa (Palu)</strong></td><td style="background:#0F5C4D; color:#fff;">100%</td><td style="background:#1F7362; color:#fff;">74%</td><td style="background:#378B7A; color:#fff;">66%</td><td style="background:#4FA291; color:#fff;">61%</td><td style="background:#6CB7A7; color:#162518;">58%</td><td style="background:#85C8B9; color:#162518;">55%</td><td style="background:#9ED7CA; color:#162518;">53%</td></tr>
+                <tr><td><strong>Pilot Kota Jawa</strong></td><td style="background:#0F5C4D; color:#fff;">100%</td><td style="background:#2A7F6E; color:#fff;">71%</td><td style="background:#459786; color:#fff;">63%</td><td style="background:#5EAE9D; color:#162518;">59%</td><td style="background:#78C1B2; color:#162518;">56%</td><td style="background:#90D1C3; color:#162518;">53%</td><td style="background:#A6DDD1; color:#162518;">51%</td></tr>
+                <tr><td><strong>Kota Pembanding</strong></td><td style="background:#5C6158; color:#fff;">100%</td><td style="background:#D8D2C5;">48%</td><td style="background:#E2DDD2;">39%</td><td style="background:#EAE5DC;">33%</td><td style="background:#EFECE4;">29%</td><td style="background:#F4F1EA;">26%</td><td style="background:#F8F6F0;">24%</td></tr>
               </tbody>
             </table>
           </div>
@@ -3188,8 +3407,8 @@
                 <strong style="font-size:16px;">Keranjang Belanja ANTAM</strong>
                 <button type="button" class="btn-text" style="min-height:32px;" onclick="state.modal=null; renderOverlays();">Tutup ✕</button>
               </div>
-              <div class="text-caption">Keranjang produk fisik tetap dipertahankan dari aplikasi asli. Untuk tabungan emas BRANKAS mulai Rp10.000, gunakan menu Beli BRANKAS.</div>
-              <button type="button" class="btn-gold-primary" onclick="navigateTo('J5')">Beli Emas BRANKAS (J5)</button>
+              <div class="text-caption">Keranjang produk fisik tetap dipertahankan dari aplikasi asli. Untuk tabungan emas BRANKAS Mula mulai Rp10.000, gunakan menu Beli BRANKAS.</div>
+              <button type="button" class="btn-gold-primary" onclick="navigateTo('J5')">Beli Emas BRANKAS Mula (J5)</button>
             </div>
           </div>
         `;
@@ -3246,18 +3465,20 @@
       const msg = (rawText || '').trim();
       if (!msg) return;
       const lower = msg.toLowerCase();
-      let reply = 'Terima kasih Rani (ilustrasi). Acuan BRANKAS 17 Nov 2026: beli Rp2.457.120/g, buyback Rp2.278.000/g (spread 7,29%). Kamu juga bisa menghubungi petugas resmi ANTAM jika butuh bantuan lanjutan.';
+      let reply = 'Terima kasih Rani (ilustrasi). Acuan BRANKAS 17 Nov 2026: beli Rp2.457.120/g, buyback Rp2.278.000/g (spread 7,29%, batas maks. 8%). Kamu juga bisa menghubungi petugas resmi ANTAM (SLA 1×24 jam).';
 
-      if (lower.indexOf('npwp') !== -1 || lower.indexOf('nik') !== -1) {
-        reply = 'Belum punya NPWP tidak masalah. Kamu bisa mendaftar memakai NIK karena NIK sudah berfungsi sebagai NPWP orang pribadi. NPWP hanya diminta saat menjual di atas Rp10 juta.';
+      if (lower.indexOf('npwp') !== -1 || lower.indexOf('nik') !== -1 || lower.indexOf('pmk') !== -1) {
+        reply = 'Belum punya NPWP tidak masalah. Sesuai PMK 136/2023, NIK sudah berfungsi sebagai NPWP orang pribadi. NPWP 16 digit baru diminta saat menjual di atas Rp10 juta.';
       } else if (lower.indexOf('lewati') !== -1) {
-        reply = 'Bisa. Data NPWP dan ahli waris dapat diisi nanti setelah akunmu aktif. Silakan lanjutkan pendaftaran satu alur di J3.';
-      } else if (lower.indexOf('petugas') !== -1) {
-        reply = 'Menghubungkan ke petugas layanan ANTAM. Kamu juga dapat mengunjungi Butik Emas LM terdekat atau WhatsApp resmi ALMIRA di 0811-1-002-002.';
+        reply = 'Bisa. Data NPWP tambahan dan ahli waris bersifat opsional serta dapat diisi nanti setelah akunmu aktif di J3.';
+      } else if (lower.indexOf('petugas') !== -1 || lower.indexOf('24') !== -1) {
+        reply = 'Tiket bantuan dibuat (SLA penyelesaian ≤1×24 jam). Menghubungkan ke petugas layanan ANTAM. WhatsApp resmi ALMIRA: 0811-1-002-002.';
       } else if (lower.indexOf('cetak') !== -1 || lower.indexOf('55') !== -1) {
-        reply = 'Biaya cetak pecahan 1 g mulai ±Rp55 rb/g (termurah di pasar), dengan perkiraan siap 15 hari kerja dan dapat diambil di butik/gerai mitra atau dikirim.';
+        reply = 'Biaya cetak pecahan 1 g mulai ±Rp55 rb/g (termurah di pasar vs Pegadaian Rp115 rb & Mandiri Rp135 rb), dengan perkiraan siap 15 hari kerja dan dapat diambil tanpa antre di 22 butik atau gerai mitra.';
       } else if (lower.indexOf('buyback') !== -1 || lower.indexOf('jual') !== -1) {
         reply = 'Dana penjualan (buyback) masuk ke rekening terdaftar paling lambat 3 hari kerja setelah konfirmasi PIN.';
+      } else if (lower.indexOf('cadangan') !== -1 || lower.indexOf('certieye') !== -1) {
+        reply = 'Setiap gram saldo BRANKAS didukung cadangan emas fisik ANTAM 1:1 dan laporan cadangan bulanan teraudit pihak independen, serta dapat dicek nomor seri batangan penjaminnya di CertiEye (layar J8).';
       }
 
       state.p8Messages.push({ from: 'user', time: '20.06', text: msg });
@@ -3276,9 +3497,9 @@
         const gramEst = calcGramFromNominal(val);
         previewEl.innerHTML =
           '<div class="tabular" style="font-size:15px; font-weight:700; color:var(--forest-earth);">' +
-          formatRp(val) + ' ≈ ' + formatGram(gramEst, 4) + ' g</div>' +
+          'Anda mendapat ' + formatGram(gramEst, 4) + ' g</div>' +
           '<div class="text-caption" style="color:var(--walnut); margin-top:2px;">' +
-          'Pada harga beli Rp2.457.120/g (' + PRICE_DATE + ') · Contoh: Rp100.000 ≈ 0,0407 g</div>';
+          'Harga beli Rp2.457.120/g (' + PRICE_DATE + ') · Contoh: Rp100.000 ≈ 0,0407 g</div>';
       }
     }
 
@@ -3292,7 +3513,7 @@
         resEl.style.color = isOfficial ? 'var(--primary)' : 'var(--danger)';
         resEl.textContent = isOfficial
           ? '✓ Domain resmi ANTAM Logam Mulia'
-          : '⚠ Bukan kanal resmi ANTAM — jangan masukkan PIN atau OTP';
+          : '⚠ Bukan kanal resmi ANTAM. Jangan isi data, OTP, atau transfer apa pun.';
       }
     }
 
